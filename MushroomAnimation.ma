@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: MushroomAnimation.ma
-//Last modified: Mon, Sep 11, 2023 01:19:49 PM
+//Last modified: Mon, Sep 11, 2023 01:23:45 PM
 //Codeset: 1252
 requires maya "2024";
 currentUnit -l centimeter -a degree -t film;
@@ -9,24 +9,24 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "30251C74-47E6-B5C3-F8E3-ADB447A26494";
+fileInfo "UUID" "F3275385-4B95-280A-A4C6-ABAA77034D04";
 createNode transform -s -n "persp";
 	rename -uid "AD13B11E-41C7-5274-9E91-8A9D794D8645";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -2.3135455349069898 8.9152945148876803 55.295371971983371 ;
-	setAttr ".r" -type "double3" -2.5314777399022366 -1.304152796199624 9.2708608691651464e-12 ;
-	setAttr ".rp" -type "double3" 2.2204460492503131e-16 -8.8817841970012523e-16 -7.1054273576010019e-15 ;
-	setAttr ".rpt" -type "double3" -5.5880583175472514e-15 -1.3266796632791548e-14 -1.6000150935903808e-14 ;
+	setAttr ".t" -type "double3" -3.0764820031760438 17.514303085449995 66.10243976230484 ;
+	setAttr ".r" -type "double3" -9.2820850463037168 -1.7388703949334503 -2.966487853656638e-13 ;
+	setAttr ".rp" -type "double3" -4.4408920985006262e-16 1.7763568394002505e-15 0 ;
+	setAttr ".rpt" -type "double3" -5.5283246029105077e-15 -1.2248367972184905e-14 -1.6430990986581126e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E93A255C-443A-5EDA-13AF-77A06F7F1BBF";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 57.151953256944878;
+	setAttr ".coi" 70.107543143885721;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -1.0140482144445646 6.3909928663469113 -1.7860170176452854 ;
+	setAttr ".tp" -type "double3" -0.9769691656255588 6.2062895155158833 -3.0552675494543422 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "DDE3AEEE-4C24-66EE-F91B-65AE8DC3F07B";
@@ -678,6 +678,14 @@ createNode mesh -n "pasted__pConeShape1" -p "|group1|pasted__pCone1";
 	setAttr ".pt[198]" -type "float3" -0.20147395 -0.84000039 0.50223297 ;
 	setAttr ".pt[199]" -type "float3" -0.35062748 -0.84000123 0.42623553 ;
 	setAttr ".pt[200]" -type "float3" -0.46899647 -0.84000039 0.30786642 ;
+createNode transform -n "directionalLight1";
+	rename -uid "CB219502-4C3E-984D-728A-86B3231DF7B8";
+	setAttr ".t" -type "double3" -31.537114541065616 19.004859481656634 0 ;
+	setAttr ".r" -type "double3" -7.2767750645565545 -13.557198616450444 -69.795624331433558 ;
+createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
+	rename -uid "B5BA6FC2-4A09-77D7-2FF1-1AB3378821C7";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 2 1 2 ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "7F077F17-4945-8EAA-72CB-9C8A5DB8765E";
 	setAttr -s 2 ".lnk";
@@ -1910,6 +1918,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
+select -ne :lightList1;
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -1923,6 +1932,7 @@ select -ne :defaultRenderGlobals;
 	setAttr ".dss" -type "string" "standardSurface1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
+select -ne :defaultLightSet;
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -2080,6 +2090,7 @@ connectAttr "|group1|pasted__pCone1|pasted__pConeShape1.wm" "polyExtrudeFace14.m
 		;
 connectAttr "polyExtrudeFace13.out" "polyTweak13.ip";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "directionalLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinderShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pConeShape1.iog" ":initialShadingGroup.dsm" -na;
@@ -2093,4 +2104,5 @@ connectAttr "|group1|pasted__pCylinder2|pasted__pCylinderShape2.iog" ":initialSh
 		 -na;
 connectAttr "|group1|pasted__pCone1|pasted__pConeShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
+connectAttr "directionalLight1.iog" ":defaultLightSet.dsm" -na;
 // End of MushroomAnimation.ma
