@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: MushroomAnimation.ma
-//Last modified: Thu, Sep 14, 2023 12:16:11 PM
+//Last modified: Thu, Sep 14, 2023 12:42:21 PM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
@@ -13,24 +13,22 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "662DBB2B-4FBC-A2D0-B6E5-9BA5A521E4EC";
+fileInfo "UUID" "5DB18BB5-4CC4-116E-8D65-D686A6802A9F";
 createNode transform -s -n "persp";
 	rename -uid "AD13B11E-41C7-5274-9E91-8A9D794D8645";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -19.426632654495137 54.110342804004297 179.20673762434524 ;
-	setAttr ".r" -type "double3" 0.38854106190573068 -1.564458828391976 -1.0550732630888966e-10 ;
-	setAttr ".rp" -type "double3" -1.7763568394002505e-15 1.4210854715202004e-14 2.8421709430404007e-14 ;
-	setAttr ".rpt" -type "double3" -1.9250299173093333e-14 -4.2948723362948004e-14 -2.4432815889544416e-14 ;
+	setAttr ".t" -type "double3" 22.743015310363226 41.732040289575203 359.01983228175163 ;
+	setAttr ".r" -type "double3" -6.6170933867319448 3.6247020731684882 -4.6686033667631447e-12 ;
+	setAttr ".rpt" -type "double3" -1.3677728766300574e-14 -2.5334187814510877e-14 -3.4755883665417601e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E93A255C-443A-5EDA-13AF-77A06F7F1BBF";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 184.50061393781763;
+	setAttr ".coi" 362.15196796891485;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -14.389593011409875 55.361491067312308 -5.2208617285958496 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "DDE3AEEE-4C24-66EE-F91B-65AE8DC3F07B";
@@ -119,13 +117,13 @@ createNode mesh -n "pConeShape1" -p "transform4";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group";
+createNode transform -n "TinyMushroom";
 	rename -uid "330D6C7A-4232-9614-A905-2FA733D498C5";
 	setAttr ".t" -type "double3" -5.5223222618440024 0 0 ;
 	setAttr ".s" -type "double3" 0.36537725271560567 0.36537725271560567 0.36537725271560567 ;
 	setAttr ".rp" -type "double3" -4.8527971507894563e-07 5.5941927515406284 -6.9403806013390579e-07 ;
 	setAttr ".sp" -type "double3" -4.8527971507894563e-07 5.5941927515406284 -6.9403806013390579e-07 ;
-createNode transform -n "pasted__pCylinder1" -p "group";
+createNode transform -n "pasted__pCylinder1" -p "TinyMushroom";
 	rename -uid "FA1A49E0-4879-E08E-1655-79A258220F93";
 	setAttr ".rp" -type "double3" -44.743175491749959 5.4603080417988519 2.1175823681357508e-22 ;
 	setAttr ".sp" -type "double3" -44.743175491749959 5.4603080417988519 2.1175823681357508e-22 ;
@@ -140,11 +138,11 @@ createNode mesh -n "pasted__pCylinderShape1" -p "pasted__pCylinder1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pasted__pCylinder2" -p "group";
+createNode transform -n "pasted__pCylinder2" -p "TinyMushroom";
 	rename -uid "66A6175E-4096-19C4-7AC4-20B11F1B9156";
 	setAttr ".rp" -type "double3" -38.809148940246502 4.0647324220431162 2.1175823681357508e-22 ;
 	setAttr ".sp" -type "double3" -38.809148940246502 4.0647324220431162 2.1175823681357508e-22 ;
-createNode transform -n "transform2" -p "|group|pasted__pCylinder2";
+createNode transform -n "transform2" -p "|TinyMushroom|pasted__pCylinder2";
 	rename -uid "3BDFDBBF-4F10-398B-3F97-5AB7DF7D9BF3";
 	setAttr ".v" no;
 createNode mesh -n "pasted__pCylinderShape2" -p "transform2";
@@ -160,11 +158,11 @@ createNode mesh -n "pasted__pCylinderShape2" -p "transform2";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pasted__pCone1" -p "group";
+createNode transform -n "pasted__pCone1" -p "TinyMushroom";
 	rename -uid "9BA133AA-4A01-418D-7A15-5AA79BEF4639";
 	setAttr ".rp" -type "double3" -43.469493940321087 11.06105784077225 -1.0796313784010343 ;
 	setAttr ".sp" -type "double3" -43.469493940321087 11.06105784077225 -1.0796313784010343 ;
-createNode transform -n "transform1" -p "|group|pasted__pCone1";
+createNode transform -n "transform1" -p "|TinyMushroom|pasted__pCone1";
 	rename -uid "B72089D0-4C2C-C239-9C8F-97B1AF9972FC";
 	setAttr ".v" no;
 createNode mesh -n "pasted__pConeShape1" -p "transform1";
@@ -196,6 +194,7 @@ createNode nurbsCurve -n "curveShape1" -p "curve1";
 		;
 createNode transform -n "pPlane1";
 	rename -uid "59731832-41AF-F681-7E99-5CAB1F913544";
+	setAttr ".s" -type "double3" 1.684753836082161 1 1 ;
 	setAttr ".rp" -type "double3" 0 2.9287455673271303 0 ;
 	setAttr ".sp" -type "double3" 0 2.9287455673271303 0 ;
 createNode mesh -n "pPlaneShape1" -p "pPlane1";
@@ -255,14 +254,9 @@ createNode mesh -n "pasted__pConeShape1" -p "transform6";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "group2";
-	rename -uid "0AF01923-4C2B-6C95-440A-30893B7DFFDC";
-	setAttr ".t" -type "double3" 39.636158265521829 -0.78750717467355358 0 ;
-	setAttr ".r" -type "double3" 2.4103884374190701 -1.6886223790784058 -8.6706709895575091 ;
-	setAttr ".rp" -type "double3" -19.053422795983472 7.9135861894213742 -2.0575403381073443e-07 ;
-	setAttr ".sp" -type "double3" -19.053422795983472 7.9135861894213742 -2.0575403381073443e-07 ;
 createNode transform -n "TreeStump";
 	rename -uid "44F7CC9E-44EE-EAF6-4463-BAA18F895436";
+	setAttr ".t" -type "double3" 0 1.1061251895482371 0 ;
 	setAttr ".rp" -type "double3" 30.824744564862417 57.726611582850801 0 ;
 	setAttr ".sp" -type "double3" 30.824744564862417 57.726611582850801 0 ;
 createNode mesh -n "TreeStumpShape" -p "TreeStump";
@@ -276,70 +270,9 @@ createNode mesh -n "TreeStumpShape" -p "TreeStump";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 61 ".pt";
-	setAttr ".pt[20]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[21]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[22]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[23]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[24]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[25]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[26]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[27]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[28]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[29]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[30]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[31]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[32]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[33]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[34]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[35]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[36]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[37]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[38]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[39]" -type "float3" -6.5504198 0 0 ;
-	setAttr ".pt[41]" -type "float3" -6.5504208 0 0 ;
-	setAttr ".pt[42]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[43]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[44]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[45]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[46]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[47]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[48]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[49]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[50]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[51]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[52]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[53]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[54]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[55]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[56]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[57]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[58]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[59]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[60]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[61]" -type "float3" 1.6839994 0 0 ;
-	setAttr ".pt[62]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[63]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[64]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[65]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[66]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[67]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[68]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[69]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[70]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[71]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[72]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[73]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[74]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[75]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[76]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[77]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[78]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[79]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[80]" -type "float3" -4.8664227 0 0 ;
-	setAttr ".pt[81]" -type "float3" -4.8664227 0 0 ;
 createNode transform -n "Mushroom1";
 	rename -uid "ADFC9883-4706-7071-4668-DBA298BF655B";
+	setAttr ".t" -type "double3" -12.164193284560131 0 0 ;
 	setAttr ".rp" -type "double3" -19.10096549987793 8.5747005939483643 -7.152557373046875e-07 ;
 	setAttr ".sp" -type "double3" -19.10096549987793 8.5747005939483643 -7.152557373046875e-07 ;
 createNode mesh -n "Mushroom1Shape" -p "Mushroom1";
@@ -355,6 +288,7 @@ createNode mesh -n "Mushroom1Shape" -p "Mushroom1";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "Mushroom2";
 	rename -uid "580B1742-4756-D432-488C-588A1FCA4A58";
+	setAttr ".t" -type "double3" 0 1.0218145766424644 0 ;
 	setAttr ".rp" -type "double3" -4.3013066152714741 8.0745159616941784 -0.13292423645394935 ;
 	setAttr ".sp" -type "double3" -4.3013066152714741 8.0745159616941784 -0.13292423645394935 ;
 createNode mesh -n "Mushroom2Shape" -p "Mushroom2";
@@ -370,8 +304,8 @@ createNode mesh -n "Mushroom2Shape" -p "Mushroom2";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "directionalLight1";
 	rename -uid "C1958476-4160-4B90-4E82-EF91F87B7526";
-	setAttr ".t" -type "double3" -32.138220897659266 22.542267878618429 -1.9749742615577981 ;
-	setAttr ".r" -type "double3" 90 -14.916517844031221 -129.60128186674805 ;
+	setAttr ".t" -type "double3" -60.709431570809166 51.463997042014377 -1.9749742615577981 ;
+	setAttr ".r" -type "double3" 85.059865926023278 -14.092265222850971 -110.05661680824673 ;
 createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
 	rename -uid "CB768F91-4A7F-FE01-84C6-26A3CC23EE76";
 	setAttr -k off ".v";
@@ -379,7 +313,7 @@ createNode directionalLight -n "directionalLightShape1" -p "directionalLight1";
 	setAttr ".in" 3;
 createNode transform -n "pCone2";
 	rename -uid "44DECB24-4048-5D39-8A66-0B839054AC50";
-	setAttr ".t" -type "double3" -15.115083310471876 37.287643858898775 0 ;
+	setAttr ".t" -type "double3" -32.693489790421395 46.706166346420495 0 ;
 createNode mesh -n "pConeShape2" -p "pCone2";
 	rename -uid "0C117D17-40DA-243C-DBAD-A1B4D97F9CA5";
 	setAttr -k off ".v";
@@ -408,7 +342,7 @@ createNode mesh -n "pCylinderShape3" -p "pCylinder3";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "pSphere1";
 	rename -uid "9CB6AC63-42AF-6800-5D28-96A5B6D4BBF7";
-	setAttr ".t" -type "double3" -14.318836018693027 52.696363013324898 0 ;
+	setAttr ".t" -type "double3" -27.968357282826734 52.696363013324898 0 ;
 	setAttr ".r" -type "double3" 0 0 45.743297949628783 ;
 	setAttr ".s" -type "double3" 6.9243098218742967 0.60132874803740599 4.3429239258932437 ;
 createNode mesh -n "pSphereShape1" -p "pSphere1";
@@ -424,7 +358,7 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "pCylinder4";
 	rename -uid "0D275422-44AF-EC15-D357-1A9746E28FCD";
-	setAttr ".t" -type "double3" -7.067949573262668 60.355596419736472 -0.10467128068676335 ;
+	setAttr ".t" -type "double3" -20.717470837396377 60.355596419736472 -0.10467128068676335 ;
 	setAttr ".r" -type "double3" 0 0 -40.885388689525129 ;
 	setAttr ".s" -type "double3" 0.12775781961720972 5.8399035563740282 0.18999388294848416 ;
 createNode mesh -n "pCylinderShape4" -p "pCylinder4";
@@ -437,10 +371,132 @@ createNode mesh -n "pCylinderShape4" -p "pCylinder4";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group6";
+	rename -uid "00871421-4B84-5DA0-EF13-AA87B09062C0";
+	setAttr ".t" -type "double3" 48.396129096748474 2.7652600732981227 0 ;
+	setAttr ".r" -type "double3" 0 0 72.255284576950274 ;
+	setAttr ".s" -type "double3" 0.36871048638393722 0.36871048638393722 0.36871048638393722 ;
+	setAttr ".rp" -type "double3" -67.509700027770478 52.371539088226172 -7.7657531383223954e-07 ;
+	setAttr ".sp" -type "double3" -67.509700027770478 52.371539088226172 -7.7657531383223954e-07 ;
+createNode transform -n "pasted__group3" -p "group6";
+	rename -uid "7776A3D2-4B03-09FD-9BE3-FCB4208D06E5";
+	setAttr ".t" -type "double3" -42.494836121905166 -3.7143055986169458 0 ;
+	setAttr ".rp" -type "double3" -25.014863905865315 56.085844686843117 -7.7657531383223954e-07 ;
+	setAttr ".sp" -type "double3" -25.014863905865315 56.085844686843117 -7.7657531383223954e-07 ;
+createNode transform -n "pasted__pasted__pSphere1" -p "pasted__group3";
+	rename -uid "DC49010D-4B50-2BD6-09A9-21BB18DF1B06";
+	setAttr ".t" -type "double3" -28.437276871937588 54.161732870355792 -2.0101240843900257e-21 ;
+	setAttr ".r" -type "double3" 0 0 45.743297949628783 ;
+	setAttr ".s" -type "double3" 6.9243098218742967 0.60132874803740599 4.3429239258932437 ;
+createNode mesh -n "pasted__pasted__pSphereShape1" -p "pasted__pasted__pSphere1";
+	rename -uid "7E91DEF0-4105-2E8A-0868-0D953DA554BA";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.49999994039535522 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__pasted__pCylinder4" -p "pasted__group3";
+	rename -uid "FBA95067-4B88-C927-2F8F-1DA2FCDD5976";
+	setAttr ".t" -type "double3" -21.186390426507231 61.820966276767365 -0.10467128068676335 ;
+	setAttr ".r" -type "double3" 0 0 -40.885388689525129 ;
+	setAttr ".s" -type "double3" 0.12775781961720972 5.8399035563740282 0.18999388294848416 ;
+createNode mesh -n "pasted__pasted__pCylinderShape4" -p "pasted__pasted__pCylinder4";
+	rename -uid "75516995-4116-D5D3-C715-B6B12EC71C60";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__group4" -p "group6";
+	rename -uid "A379570D-4BC4-7EF4-E1DB-3FBC44832529";
+	setAttr ".rp" -type "double3" -70.463196114534284 48.982061207595812 -7.7657531383223954e-07 ;
+	setAttr ".sp" -type "double3" -70.463196114534284 48.982061207595812 -7.7657531383223954e-07 ;
+createNode transform -n "pasted__pasted__group3" -p "pasted__group4";
+	rename -uid "FF06BFCB-4DF1-1CFA-7AE6-6CA953B61B9F";
+	setAttr ".t" -type "double3" -42.494836121905166 -3.7143055986169458 0 ;
+	setAttr ".rp" -type "double3" -25.014863905865315 56.085844686843117 -7.7657531383223954e-07 ;
+	setAttr ".sp" -type "double3" -25.014863905865315 56.085844686843117 -7.7657531383223954e-07 ;
+createNode transform -n "pasted__pasted__pasted__pSphere1" -p "|group6|pasted__group4|pasted__pasted__group3";
+	rename -uid "2703A7A5-449C-38EB-72CB-589BC61CB6C5";
+	setAttr ".t" -type "double3" -28.437276871937588 54.161732870355792 -2.0101240843900257e-21 ;
+	setAttr ".r" -type "double3" 0 0 45.743297949628783 ;
+	setAttr ".s" -type "double3" 6.9243098218742967 0.60132874803740599 4.3429239258932437 ;
+createNode mesh -n "pasted__pasted__pasted__pSphereShape1" -p "|group6|pasted__group4|pasted__pasted__group3|pasted__pasted__pasted__pSphere1";
+	rename -uid "7157F90A-4B2F-CCED-19E6-58BAC3F9AAA5";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.49999994039535522 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pasted__group5" -p "group6";
+	rename -uid "2D6C15FE-439D-3723-CE54-70BDAD8BE726";
+	setAttr ".rp" -type "double3" -70.463196114534284 48.982061207595812 -7.7657531383223954e-07 ;
+	setAttr ".sp" -type "double3" -70.463196114534284 48.982061207595812 -7.7657531383223954e-07 ;
+createNode transform -n "pasted__pasted__group3" -p "pasted__group5";
+	rename -uid "60F4ED04-4385-AAA4-F908-8D9883C363ED";
+	setAttr ".t" -type "double3" -42.494836121905166 -3.7143055986169458 0 ;
+	setAttr ".rp" -type "double3" -25.014863905865315 56.085844686843117 -7.7657531383223954e-07 ;
+	setAttr ".sp" -type "double3" -25.014863905865315 56.085844686843117 -7.7657531383223954e-07 ;
+createNode transform -n "pasted__pasted__pasted__pSphere1" -p "|group6|pasted__group5|pasted__pasted__group3";
+	rename -uid "371E55A7-46CC-A450-E8AD-73BC4F302E9E";
+	setAttr ".t" -type "double3" -28.437276871937588 54.161732870355792 -2.0101240843900257e-21 ;
+	setAttr ".r" -type "double3" 0 0 45.743297949628783 ;
+	setAttr ".s" -type "double3" 6.9243098218742967 0.60132874803740599 4.3429239258932437 ;
+createNode mesh -n "pasted__pasted__pasted__pSphereShape1" -p "|group6|pasted__group5|pasted__pasted__group3|pasted__pasted__pasted__pSphere1";
+	rename -uid "AFF89F3C-42C8-B511-66BD-0FB4DED3F271";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.49999994039535522 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pSphere2";
+	rename -uid "0B3F23DB-4220-9A10-2CD2-1BB6FDE46B70";
+	setAttr ".t" -type "double3" -25.861273186996605 56.597892268610252 0.015151278009525981 ;
+	setAttr ".r" -type "double3" 0 0 31.872825853020988 ;
+	setAttr ".s" -type "double3" 1.0856744839769841 0.8596167380945996 1 ;
+createNode mesh -n "pSphereShape2" -p "pSphere2";
+	rename -uid "3E908EAD-4118-8909-F21D-789CC28CA938";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group7";
+	rename -uid "CB6C58C5-4919-957D-3E63-7CB6AD27BB68";
+	setAttr ".t" -type "double3" 5.8790280675960247 -22.220485233024405 0 ;
+	setAttr ".rp" -type "double3" -60.719416016095018 51.45192847069292 -2.0337731190975656 ;
+	setAttr ".sp" -type "double3" -60.719416016095018 51.45192847069292 -2.0337731190975656 ;
+createNode transform -n "pasted__directionalLight1" -p "group7";
+	rename -uid "F9E4674D-44D6-612B-5F34-82BE9E3B1E9F";
+	setAttr ".t" -type "double3" -60.709431570809166 51.463997042014377 -1.9749742615577981 ;
+	setAttr ".r" -type "double3" 90 -14.916517844031221 -129.60128186674805 ;
+createNode directionalLight -n "pasted__directionalLightShape1" -p "pasted__directionalLight1";
+	rename -uid "5FFEC980-4E50-D338-D5A8-5799A8CC42A2";
+	setAttr -k off ".v";
+	setAttr ".cl" -type "float3" 3 2 4 ;
+	setAttr ".in" 3;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "0E395CDA-4D8E-F987-2EE8-81BDE676660E";
-	setAttr -s 21 ".lnk";
-	setAttr -s 21 ".slnk";
+	setAttr -s 32 ".lnk";
+	setAttr -s 32 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "BC5C3EDA-4020-8B7D-37E3-9CA1F6760F66";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -799,7 +855,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "C4A82618-450B-A356-10CB-F2A78340F2DF";
-	setAttr ".b" -type "string" "playbackOptions -min -3 -max 120 -ast -3 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 0 -max 120 -ast 0 -aet 200 ";
 	setAttr ".st" 6;
 createNode deleteComponent -n "pasted__deleteComponent1";
 	rename -uid "11A3F8D2-444A-40C4-60C9-F98D7FC5155B";
@@ -2645,9 +2701,6 @@ createNode groupParts -n "groupParts2";
 	rename -uid "A5ED80E0-4EF3-CD55-C499-1DBD182299FC";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:159]";
-createNode groupId -n "groupId4";
-	rename -uid "DFB7255F-4E0B-F7FF-0650-D6A2BAFA9AC6";
-	setAttr ".ihi" 0;
 createNode groupId -n "groupId5";
 	rename -uid "F84ADBE6-4E0E-E227-D924-76A1A4A3FA85";
 	setAttr ".ihi" 0;
@@ -2889,9 +2942,6 @@ createNode groupParts -n "groupParts6";
 	rename -uid "BF472308-4667-6F50-70D6-29A5A8911877";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:200]";
-createNode groupId -n "groupId11";
-	rename -uid "FBFEF94C-4B72-AD73-5A4E-4E8D243639D8";
-	setAttr ".ihi" 0;
 createNode groupId -n "groupId12";
 	rename -uid "726ED900-42EB-5867-3FFB-288130A2105D";
 	setAttr ".ihi" 0;
@@ -2899,9 +2949,6 @@ createNode groupParts -n "groupParts7";
 	rename -uid "1DD61B25-449C-DEAE-86B1-32858732DBDE";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:159]";
-createNode groupId -n "groupId13";
-	rename -uid "FB1EB0A5-4438-6699-251E-1FAF59BE84EC";
-	setAttr ".ihi" 0;
 createNode polyAutoProj -n "polyAutoProj11";
 	rename -uid "DE5789C1-4FC8-C502-1329-2B8EEE0F26B2";
 	setAttr ".cch" yes;
@@ -4500,6 +4547,7 @@ createNode aiStandardSurface -n "RaindropMaterial";
 createNode shadingEngine -n "set6";
 	rename -uid "EB8F9423-47B1-C14A-37FF-84A378778366";
 	setAttr ".ihi" 0;
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo14";
 	rename -uid "6D7FFAB0-472B-24B8-DC97-1AA42574C1C0";
@@ -4616,189 +4664,2003 @@ createNode shadingEngine -n "blinn8SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo17";
 	rename -uid "6D15E924-49CA-B6BB-9B9F-B9B6A706C422";
+createNode polyCut -n "polyCut6";
+	rename -uid "DEE404E3-445E-1D55-A934-148552F4442E";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:19]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 1.1061251895482371 0 1;
+	setAttr ".pc" -type "double3" 39.975729899999997 -2.8080166000000002 77.686460460000006 ;
+	setAttr ".ro" -type "double3" -7.7630938099999991 85.529033100000021 90 ;
+createNode polyTweak -n "polyTweak29";
+	rename -uid "2FC39C1F-4758-5478-757A-7CB2518F82E2";
+	setAttr ".uopa" yes;
+	setAttr -s 61 ".tk";
+	setAttr ".tk[20]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[21]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[22]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[23]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[24]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[25]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[26]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[27]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[28]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[29]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[30]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[31]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[32]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[33]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[34]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[35]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[36]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[37]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[38]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[39]" -type "float3" -6.5504198 0 0 ;
+	setAttr ".tk[41]" -type "float3" -6.5504208 0 0 ;
+	setAttr ".tk[42]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[43]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[44]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[45]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[46]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[47]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[48]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[49]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[50]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[51]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[52]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[53]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[54]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[55]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[56]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[57]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[58]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[59]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[60]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[61]" -type "float3" 1.6839994 0 0 ;
+	setAttr ".tk[62]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[63]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[64]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[65]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[66]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[67]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[68]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[69]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[70]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[71]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[72]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[73]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[74]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[75]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[76]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[77]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[78]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[79]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[80]" -type "float3" -4.8664227 0 0 ;
+	setAttr ".tk[81]" -type "float3" -4.8664227 0 0 ;
+createNode deleteComponent -n "deleteComponent1";
+	rename -uid "D15D2901-4785-BAC0-F0C8-19B7242792A0";
+	setAttr ".dc" -type "componentList" 2 "f[0:2]" "f[15:19]";
+createNode deleteComponent -n "deleteComponent2";
+	rename -uid "58BDF063-4C5C-DDFB-6423-589304C7D353";
+	setAttr ".dc" -type "componentList" 2 "f[0:3]" "f[9:31]";
+createNode deleteComponent -n "deleteComponent3";
+	rename -uid "35BAA744-4ADD-F850-7FBA-2A9B51196308";
+	setAttr ".dc" -type "componentList" 2 "f[0:1]" "f[3:4]";
+createNode deleteComponent -n "deleteComponent4";
+	rename -uid "50A7F8C6-4E97-9C36-51FE-4D8987900BDA";
+	setAttr ".dc" -type "componentList" 1 "f[0]";
+createNode materialInfo -n "pasted__materialInfo15";
+	rename -uid "8F5B8F40-4DA1-28DE-23B0-3D85D561E6B2";
+createNode shadingEngine -n "pasted__set7";
+	rename -uid "39EC59AF-4AB1-6B3C-0CB4-ABB6339D3455";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__LeafMaterial";
+	rename -uid "B242CC0B-4586-34D8-B2C0-84939C2A7E71";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__file40";
+	rename -uid "FF42BA43-48E2-4FCF-67A5-41AE53DA985D";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__place2dTexture16";
+	rename -uid "25167E91-4C18-B0EE-47E3-6898159548C1";
+createNode bump2d -n "pasted__bump2d7";
+	rename -uid "ED89DBA7-40C1-FA07-383E-4BBB9647D823";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__file41";
+	rename -uid "E52CA996-4E5B-F84C-BE5C-B2AB3C13C615";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__file42";
+	rename -uid "2191F17F-4791-6A2D-403A-81ADEC3AC1B0";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__multiplyDivide7";
+	rename -uid "B42FC03C-4E20-673C-B92A-068521C7EA8A";
+createNode file -n "pasted__file44";
+	rename -uid "F258C040-413F-7BB1-5E21-64BD1D743BDC";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__displacementShader7";
+	rename -uid "821A7B47-4E60-3106-5568-68AB180428D8";
+createNode file -n "pasted__file43";
+	rename -uid "399B8C41-4436-30A8-68AD-E682A83859C9";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode materialInfo -n "pasted__materialInfo16";
+	rename -uid "510D158E-43E3-658C-4F8C-7A81A672C459";
+createNode shadingEngine -n "pasted__set8";
+	rename -uid "CA9FA1C6-4DA4-55DE-F6B5-92BD11DC6143";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__aiStandardSurface2";
+	rename -uid "86681412-4FCD-F7B1-5B32-01B57CBF5078";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__file45";
+	rename -uid "58A8AE0F-47F2-1ABD-BE2F-C59D014D2181";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__place2dTexture17";
+	rename -uid "846C6EC4-4ACF-463A-6F8C-658BC12363CE";
+createNode bump2d -n "pasted__bump2d8";
+	rename -uid "5AFD50D5-44F7-F1F4-69A8-F3BABB4570A2";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__file46";
+	rename -uid "FD5119BD-4252-626D-BD10-51BC7F367EC6";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__file47";
+	rename -uid "57F3525B-4FF6-4FC9-49B8-329A7BBCA263";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__multiplyDivide8";
+	rename -uid "43D8614B-4690-DFC4-1932-37B560485E8B";
+createNode file -n "pasted__file49";
+	rename -uid "9FE2D0B5-4E15-EB36-5885-B7A284A842BB";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__displacementShader8";
+	rename -uid "B8C7F183-49D8-067B-D3BD-C8909A474324";
+createNode file -n "pasted__file48";
+	rename -uid "40B2E22A-4056-01ED-E274-65B23F4F94B9";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode materialInfo -n "pasted__pasted__materialInfo15";
+	rename -uid "7A36945A-4D1C-27F8-1214-2CAE7997971E";
+createNode shadingEngine -n "pasted__pasted__set7";
+	rename -uid "5C77632A-4AAD-481C-A825-ED8E64EB4514";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__pasted__LeafMaterial";
+	rename -uid "265A679A-41AA-A74C-C43D-D2A38BAC6209";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__pasted__file40";
+	rename -uid "549D79D5-4E89-DF10-F821-938A8A78DEB3";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__pasted__place2dTexture16";
+	rename -uid "48173021-42B3-C6F5-7550-11A888D1A802";
+createNode bump2d -n "pasted__pasted__bump2d7";
+	rename -uid "B800AAD3-4D07-2439-BB73-648C297BA4F1";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__pasted__file41";
+	rename -uid "B3943A0B-4295-B6EB-D0C4-A7B60B5F3724";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__pasted__file42";
+	rename -uid "19E30227-4E6B-20BC-2CC2-648004970C29";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__pasted__multiplyDivide7";
+	rename -uid "041940A5-4EE3-91F1-1FD1-05811358DFC4";
+createNode file -n "pasted__pasted__file44";
+	rename -uid "659F745D-4AD5-9030-4470-5BB4707612E8";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__pasted__displacementShader7";
+	rename -uid "B97FB118-4ED6-B19F-3969-A0A7175F00FA";
+createNode file -n "pasted__pasted__file43";
+	rename -uid "BB50AA0A-4898-1830-5571-32BE946A9559";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode materialInfo -n "pasted__pasted__materialInfo16";
+	rename -uid "6C3D1967-42E5-B4B9-AC2A-2FA8C379D511";
+createNode shadingEngine -n "pasted__pasted__set8";
+	rename -uid "F76CA02D-4AA7-74E9-EC27-34AC06C0A595";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__pasted__LeafMaterial1";
+	rename -uid "24C520AF-4F87-B100-ABE5-7A9DC84CA6DB";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__pasted__file45";
+	rename -uid "F179F0EA-40AD-A553-175F-7B9A582A7D2B";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__pasted__place2dTexture17";
+	rename -uid "1F9B34D9-4FFB-4C73-42B7-4597938F6F2D";
+createNode bump2d -n "pasted__pasted__bump2d8";
+	rename -uid "E6FD1B10-4421-F44C-AC9B-45B367926B71";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__pasted__file46";
+	rename -uid "0F54E554-4399-E24A-AF57-ADA906B47AA9";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__pasted__file47";
+	rename -uid "B4EF8956-4EC6-F1AF-E7A8-308414930AC3";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__pasted__multiplyDivide8";
+	rename -uid "F716BEBC-4AEF-5CB8-9A74-5F9384D804F9";
+createNode file -n "pasted__pasted__file49";
+	rename -uid "38C73C1D-4E65-385C-EBFB-EDBC6ACD8DDC";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__pasted__displacementShader8";
+	rename -uid "7BD3CCF7-409C-F9C7-84DE-F286407F2EA1";
+createNode file -n "pasted__pasted__file48";
+	rename -uid "F14E17A6-420B-4D06-09A5-A1921A1A4380";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode polyTweakUV -n "pasted__pasted__polyTweakUV23";
+	rename -uid "0D01A0AD-456C-0F9D-A847-2396CB98696C";
+	setAttr ".uopa" yes;
+	setAttr -s 482 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" -0.39287868 0.12950313 -0.39057827
+		 0.12950313 -0.3902514 0.13084579 -0.39270681 0.13084579 -0.39311332 0.12826407 -0.39102459
+		 0.12826407 -0.3887527 0.12950313 -0.38830274 0.13084579 -0.39005196 0.13225895 -0.39260197
+		 0.13225895 -0.39542866 0.12950313 -0.39542866 0.13084579 -0.39340499 0.12715897 -0.39157939
+		 0.12715897 -0.38936698 0.12826407 -0.39542866 0.12826407 -0.38802826 0.13225895 -0.38998497
+		 0.1337077 -0.39256674 0.1337077 -0.39542866 0.13225895 -0.39797866 0.12950313 -0.3981505
+		 0.13084579 -0.39374647 0.12621516 -0.39222893 0.12621516 -0.39013058 0.12715897 -0.39542866
+		 0.12715897 -0.397744 0.12826407 -0.38793606 0.1337077 -0.39005196 0.13515651 -0.39260197
+		 0.13515651 -0.39542866 0.1337077 -0.39825535 0.13225895 -0.40027902 0.12950313 -0.40060592
+		 0.13084579 -0.39542866 0.12621516 -0.39745235 0.12715897 -0.3998327 0.12826407 -0.38802826
+		 0.13515651 -0.3902514 0.13656962 -0.39270681 0.13656962 -0.39542866 0.13515651 -0.39829057
+		 0.1337077 -0.40080535 0.13225895 -0.40210462 0.12950313 -0.40255457 0.13084579 -0.39542866
+		 0.12545571 -0.39412937 0.12545571 -0.39711085 0.12621516 -0.39927793 0.12715897 -0.4014903
+		 0.12826407 -0.38830274 0.13656962 -0.39057827 0.13791233 -0.39287868 0.13791233 -0.39542866
+		 0.13656962 -0.39825535 0.13515651 -0.40087235 0.1337077 -0.40282899 0.13225895 -0.39672795
+		 0.12545571 -0.39862838 0.12621516 -0.40072674 0.12715897 -0.3887527 0.13791233 -0.39102459
+		 0.13915139 -0.39311332 0.13915139 -0.39542866 0.13791233 -0.3981505 0.13656962 -0.40080535
+		 0.13515651 -0.40292126 0.1337077 -0.38936698 0.13915139 -0.39157939 0.14025652 -0.39340499
+		 0.14025652 -0.39542866 0.13915139 -0.39797866 0.13791233 -0.40060592 0.13656962 -0.40282899
+		 0.13515651 -0.39013058 0.14025652 -0.39222893 0.1412003 -0.39374647 0.1412003 -0.39542866
+		 0.14025652 -0.397744 0.13915139 -0.40027902 0.13791233 -0.40255457 0.13656962 -0.39542866
+		 0.1412003 -0.39745235 0.14025652 -0.3998327 0.13915139 -0.40210462 0.13791233 -0.39412937
+		 0.14195967 -0.39542866 0.14195967 -0.39711085 0.1412003 -0.39927793 0.14025652 -0.4014903
+		 0.13915139 -0.39672795 0.14195967 -0.39862838 0.1412003 -0.40072674 0.14025652 0.31282812
+		 0.54670149 0.31512851 0.54670149 0.31495664 0.54804415 0.31250119 0.54804415 0.31327441
+		 0.54546243 0.31536314 0.54546243 0.31767848 0.54670149 0.31767848 0.54804415 0.31485182
+		 0.54945737 0.31230181 0.54945737 0.31100249 0.54670149 0.3105526 0.54804415 0.31382918
+		 0.54435736 0.31565481 0.54435736 0.31767848 0.54546243 0.31161681 0.54546243 0.32022846
+		 0.54670149 0.32040036 0.54804415 0.31767848 0.54945737 0.31481656 0.55090618 0.31223479
+		 0.55090618 0.31027812 0.54945737 0.31447875 0.54341358 0.31599626 0.54341358 0.31767848
+		 0.54435736 0.3123804 0.54435736 0.31999385 0.54546243 0.3225289 0.54670149 0.32285577
+		 0.54804415 0.3205052 0.54945737 0.31767848 0.55090618 0.31485182 0.55235493 0.31230181
+		 0.55235493 0.31018585 0.55090618 0.31767848 0.54341358 0.31970215 0.54435736 0.32208252
+		 0.54546243 0.32435447 0.54670149 0.32480443 0.54804415 0.32305515 0.54945737 0.32054043
+		 0.55090618 0.31767848 0.55235493 0.31495664 0.55376804 0.31250119 0.55376804 0.31027812
+		 0.55235493 0.31637922 0.54265416 0.31767848 0.54265416 0.31936067 0.54341358 0.32152778
+		 0.54435736 0.32374012 0.54546243 0.32507885 0.54945737 0.3231222 0.55090618 0.3205052
+		 0.55235493 0.31767848 0.55376804 0.31512851 0.55511075 0.31282812 0.55511075 0.3105526
+		 0.55376804 0.31897777 0.54265416 0.32087821 0.54341358 0.32297659 0.54435736 0.32517111
+		 0.55090618 0.32305515 0.55235493 0.32040036 0.55376804 0.31767848 0.55511075 0.31536314
+		 0.55634987 0.31327441 0.55634987 0.31100249 0.55511075 0.32507885 0.55235493 0.32285577
+		 0.55376804 0.32022846 0.55511075 0.31767848 0.55634987 0.31565481 0.55745494 0.31382918
+		 0.55745494 0.31161681 0.55634987 0.32480443 0.55376804 0.3225289 0.55511075 0.31999385
+		 0.55634987 0.31767848 0.55745494 0.31599626 0.55839872 0.31447875 0.55839872 0.3123804
+		 0.55745494 0.32435447 0.55511075 0.32208252 0.55634987 0.31970215 0.55745494 0.31767848
+		 0.55839872 0.32374012 0.55634987 0.32152778 0.55745494 0.31936067 0.55839872 0.31767848
+		 0.55915809 0.31637922 0.55915809 0.32297659 0.55745494 0.32087821 0.55839872 0.31897777
+		 0.55915809 0.45335379 0.079300299 0.45121032 0.075093329 0.46311885 0.066441298 0.46735317
+		 0.074751735 0.43900114 0.083963796 0.44787166 0.071754649 0.45652366 0.059846193
+		 0.47443345 0.058220774 0.48065424 0.070429936 0.45409244 0.083963796 0.46881223 0.083963796
+		 0.44366467 0.069611162 0.44821325 0.055611834 0.46474415 0.048531547 0.48487565 0.050634027
+		 0.49292985 0.066441298 0.48279786 0.083963796 0.45335379 0.088627264 0.46735317 0.093175948
+		 0.43900114 0.068872496 0.43900114 0.054152757 0.45253503 0.0423107 0.47233093 0.038089402
+		 0.48065424 0.097497731 0.45121032 0.092834234 0.46311873 0.1014863 0.43433768 0.069611162
+		 0.42978907 0.055611834 0.43900114 0.040167131 0.45652366 0.030035146 0.47909689 0.028776743
+		 0.49418825 0.043868043 0.47443345 0.10970685 0.44787166 0.096172914 0.45652366 0.10808143
+		 0.43013066 0.071754649 0.42147869 0.059846193 0.42546725 0.0423107 0.43900114 0.027259856
+		 0.46008074 0.019087505 0.49292985 0.1014863 0.48487556 0.11729354 0.46474415 0.11939609
+		 0.44366467 0.098316491 0.44821325 0.11231574 0.42679209 0.075093329 0.41488355 0.066441298
+		 0.41325814 0.048531547 0.42147869 0.030035146 0.43900114 0.015748907 0.46311885 0.0097374227
+		 0.48487565 0.020823058 0.47233087 0.12983823 0.45253503 0.12561691 0.43900114 0.099055111
+		 0.43900114 0.11377481 0.42464843 0.079300299 0.41064918 0.074751735 0.40356889 0.058220774
+		 0.40567148 0.038089402 0.41792157 0.01908759 0.43900114 0.0059175342 0.46556297 0.0022149412
+		 0.48952475 0.014424093;
+	setAttr ".uvtk[250:481]" 0.49418813 0.12405953 0.47909686 0.13915083 0.45652366
+		 0.13789243 0.43900114 0.1277605 0.43433768 0.098316491 0.42978907 0.11231574 0.42390987
+		 0.083963796 0.40919012 0.083963796 0.39734808 0.070429936 0.3931267 0.050634116 0.39890546
+		 0.028776743 0.41488355 0.0097374227 0.43900114 -0.0019920319 0.46008074 0.14884001
+		 0.43900114 0.14066774 0.42546725 0.12561691 0.43013066 0.096172914 0.42147869 0.10808143
+		 0.42464843 0.088627264 0.41064918 0.093175948 0.39520451 0.083963796 0.38507259 0.066441298
+		 0.38381413 0.043868124 0.3931267 0.020823058 0.41243935 0.0022149412 0.48487556 0.14710453
+		 0.46311873 0.15819022 0.43900114 0.1521787 0.42147869 0.13789243 0.41325814 0.11939609
+		 0.42679209 0.092834234 0.41488355 0.1014863 0.39734808 0.097497731 0.38847759 0.014424093
+		 0.48952475 0.15350351 0.46556297 0.16571265 0.43900114 0.16201004 0.41792157 0.14884001
+		 0.40567148 0.12983823 0.40356889 0.10970685 0.43900114 0.16991964 0.41488355 0.15819022
+		 0.39890546 0.13915083 0.39312676 0.11729354 0.38507259 0.1014863 0.41243941 0.16571265
+		 0.39312676 0.14710456 0.38381413 0.12405953 0.38847759 0.15350351 -0.19599512 -0.30590984
+		 -0.21108642 -0.29081851 -0.21785241 -0.30013102 -0.20530769 -0.31267574 -0.23010257
+		 -0.28112918 -0.23365968 -0.29207683 -0.22543916 -0.31057331 -0.21574992 -0.32026249
+		 -0.20530769 -0.28286469 -0.22706452 -0.27177906 -0.2511822 -0.27779061 -0.2511822
+		 -0.28930154 -0.23764832 -0.3043524 -0.23365968 -0.32188791 -0.22706452 -0.3284831
+		 -0.1972535 -0.3284831 -0.20952907 -0.33247164 -0.20065859 -0.27646565 -0.2246204
+		 -0.26425666 -0.2511822 -0.26795918 -0.2722618 -0.28112918 -0.26870468 -0.29207683
+		 -0.2511822 -0.3022089 -0.24197012 -0.31765363 -0.24231173 -0.33379638 -0.23897305
+		 -0.33713514 -0.22283021 -0.33679336 -0.2511822 -0.26004958 -0.27529985 -0.27177906
+		 -0.29127795 -0.29081851 -0.28451192 -0.30013102 -0.26471615 -0.3043524 -0.2511822
+		 -0.31619447 -0.24651872 -0.33165288 -0.2511822 -0.34600556 -0.23682956 -0.34134203
+		 -0.20738551 -0.34600556 -0.22137111 -0.34600556 -0.27774402 -0.26425666 -0.29705667
+		 -0.28286481 -0.30636927 -0.30590984 -0.29705667 -0.31267574 -0.27692527 -0.31057331
+		 -0.2603943 -0.31765363 -0.2511822 -0.3309142 -0.2360909 -0.34600556 -0.20952907 -0.35953945
+		 -0.22283021 -0.35521773 -0.30170581 -0.27646583 -0.28661451 -0.32026249 -0.26870468
+		 -0.32188791 -0.25584567 -0.33165288 -0.23682956 -0.35066903 -0.21574992 -0.3717486
+		 -0.22706458 -0.36352801 -0.30511081 -0.3284831 -0.29283533 -0.33247164 -0.27529985
+		 -0.3284831 -0.26005268 -0.33379638 -0.23897305 -0.35487592 -0.20530778 -0.37933534
+		 -0.1972535 -0.36352801 -0.22543916 -0.38143775 -0.23365968 -0.37012318 -0.27953422
+		 -0.33679336 -0.26339129 -0.33713514 -0.24231173 -0.35821471 -0.2178525 -0.3918801
+		 -0.23764832 -0.38765869 -0.24197012 -0.37435746 -0.29497889 -0.34600556 -0.28099322
+		 -0.34600556 -0.26553491 -0.34134203 -0.24651872 -0.36035818 -0.21108648 -0.40119258
+		 -0.19599518 -0.38610125 -0.23365968 -0.39993423 -0.2511822 -0.38980216 -0.2511822
+		 -0.37581661 -0.29283533 -0.35953945 -0.27953422 -0.35521773 -0.26627353 -0.34600556
+		 -0.2511822 -0.36109686 -0.23010257 -0.41088188 -0.2511822 -0.40270954 -0.26471615
+		 -0.38765869 -0.2603943 -0.37435746 -0.28661451 -0.3717486 -0.27529985 -0.36352801
+		 -0.26553491 -0.35066903 -0.25584567 -0.36035818 -0.22706458 -0.420232 -0.20530778
+		 -0.40914625 -0.2511822 -0.41422048 -0.26870468 -0.39993423 -0.27692527 -0.38143775
+		 -0.26870468 -0.37012318 -0.30511081 -0.36352801 -0.29705665 -0.37933534 -0.26339129
+		 -0.35487592 -0.26005268 -0.35821471 -0.2246204 -0.42775437 -0.20065859 -0.41554523
+		 -0.2511822 -0.42405188 -0.2722618 -0.41088188 -0.28451192 -0.3918801 -0.2511822 -0.43196145
+		 -0.27529985 -0.420232 -0.29127795 -0.40119258 -0.30636927 -0.38610125 -0.277744 -0.42775437
+		 -0.29705665 -0.40914625 -0.30170581 -0.41554523 0.63656986 -0.43560243 0.63656986
+		 -0.44973201 0.64481688 -0.44867629 0.64481688 -0.43359458 0.63656986 -0.46539468
+		 0.64481688 -0.46539468 0.65349692 -0.44803241 0.65349692 -0.43236959 0.63656986 -0.48105729
+		 0.64481688 -0.48211306 0.65349692 -0.46539468 0.66239566 -0.44781584 0.66239566 -0.43195787
+		 0.63656986 -0.49518692 0.64481688 -0.49719477 0.65349692 -0.48275691 0.66239566 -0.46539468
+		 0.67129463 -0.44803241 0.67129463 -0.43236959 0.65349692 -0.49841976 0.66239566 -0.48297328
+		 0.67129463 -0.46539468 0.67997426 -0.44867629 0.67997426 -0.43359458 0.66239566 -0.49883145
+		 0.67129463 -0.48275691 0.67997426 -0.46539468 0.68822169 -0.44973201 0.68822169 -0.43560243
+		 0.67129463 -0.49841976 0.67997426 -0.48211306 0.68822169 -0.46539468 0.67997426 -0.49719477
+		 0.68822169 -0.48105729 0.68822169 -0.49518692 0.82891697 -0.56846762 0.82891697 -0.55433804
+		 0.82067001 -0.5553937 0.82067001 -0.57047546 0.82891697 -0.53867531 0.82067001 -0.53867531
+		 0.8119899 -0.55603755 0.8119899 -0.57170033 0.82891697 -0.52301252 0.82067001 -0.52195692
+		 0.8119899 -0.53867531 0.80309111 -0.55625403 0.80309111 -0.57211202 0.82891697 -0.508883
+		 0.82067001 -0.5068751 0.8119899 -0.52131307 0.80309111 -0.53867531 0.79419225 -0.55603755
+		 0.79419225 -0.57170033 0.8119899 -0.50565028 0.80309111 -0.52109659 0.79419225 -0.53867531
+		 0.78551263 -0.5553937 0.78551263 -0.57047546 0.80309111 -0.50523865 0.79419225 -0.52131307
+		 0.78551263 -0.53867531 0.77726519 -0.55433804 0.77726519 -0.56846762 0.79419225 -0.50565028
+		 0.78551263 -0.52195692 0.77726519 -0.53867531 0.78551263 -0.5068751 0.77726519 -0.52301252
+		 0.77726519 -0.508883;
+createNode polyAutoProj -n "pasted__pasted__polyAutoProj16";
+	rename -uid "32520F96-420D-BCAA-69A7-DD8867F3D136";
+	setAttr ".cch" yes;
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:399]";
+	setAttr ".ix" -type "matrix" 6.9243098218742967 0 0 0 0 0.60132874803740599 0 0 0 0 4.3429239258932437 0
+		 -30.4928654545133 40.874896044667139 0 1;
+	setAttr ".s" -type "double3" 13.8486212946327 13.8486212946327 13.8486212946327 ;
+	setAttr ".ps" 0.20000000298023224;
+	setAttr ".dl" yes;
+createNode polyTweakUV -n "pasted__pasted__polyTweakUV22";
+	rename -uid "10C2FD9E-4AC3-8458-E03C-43B206D96C86";
+	setAttr ".uopa" yes;
+	setAttr -s 402 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" -0.54268187 0.051579416 -0.59075397
+		 0.067881152 -0.59075397 -0.042717814 -0.54268199 -0.052616537 -0.65114135 0.094275534
+		 -0.65114152 -0.025967509 -0.7319212 -0.005954951 0.49996817 0.1382287 0.49996817
+		 0.0043081492 0.39853808 0.12386093 0.39853832 -0.0059549212 0.31775856 0.094275549
+		 0.31775868 -0.025967479 0.25737119 0.067881152 0.25737125 -0.042717725 0.20929907
+		 0.051579416 0.20929912 -0.052616537 0.16663824 0.04619886 0.1666383 -0.055816352
+		 0.12397741 0.051579371 0.12397748 -0.052616537 0.075905278 0.067881033 0.075905368
+		 -0.042717755 0.01551798 0.09427534 0.01551798 -0.025967538 -0.065261513 0.1238606
+		 -0.065261632 -0.0059550405 -0.16669142 0.13822834 -0.16669142 0.0043080449 -0.26812133
+		 0.12386063 -0.26812118 -0.0059550107 -0.34890079 0.094275355 -0.34890079 -0.025967538
+		 -0.40928811 0.067881033 -0.4092882 -0.042717755 -0.45736024 0.051579371 -0.4573603
+		 -0.052616447 -0.5000211 0.04619886 -0.5000211 -0.055816352 -0.59075409 -0.08627224
+		 -0.54268199 -0.092885166 -0.65114152 -0.074958205 -0.73192126 -0.061208695 0.49996817
+		 -0.054047406 0.39853841 -0.061208695 0.31775868 -0.074958205 0.25737122 -0.08627224
+		 0.20929919 -0.092885137 0.16663831 -0.095012248 0.12397748 -0.092885137 0.075905442
+		 -0.08627224 0.01551801 -0.074958235 -0.065261662 -0.061208725 -0.16669142 -0.054047436
+		 -0.26812115 -0.061208725 -0.34890071 -0.074958175 -0.40928823 -0.08627224 -0.4573603
+		 -0.092885137 -0.5000211 -0.095012248 -0.59075397 -0.10994023 -0.54268199 -0.11465612
+		 -0.65114152 -0.10183856 -0.7319212 -0.09192881 0.49996817 -0.086736143 0.39853832
+		 -0.09192878 0.31775874 -0.10183853 0.25737122 -0.10994023 0.20929919 -0.11465606
+		 0.16663834 -0.1161702 0.12397748 -0.11465606 0.075905398 -0.1099402 0.01551795 -0.10183856
+		 -0.065261602 -0.09192881 -0.16669142 -0.086736172 -0.26812121 -0.09192881 -0.34890079
+		 -0.10183856 -0.40928823 -0.10994023 -0.4573603 -0.11465609 -0.5000211 -0.11617017
+		 -0.59075397 -0.12533444 -0.54268199 -0.12878734 -0.65114152 -0.11939096 -0.7319212
+		 -0.11209869 0.49996817 -0.10826656 0.39853835 -0.11209866 0.31775868 -0.11939096
+		 0.25737131 -0.12533438 0.20929919 -0.12878731 0.16663834 -0.12989497 0.12397748 -0.12878731
+		 0.075905427 -0.12533441 0.015518039 -0.11939096 -0.065261602 -0.11209869 -0.16669142
+		 -0.10826656 -0.26812121 -0.11209869 -0.34890079 -0.11939093 -0.40928823 -0.12533441
+		 -0.4573603 -0.12878731 -0.5000211 -0.12989497 -0.59075409 -0.13659057 -0.54268199
+		 -0.13910955 -0.65114152 -0.13225013 -0.73192108 -0.12691587 0.49996817 -0.12410837
+		 0.39853841 -0.12691587 0.31775868 -0.13225013 0.25737122 -0.13659057 0.20929919 -0.13910955
+		 0.16663836 -0.13991722 0.12397753 -0.13910955 0.075905487 -0.13659057 0.015517935
+		 -0.13225013 -0.065261632 -0.12691587 -0.16669142 -0.12410837 -0.26812118 -0.12691587
+		 -0.34890082 -0.13225013 -0.40928823 -0.13659054 -0.4573603 -0.13910955 -0.5000211
+		 -0.13991722 -0.59075397 -0.1455541 -0.54268199 -0.14732483 -0.65114152 -0.14250118
+		 -0.7319212 -0.13874567 0.49996817 -0.1367673 0.39853829 -0.13874567 0.31775868 -0.14250118
+		 0.25737125 -0.14555407 0.20929919 -0.1473248 0.16663836 -0.14789242 0.12397751 -0.1473248
+		 0.075905442 -0.14555407 0.015518054 -0.14250118 -0.065261722 -0.13874567 -0.16669142
+		 -0.13676733 -0.26812121 -0.13874567 -0.34890079 -0.14250115 -0.40928823 -0.14555407
+		 -0.4573603 -0.1473248 -0.5000211 -0.14789242 -0.59075409 -0.15319431 -0.54268199
+		 -0.15432504 -0.65114152 -0.15124422 -0.73192108 -0.148844 0.49996817 -0.14757895
+		 0.39853832 -0.148844 0.31775871 -0.15124422 0.25737125 -0.15319431 0.20929919 -0.15432504
+		 0.16663836 -0.1546874 0.12397751 -0.15432504 0.075905457 -0.15319431 0.015517935
+		 -0.15124419 -0.065261543 -0.148844 -0.16669142 -0.14757895 -0.26812121 -0.148844
+		 -0.34890079 -0.15124419 -0.40928829 -0.15319431 -0.4573603 -0.15432504 -0.5000211
+		 -0.1546874 -0.59075409 -0.16009447 -0.54268199 -0.16064599 -0.65114152 -0.15914303
+		 -0.73192126 -0.15797171 0.49996817 -0.15735418 0.39853835 -0.15797171 0.31775874
+		 -0.15914303 0.25737125 -0.16009447 0.20929919 -0.16064599 0.16663836 -0.16082275
+		 0.12397753 -0.16064599 0.075905427 -0.16009447 0.015517995 -0.15914303 -0.065261602
+		 -0.15797171 -0.16669142 -0.15735418 -0.26812121 -0.15797171 -0.34890082 -0.15914303
+		 -0.40928823 -0.16009447 -0.45736036 -0.16064599 -0.5000211 -0.16082275 -0.59075409
+		 -0.16665983 -0.54268199 -0.16665983 -0.65114158 -0.16665983 -0.7319212 -0.16665983
+		 0.49996817 -0.16665983 0.39853835 -0.16665983 0.31775871 -0.16665983 0.25737125 -0.16665983
+		 0.20929919 -0.16665983 0.16663836 -0.16665983 0.12397753 -0.16665983 0.075905442
+		 -0.16665983 0.015518039 -0.16665983 -0.065261602 -0.16665983 -0.16669142 -0.16665983
+		 -0.26812115 -0.16665983 -0.34890079 -0.16665983 -0.40928829 -0.16665983 -0.4573603
+		 -0.16665983 -0.5000211 -0.16665983 -0.59075409 -0.17322522 -0.54268199 -0.17267367
+		 -0.65114152 -0.17417663 -0.73192126 -0.17534798 0.49996817 -0.17596549 0.39853835
+		 -0.17534798 0.31775874 -0.17417663 0.25737125 -0.17322522 0.20929919 -0.17267367
+		 0.16663836 -0.17249694 0.12397753 -0.17267367 0.075905427 -0.17322522 0.015517995
+		 -0.17417663 -0.065261602 -0.17534798 -0.16669142 -0.17596549 -0.26812121 -0.17534798
+		 -0.34890082 -0.17417663 -0.40928823 -0.17322522 -0.45736036 -0.17267367 -0.5000211
+		 -0.17249694 -0.59075409 -0.18012539 -0.54268199 -0.17899466 -0.65114152 -0.18207547
+		 -0.73192108 -0.18447569 0.49996817 -0.18574074 0.39853832 -0.18447569 0.31775871
+		 -0.18207547 0.25737125 -0.18012539 0.20929919 -0.17899466 0.16663836 -0.17863226
+		 0.12397751 -0.17899466 0.075905457 -0.18012539 0.015517935 -0.18207547 -0.065261543
+		 -0.18447569 -0.16669142 -0.18574074 -0.26812121 -0.18447569 -0.34890079 -0.18207547
+		 -0.40928829 -0.18012539 -0.4573603 -0.17899466 -0.5000211 -0.17863226 -0.59075397
+		 -0.18776557 -0.54268199 -0.18599486 -0.65114152 -0.19081849 -0.7319212 -0.19457403
+		 0.49996817 -0.19655237 0.39853829 -0.19457403 0.31775868 -0.19081855 0.25737125 -0.18776563
+		 0.20929919 -0.18599486 0.16663836 -0.18542725 0.12397751 -0.18599486;
+	setAttr ".uvtk[250:401]" 0.075905442 -0.18776563 0.015518054 -0.19081849 -0.065261722
+		 -0.19457403 -0.16669142 -0.19655237 -0.26812121 -0.19457403 -0.34890079 -0.19081855
+		 -0.40928823 -0.18776563 -0.4573603 -0.18599486 -0.5000211 -0.18542725 -0.59075409
+		 -0.19672909 -0.54268199 -0.19421011 -0.65114152 -0.20106956 -0.73192108 -0.20640379
+		 0.49996817 -0.20921129 0.39853841 -0.20640379 0.31775868 -0.20106956 0.25737122 -0.19672909
+		 0.20929919 -0.19421011 0.16663836 -0.19340244 0.12397753 -0.19421011 0.075905487
+		 -0.19672909 0.015517935 -0.20106956 -0.065261632 -0.20640379 -0.16669142 -0.20921129
+		 -0.26812118 -0.20640379 -0.34890082 -0.20106956 -0.40928823 -0.19672915 -0.4573603
+		 -0.19421011 -0.5000211 -0.19340244 -0.59075397 -0.20798525 -0.54268199 -0.20453236
+		 -0.65114152 -0.21392873 -0.7319212 -0.221221 0.49996817 -0.22505313 0.39853835 -0.221221
+		 0.31775868 -0.21392873 0.25737131 -0.20798528 0.20929919 -0.20453236 0.16663834 -0.20342469
+		 0.12397748 -0.20453236 0.075905427 -0.20798528 0.015518039 -0.21392873 -0.065261602
+		 -0.221221 -0.16669142 -0.2250531 -0.26812121 -0.221221 -0.34890079 -0.21392876 -0.40928823
+		 -0.20798528 -0.4573603 -0.20453236 -0.5000211 -0.20342469 -0.59075397 -0.2233794
+		 -0.54268199 -0.21866354 -0.65114152 -0.23148111 -0.7319212 -0.24139088 0.49996817
+		 -0.24658352 0.39853832 -0.24139088 0.31775874 -0.23148113 0.25737122 -0.2233794 0.20929919
+		 -0.21866363 0.16663834 -0.2171495 0.12397748 -0.21866363 0.075905398 -0.22337949
+		 0.01551795 -0.23148113 -0.065261602 -0.24139088 -0.16669142 -0.24658349 -0.26812121
+		 -0.24139088 -0.34890079 -0.23148113 -0.40928823 -0.22337946 -0.4573603 -0.21866357
+		 -0.5000211 -0.21714953 -0.59075409 -0.24704745 -0.54268199 -0.2404345 -0.65114152
+		 -0.25836149 -0.73192126 -0.27211097 0.49996817 -0.27927229 0.39853841 -0.27211097
+		 0.31775868 -0.25836149 0.25737122 -0.24704745 0.20929919 -0.24043456 0.16663831 -0.23830745
+		 0.12397748 -0.24043456 0.075905442 -0.24704745 0.01551801 -0.25836146 -0.065261662
+		 -0.27211094 -0.16669142 -0.27927223 -0.26812115 -0.27211094 -0.34890071 -0.25836149
+		 -0.40928823 -0.24704745 -0.4573603 -0.24043456 -0.5000211 -0.23830745 -0.59075397
+		 -0.29060185 -0.54268199 -0.28070313 -0.65114152 -0.30735216 -0.7319212 -0.32736474
+		 0.49996817 -0.33762783 0.39853832 -0.32736474 0.31775868 -0.30735216 0.25737125 -0.29060194
+		 0.20929912 -0.28070313 0.1666383 -0.27750331 0.12397748 -0.28070313 0.075905368 -0.29060194
+		 0.01551798 -0.30735213 -0.065261632 -0.32736465 -0.16669142 -0.33762774 -0.26812118
+		 -0.32736465 -0.34890079 -0.30735213 -0.4092882 -0.29060194 -0.4573603 -0.28070322
+		 -0.5000211 -0.27750331 -0.59075397 -0.40120083 -0.54268187 -0.38489908 -0.65114135
+		 -0.42759523 -0.73192096 -0.45718059 0.49996817 -0.47154838 0.39853808 -0.45718059
+		 0.31775856 -0.42759523 0.25737119 -0.40120083 0.20929907 -0.38489908 0.16663824 -0.37951857
+		 0.12397741 -0.38489905 0.075905278 -0.40120071 0.01551798 -0.42759499 -0.065261513
+		 -0.45718029 -0.16669142 -0.47154802 -0.26812133 -0.45718029 -0.34890079 -0.42759502
+		 -0.40928811 -0.40120071 -0.45736024 -0.38489905 -0.5000211 -0.37951857 -0.16664898
+		 0.49999923 -0.16664898 -0.83331895 -0.83335102 0.1382287 -0.83335102 0.0043081492
+		 -0.83335102 -0.054047406 -0.83335102 -0.086736143 -0.83335102 -0.10826656 -0.83335102
+		 -0.12410837 -0.83335102 -0.1367673 -0.83335102 -0.14757895 -0.83335102 -0.15735418
+		 -0.83335102 -0.16665983 -0.83335102 -0.17596549 -0.83335102 -0.18574074 -0.83335102
+		 -0.19655237 -0.83335102 -0.20921129 -0.83335102 -0.22505313 -0.83335102 -0.24658352
+		 -0.83335102 -0.27927229 -0.83335102 -0.33762783 -0.73192096 0.1238609 -0.83335102
+		 -0.47154838 -1.49996805 -0.83331895;
+createNode polySphProj -n "pasted__pasted__polySphProj4";
+	rename -uid "ED3ADA24-45C7-FE43-30F3-5998CDF81044";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:399]";
+	setAttr ".ix" -type "matrix" 6.9243098218742967 0 0 0 0 0.60132874803740599 0 0 0 0 4.3429239258932437 0
+		 -30.4928654545133 40.874896044667139 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" -30.492864608764648 40.874897003173828 -7.152557373046875e-07 ;
+	setAttr ".r" 13.848621368408203;
+createNode polyTweakUV -n "pasted__pasted__polyTweakUV21";
+	rename -uid "7DD02F5E-4FBF-512A-8675-87B7AE064407";
+	setAttr ".uopa" yes;
+	setAttr -s 439 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" 0 -7.4505806e-09 -7.4505806e-09 -7.4505806e-09
+		 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09
+		 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -7.4505806e-09 0 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -1.4901161e-08
+		 -1.4901161e-08 -1.4901161e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08
+		 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 0 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -1.4901161e-08 -1.4901161e-08
+		 -1.4901161e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08
+		 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 0 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08
+		 -7.4505806e-09 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08 -7.4505806e-09
+		 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08
+		 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08
+		 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08;
+	setAttr ".uvtk[250:438]" -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08
+		 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -3.7252903e-09
+		 -1.1719548e-17 -7.4505806e-09 -1.1719548e-17 -1.4901161e-08 -1.1719548e-17 -1.4901161e-08
+		 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -2.9802322e-08
+		 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08
+		 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08
+		 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -1.1920929e-07
+		 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -1.1920929e-07
+		 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -3.7252903e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07;
+createNode polySphere -n "pasted__pasted__polySphere3";
+	rename -uid "C6043CA5-4E5B-104D-1BA4-C5A6FDC8C75A";
+createNode materialInfo -n "pasted__pasted__materialInfo17";
+	rename -uid "74A7E15E-4B31-9845-741F-BF9A5BDA06EA";
+createNode shadingEngine -n "pasted__pasted__set9";
+	rename -uid "27F0426B-4EBA-4670-A1D2-7A91D9E87EB1";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__pasted__LeafMaterial2";
+	rename -uid "99A5454B-4C46-2183-831C-5CAE218FC3DE";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__pasted__file50";
+	rename -uid "636AA13C-4842-CF4F-D426-1A91F5B3573B";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__pasted__place2dTexture18";
+	rename -uid "074132C1-4402-9B3A-3799-A490CEAE09E2";
+createNode bump2d -n "pasted__pasted__bump2d9";
+	rename -uid "99E78261-4370-6E12-F85D-F6BB35E4149B";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__pasted__file51";
+	rename -uid "56093C56-4459-2976-E853-ACBA3F4B9FC9";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__pasted__file52";
+	rename -uid "07E580AC-440C-7CE9-ACDC-0198ACB60103";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__pasted__multiplyDivide9";
+	rename -uid "EBA010EF-4853-5AAF-383A-C3B822475A87";
+createNode file -n "pasted__pasted__file54";
+	rename -uid "91A7B8EB-4D34-69D9-B1C2-56A722DCEFCB";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__pasted__displacementShader9";
+	rename -uid "2B0BAB95-4D77-BB36-ADDC-3C9342B7AFFD";
+createNode file -n "pasted__pasted__file53";
+	rename -uid "178C095F-494A-2C75-BD83-A39BE0FA2930";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode polyCylinder -n "pasted__pasted__polyCylinder5";
+	rename -uid "50B8D89D-4AF3-6579-8B03-879D65A556B6";
+	setAttr ".sc" 1;
+	setAttr ".cuv" 3;
+createNode materialInfo -n "pasted__pasted__materialInfo18";
+	rename -uid "D6B056BB-4A8F-1509-F3E6-7CBDF70A64DA";
+createNode shadingEngine -n "pasted__pasted__set10";
+	rename -uid "1F0803A8-4453-5A5D-5209-CD9D59ECE6B5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__pasted__aiStandardSurface2";
+	rename -uid "F53AD15A-41FC-1D3B-B816-96A117DBB2A4";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__pasted__file55";
+	rename -uid "680CFC8F-4743-0EDD-EEE0-19A3CB09E1B9";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__pasted__place2dTexture19";
+	rename -uid "68C5B6C0-4C5B-48EF-D816-019E16A9E706";
+createNode bump2d -n "pasted__pasted__bump2d10";
+	rename -uid "A3BE8437-4525-F9AB-9DA4-6FBA97BFB264";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__pasted__file56";
+	rename -uid "3D08295B-4E5A-58D5-7ABA-BC9C6A4E80AE";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__pasted__file57";
+	rename -uid "2CC4251C-44D3-37C7-3F09-F0862E40E38D";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__pasted__multiplyDivide10";
+	rename -uid "1192B65D-4057-AA56-332A-24A406DFA1CE";
+createNode file -n "pasted__pasted__file59";
+	rename -uid "F30757F8-4D4A-C6C0-C295-F093ACE78E87";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__pasted__displacementShader10";
+	rename -uid "17530FEB-40D8-E882-5584-4AB3872F9614";
+createNode file -n "pasted__pasted__file58";
+	rename -uid "BA992AB6-40C2-5C36-5562-BEB33FDDD692";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/TreeBranch_blinn6_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode polyTweakUV -n "pasted__pasted__pasted__polyTweakUV20";
+	rename -uid "72912BBE-4AB3-BBE3-0D39-50A9FB9E1349";
+	setAttr ".uopa" yes;
+	setAttr -s 482 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" -0.39287868 0.12950313 -0.39057827
+		 0.12950313 -0.3902514 0.13084579 -0.39270681 0.13084579 -0.39311332 0.12826407 -0.39102459
+		 0.12826407 -0.3887527 0.12950313 -0.38830274 0.13084579 -0.39005196 0.13225895 -0.39260197
+		 0.13225895 -0.39542866 0.12950313 -0.39542866 0.13084579 -0.39340499 0.12715897 -0.39157939
+		 0.12715897 -0.38936698 0.12826407 -0.39542866 0.12826407 -0.38802826 0.13225895 -0.38998497
+		 0.1337077 -0.39256674 0.1337077 -0.39542866 0.13225895 -0.39797866 0.12950313 -0.3981505
+		 0.13084579 -0.39374647 0.12621516 -0.39222893 0.12621516 -0.39013058 0.12715897 -0.39542866
+		 0.12715897 -0.397744 0.12826407 -0.38793606 0.1337077 -0.39005196 0.13515651 -0.39260197
+		 0.13515651 -0.39542866 0.1337077 -0.39825535 0.13225895 -0.40027902 0.12950313 -0.40060592
+		 0.13084579 -0.39542866 0.12621516 -0.39745235 0.12715897 -0.3998327 0.12826407 -0.38802826
+		 0.13515651 -0.3902514 0.13656962 -0.39270681 0.13656962 -0.39542866 0.13515651 -0.39829057
+		 0.1337077 -0.40080535 0.13225895 -0.40210462 0.12950313 -0.40255457 0.13084579 -0.39542866
+		 0.12545571 -0.39412937 0.12545571 -0.39711085 0.12621516 -0.39927793 0.12715897 -0.4014903
+		 0.12826407 -0.38830274 0.13656962 -0.39057827 0.13791233 -0.39287868 0.13791233 -0.39542866
+		 0.13656962 -0.39825535 0.13515651 -0.40087235 0.1337077 -0.40282899 0.13225895 -0.39672795
+		 0.12545571 -0.39862838 0.12621516 -0.40072674 0.12715897 -0.3887527 0.13791233 -0.39102459
+		 0.13915139 -0.39311332 0.13915139 -0.39542866 0.13791233 -0.3981505 0.13656962 -0.40080535
+		 0.13515651 -0.40292126 0.1337077 -0.38936698 0.13915139 -0.39157939 0.14025652 -0.39340499
+		 0.14025652 -0.39542866 0.13915139 -0.39797866 0.13791233 -0.40060592 0.13656962 -0.40282899
+		 0.13515651 -0.39013058 0.14025652 -0.39222893 0.1412003 -0.39374647 0.1412003 -0.39542866
+		 0.14025652 -0.397744 0.13915139 -0.40027902 0.13791233 -0.40255457 0.13656962 -0.39542866
+		 0.1412003 -0.39745235 0.14025652 -0.3998327 0.13915139 -0.40210462 0.13791233 -0.39412937
+		 0.14195967 -0.39542866 0.14195967 -0.39711085 0.1412003 -0.39927793 0.14025652 -0.4014903
+		 0.13915139 -0.39672795 0.14195967 -0.39862838 0.1412003 -0.40072674 0.14025652 0.31282812
+		 0.54670149 0.31512851 0.54670149 0.31495664 0.54804415 0.31250119 0.54804415 0.31327441
+		 0.54546243 0.31536314 0.54546243 0.31767848 0.54670149 0.31767848 0.54804415 0.31485182
+		 0.54945737 0.31230181 0.54945737 0.31100249 0.54670149 0.3105526 0.54804415 0.31382918
+		 0.54435736 0.31565481 0.54435736 0.31767848 0.54546243 0.31161681 0.54546243 0.32022846
+		 0.54670149 0.32040036 0.54804415 0.31767848 0.54945737 0.31481656 0.55090618 0.31223479
+		 0.55090618 0.31027812 0.54945737 0.31447875 0.54341358 0.31599626 0.54341358 0.31767848
+		 0.54435736 0.3123804 0.54435736 0.31999385 0.54546243 0.3225289 0.54670149 0.32285577
+		 0.54804415 0.3205052 0.54945737 0.31767848 0.55090618 0.31485182 0.55235493 0.31230181
+		 0.55235493 0.31018585 0.55090618 0.31767848 0.54341358 0.31970215 0.54435736 0.32208252
+		 0.54546243 0.32435447 0.54670149 0.32480443 0.54804415 0.32305515 0.54945737 0.32054043
+		 0.55090618 0.31767848 0.55235493 0.31495664 0.55376804 0.31250119 0.55376804 0.31027812
+		 0.55235493 0.31637922 0.54265416 0.31767848 0.54265416 0.31936067 0.54341358 0.32152778
+		 0.54435736 0.32374012 0.54546243 0.32507885 0.54945737 0.3231222 0.55090618 0.3205052
+		 0.55235493 0.31767848 0.55376804 0.31512851 0.55511075 0.31282812 0.55511075 0.3105526
+		 0.55376804 0.31897777 0.54265416 0.32087821 0.54341358 0.32297659 0.54435736 0.32517111
+		 0.55090618 0.32305515 0.55235493 0.32040036 0.55376804 0.31767848 0.55511075 0.31536314
+		 0.55634987 0.31327441 0.55634987 0.31100249 0.55511075 0.32507885 0.55235493 0.32285577
+		 0.55376804 0.32022846 0.55511075 0.31767848 0.55634987 0.31565481 0.55745494 0.31382918
+		 0.55745494 0.31161681 0.55634987 0.32480443 0.55376804 0.3225289 0.55511075 0.31999385
+		 0.55634987 0.31767848 0.55745494 0.31599626 0.55839872 0.31447875 0.55839872 0.3123804
+		 0.55745494 0.32435447 0.55511075 0.32208252 0.55634987 0.31970215 0.55745494 0.31767848
+		 0.55839872 0.32374012 0.55634987 0.32152778 0.55745494 0.31936067 0.55839872 0.31767848
+		 0.55915809 0.31637922 0.55915809 0.32297659 0.55745494 0.32087821 0.55839872 0.31897777
+		 0.55915809 0.45335379 0.079300299 0.45121032 0.075093329 0.46311885 0.066441298 0.46735317
+		 0.074751735 0.43900114 0.083963796 0.44787166 0.071754649 0.45652366 0.059846193
+		 0.47443345 0.058220774 0.48065424 0.070429936 0.45409244 0.083963796 0.46881223 0.083963796
+		 0.44366467 0.069611162 0.44821325 0.055611834 0.46474415 0.048531547 0.48487565 0.050634027
+		 0.49292985 0.066441298 0.48279786 0.083963796 0.45335379 0.088627264 0.46735317 0.093175948
+		 0.43900114 0.068872496 0.43900114 0.054152757 0.45253503 0.0423107 0.47233093 0.038089402
+		 0.48065424 0.097497731 0.45121032 0.092834234 0.46311873 0.1014863 0.43433768 0.069611162
+		 0.42978907 0.055611834 0.43900114 0.040167131 0.45652366 0.030035146 0.47909689 0.028776743
+		 0.49418825 0.043868043 0.47443345 0.10970685 0.44787166 0.096172914 0.45652366 0.10808143
+		 0.43013066 0.071754649 0.42147869 0.059846193 0.42546725 0.0423107 0.43900114 0.027259856
+		 0.46008074 0.019087505 0.49292985 0.1014863 0.48487556 0.11729354 0.46474415 0.11939609
+		 0.44366467 0.098316491 0.44821325 0.11231574 0.42679209 0.075093329 0.41488355 0.066441298
+		 0.41325814 0.048531547 0.42147869 0.030035146 0.43900114 0.015748907 0.46311885 0.0097374227
+		 0.48487565 0.020823058 0.47233087 0.12983823 0.45253503 0.12561691 0.43900114 0.099055111
+		 0.43900114 0.11377481 0.42464843 0.079300299 0.41064918 0.074751735 0.40356889 0.058220774
+		 0.40567148 0.038089402 0.41792157 0.01908759 0.43900114 0.0059175342 0.46556297 0.0022149412
+		 0.48952475 0.014424093;
+	setAttr ".uvtk[250:481]" 0.49418813 0.12405953 0.47909686 0.13915083 0.45652366
+		 0.13789243 0.43900114 0.1277605 0.43433768 0.098316491 0.42978907 0.11231574 0.42390987
+		 0.083963796 0.40919012 0.083963796 0.39734808 0.070429936 0.3931267 0.050634116 0.39890546
+		 0.028776743 0.41488355 0.0097374227 0.43900114 -0.0019920319 0.46008074 0.14884001
+		 0.43900114 0.14066774 0.42546725 0.12561691 0.43013066 0.096172914 0.42147869 0.10808143
+		 0.42464843 0.088627264 0.41064918 0.093175948 0.39520451 0.083963796 0.38507259 0.066441298
+		 0.38381413 0.043868124 0.3931267 0.020823058 0.41243935 0.0022149412 0.48487556 0.14710453
+		 0.46311873 0.15819022 0.43900114 0.1521787 0.42147869 0.13789243 0.41325814 0.11939609
+		 0.42679209 0.092834234 0.41488355 0.1014863 0.39734808 0.097497731 0.38847759 0.014424093
+		 0.48952475 0.15350351 0.46556297 0.16571265 0.43900114 0.16201004 0.41792157 0.14884001
+		 0.40567148 0.12983823 0.40356889 0.10970685 0.43900114 0.16991964 0.41488355 0.15819022
+		 0.39890546 0.13915083 0.39312676 0.11729354 0.38507259 0.1014863 0.41243941 0.16571265
+		 0.39312676 0.14710456 0.38381413 0.12405953 0.38847759 0.15350351 -0.19599512 -0.30590984
+		 -0.21108642 -0.29081851 -0.21785241 -0.30013102 -0.20530769 -0.31267574 -0.23010257
+		 -0.28112918 -0.23365968 -0.29207683 -0.22543916 -0.31057331 -0.21574992 -0.32026249
+		 -0.20530769 -0.28286469 -0.22706452 -0.27177906 -0.2511822 -0.27779061 -0.2511822
+		 -0.28930154 -0.23764832 -0.3043524 -0.23365968 -0.32188791 -0.22706452 -0.3284831
+		 -0.1972535 -0.3284831 -0.20952907 -0.33247164 -0.20065859 -0.27646565 -0.2246204
+		 -0.26425666 -0.2511822 -0.26795918 -0.2722618 -0.28112918 -0.26870468 -0.29207683
+		 -0.2511822 -0.3022089 -0.24197012 -0.31765363 -0.24231173 -0.33379638 -0.23897305
+		 -0.33713514 -0.22283021 -0.33679336 -0.2511822 -0.26004958 -0.27529985 -0.27177906
+		 -0.29127795 -0.29081851 -0.28451192 -0.30013102 -0.26471615 -0.3043524 -0.2511822
+		 -0.31619447 -0.24651872 -0.33165288 -0.2511822 -0.34600556 -0.23682956 -0.34134203
+		 -0.20738551 -0.34600556 -0.22137111 -0.34600556 -0.27774402 -0.26425666 -0.29705667
+		 -0.28286481 -0.30636927 -0.30590984 -0.29705667 -0.31267574 -0.27692527 -0.31057331
+		 -0.2603943 -0.31765363 -0.2511822 -0.3309142 -0.2360909 -0.34600556 -0.20952907 -0.35953945
+		 -0.22283021 -0.35521773 -0.30170581 -0.27646583 -0.28661451 -0.32026249 -0.26870468
+		 -0.32188791 -0.25584567 -0.33165288 -0.23682956 -0.35066903 -0.21574992 -0.3717486
+		 -0.22706458 -0.36352801 -0.30511081 -0.3284831 -0.29283533 -0.33247164 -0.27529985
+		 -0.3284831 -0.26005268 -0.33379638 -0.23897305 -0.35487592 -0.20530778 -0.37933534
+		 -0.1972535 -0.36352801 -0.22543916 -0.38143775 -0.23365968 -0.37012318 -0.27953422
+		 -0.33679336 -0.26339129 -0.33713514 -0.24231173 -0.35821471 -0.2178525 -0.3918801
+		 -0.23764832 -0.38765869 -0.24197012 -0.37435746 -0.29497889 -0.34600556 -0.28099322
+		 -0.34600556 -0.26553491 -0.34134203 -0.24651872 -0.36035818 -0.21108648 -0.40119258
+		 -0.19599518 -0.38610125 -0.23365968 -0.39993423 -0.2511822 -0.38980216 -0.2511822
+		 -0.37581661 -0.29283533 -0.35953945 -0.27953422 -0.35521773 -0.26627353 -0.34600556
+		 -0.2511822 -0.36109686 -0.23010257 -0.41088188 -0.2511822 -0.40270954 -0.26471615
+		 -0.38765869 -0.2603943 -0.37435746 -0.28661451 -0.3717486 -0.27529985 -0.36352801
+		 -0.26553491 -0.35066903 -0.25584567 -0.36035818 -0.22706458 -0.420232 -0.20530778
+		 -0.40914625 -0.2511822 -0.41422048 -0.26870468 -0.39993423 -0.27692527 -0.38143775
+		 -0.26870468 -0.37012318 -0.30511081 -0.36352801 -0.29705665 -0.37933534 -0.26339129
+		 -0.35487592 -0.26005268 -0.35821471 -0.2246204 -0.42775437 -0.20065859 -0.41554523
+		 -0.2511822 -0.42405188 -0.2722618 -0.41088188 -0.28451192 -0.3918801 -0.2511822 -0.43196145
+		 -0.27529985 -0.420232 -0.29127795 -0.40119258 -0.30636927 -0.38610125 -0.277744 -0.42775437
+		 -0.29705665 -0.40914625 -0.30170581 -0.41554523 0.63656986 -0.43560243 0.63656986
+		 -0.44973201 0.64481688 -0.44867629 0.64481688 -0.43359458 0.63656986 -0.46539468
+		 0.64481688 -0.46539468 0.65349692 -0.44803241 0.65349692 -0.43236959 0.63656986 -0.48105729
+		 0.64481688 -0.48211306 0.65349692 -0.46539468 0.66239566 -0.44781584 0.66239566 -0.43195787
+		 0.63656986 -0.49518692 0.64481688 -0.49719477 0.65349692 -0.48275691 0.66239566 -0.46539468
+		 0.67129463 -0.44803241 0.67129463 -0.43236959 0.65349692 -0.49841976 0.66239566 -0.48297328
+		 0.67129463 -0.46539468 0.67997426 -0.44867629 0.67997426 -0.43359458 0.66239566 -0.49883145
+		 0.67129463 -0.48275691 0.67997426 -0.46539468 0.68822169 -0.44973201 0.68822169 -0.43560243
+		 0.67129463 -0.49841976 0.67997426 -0.48211306 0.68822169 -0.46539468 0.67997426 -0.49719477
+		 0.68822169 -0.48105729 0.68822169 -0.49518692 0.82891697 -0.56846762 0.82891697 -0.55433804
+		 0.82067001 -0.5553937 0.82067001 -0.57047546 0.82891697 -0.53867531 0.82067001 -0.53867531
+		 0.8119899 -0.55603755 0.8119899 -0.57170033 0.82891697 -0.52301252 0.82067001 -0.52195692
+		 0.8119899 -0.53867531 0.80309111 -0.55625403 0.80309111 -0.57211202 0.82891697 -0.508883
+		 0.82067001 -0.5068751 0.8119899 -0.52131307 0.80309111 -0.53867531 0.79419225 -0.55603755
+		 0.79419225 -0.57170033 0.8119899 -0.50565028 0.80309111 -0.52109659 0.79419225 -0.53867531
+		 0.78551263 -0.5553937 0.78551263 -0.57047546 0.80309111 -0.50523865 0.79419225 -0.52131307
+		 0.78551263 -0.53867531 0.77726519 -0.55433804 0.77726519 -0.56846762 0.79419225 -0.50565028
+		 0.78551263 -0.52195692 0.77726519 -0.53867531 0.78551263 -0.5068751 0.77726519 -0.52301252
+		 0.77726519 -0.508883;
+createNode polyAutoProj -n "pasted__pasted__pasted__polyAutoProj15";
+	rename -uid "57DE7C66-46E4-A60B-830A-AE93340381B9";
+	setAttr ".cch" yes;
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:399]";
+	setAttr ".ix" -type "matrix" 6.9243098218742967 0 0 0 0 0.60132874803740599 0 0 0 0 4.3429239258932437 0
+		 -30.4928654545133 40.874896044667139 0 1;
+	setAttr ".s" -type "double3" 13.8486212946327 13.8486212946327 13.8486212946327 ;
+	setAttr ".ps" 0.20000000298023224;
+	setAttr ".dl" yes;
+createNode polyTweakUV -n "pasted__pasted__pasted__polyTweakUV19";
+	rename -uid "C286A9EB-4F94-8E50-6938-C581566762E9";
+	setAttr ".uopa" yes;
+	setAttr -s 402 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" -0.54268187 0.051579416 -0.59075397
+		 0.067881152 -0.59075397 -0.042717814 -0.54268199 -0.052616537 -0.65114135 0.094275534
+		 -0.65114152 -0.025967509 -0.7319212 -0.005954951 0.49996817 0.1382287 0.49996817
+		 0.0043081492 0.39853808 0.12386093 0.39853832 -0.0059549212 0.31775856 0.094275549
+		 0.31775868 -0.025967479 0.25737119 0.067881152 0.25737125 -0.042717725 0.20929907
+		 0.051579416 0.20929912 -0.052616537 0.16663824 0.04619886 0.1666383 -0.055816352
+		 0.12397741 0.051579371 0.12397748 -0.052616537 0.075905278 0.067881033 0.075905368
+		 -0.042717755 0.01551798 0.09427534 0.01551798 -0.025967538 -0.065261513 0.1238606
+		 -0.065261632 -0.0059550405 -0.16669142 0.13822834 -0.16669142 0.0043080449 -0.26812133
+		 0.12386063 -0.26812118 -0.0059550107 -0.34890079 0.094275355 -0.34890079 -0.025967538
+		 -0.40928811 0.067881033 -0.4092882 -0.042717755 -0.45736024 0.051579371 -0.4573603
+		 -0.052616447 -0.5000211 0.04619886 -0.5000211 -0.055816352 -0.59075409 -0.08627224
+		 -0.54268199 -0.092885166 -0.65114152 -0.074958205 -0.73192126 -0.061208695 0.49996817
+		 -0.054047406 0.39853841 -0.061208695 0.31775868 -0.074958205 0.25737122 -0.08627224
+		 0.20929919 -0.092885137 0.16663831 -0.095012248 0.12397748 -0.092885137 0.075905442
+		 -0.08627224 0.01551801 -0.074958235 -0.065261662 -0.061208725 -0.16669142 -0.054047436
+		 -0.26812115 -0.061208725 -0.34890071 -0.074958175 -0.40928823 -0.08627224 -0.4573603
+		 -0.092885137 -0.5000211 -0.095012248 -0.59075397 -0.10994023 -0.54268199 -0.11465612
+		 -0.65114152 -0.10183856 -0.7319212 -0.09192881 0.49996817 -0.086736143 0.39853832
+		 -0.09192878 0.31775874 -0.10183853 0.25737122 -0.10994023 0.20929919 -0.11465606
+		 0.16663834 -0.1161702 0.12397748 -0.11465606 0.075905398 -0.1099402 0.01551795 -0.10183856
+		 -0.065261602 -0.09192881 -0.16669142 -0.086736172 -0.26812121 -0.09192881 -0.34890079
+		 -0.10183856 -0.40928823 -0.10994023 -0.4573603 -0.11465609 -0.5000211 -0.11617017
+		 -0.59075397 -0.12533444 -0.54268199 -0.12878734 -0.65114152 -0.11939096 -0.7319212
+		 -0.11209869 0.49996817 -0.10826656 0.39853835 -0.11209866 0.31775868 -0.11939096
+		 0.25737131 -0.12533438 0.20929919 -0.12878731 0.16663834 -0.12989497 0.12397748 -0.12878731
+		 0.075905427 -0.12533441 0.015518039 -0.11939096 -0.065261602 -0.11209869 -0.16669142
+		 -0.10826656 -0.26812121 -0.11209869 -0.34890079 -0.11939093 -0.40928823 -0.12533441
+		 -0.4573603 -0.12878731 -0.5000211 -0.12989497 -0.59075409 -0.13659057 -0.54268199
+		 -0.13910955 -0.65114152 -0.13225013 -0.73192108 -0.12691587 0.49996817 -0.12410837
+		 0.39853841 -0.12691587 0.31775868 -0.13225013 0.25737122 -0.13659057 0.20929919 -0.13910955
+		 0.16663836 -0.13991722 0.12397753 -0.13910955 0.075905487 -0.13659057 0.015517935
+		 -0.13225013 -0.065261632 -0.12691587 -0.16669142 -0.12410837 -0.26812118 -0.12691587
+		 -0.34890082 -0.13225013 -0.40928823 -0.13659054 -0.4573603 -0.13910955 -0.5000211
+		 -0.13991722 -0.59075397 -0.1455541 -0.54268199 -0.14732483 -0.65114152 -0.14250118
+		 -0.7319212 -0.13874567 0.49996817 -0.1367673 0.39853829 -0.13874567 0.31775868 -0.14250118
+		 0.25737125 -0.14555407 0.20929919 -0.1473248 0.16663836 -0.14789242 0.12397751 -0.1473248
+		 0.075905442 -0.14555407 0.015518054 -0.14250118 -0.065261722 -0.13874567 -0.16669142
+		 -0.13676733 -0.26812121 -0.13874567 -0.34890079 -0.14250115 -0.40928823 -0.14555407
+		 -0.4573603 -0.1473248 -0.5000211 -0.14789242 -0.59075409 -0.15319431 -0.54268199
+		 -0.15432504 -0.65114152 -0.15124422 -0.73192108 -0.148844 0.49996817 -0.14757895
+		 0.39853832 -0.148844 0.31775871 -0.15124422 0.25737125 -0.15319431 0.20929919 -0.15432504
+		 0.16663836 -0.1546874 0.12397751 -0.15432504 0.075905457 -0.15319431 0.015517935
+		 -0.15124419 -0.065261543 -0.148844 -0.16669142 -0.14757895 -0.26812121 -0.148844
+		 -0.34890079 -0.15124419 -0.40928829 -0.15319431 -0.4573603 -0.15432504 -0.5000211
+		 -0.1546874 -0.59075409 -0.16009447 -0.54268199 -0.16064599 -0.65114152 -0.15914303
+		 -0.73192126 -0.15797171 0.49996817 -0.15735418 0.39853835 -0.15797171 0.31775874
+		 -0.15914303 0.25737125 -0.16009447 0.20929919 -0.16064599 0.16663836 -0.16082275
+		 0.12397753 -0.16064599 0.075905427 -0.16009447 0.015517995 -0.15914303 -0.065261602
+		 -0.15797171 -0.16669142 -0.15735418 -0.26812121 -0.15797171 -0.34890082 -0.15914303
+		 -0.40928823 -0.16009447 -0.45736036 -0.16064599 -0.5000211 -0.16082275 -0.59075409
+		 -0.16665983 -0.54268199 -0.16665983 -0.65114158 -0.16665983 -0.7319212 -0.16665983
+		 0.49996817 -0.16665983 0.39853835 -0.16665983 0.31775871 -0.16665983 0.25737125 -0.16665983
+		 0.20929919 -0.16665983 0.16663836 -0.16665983 0.12397753 -0.16665983 0.075905442
+		 -0.16665983 0.015518039 -0.16665983 -0.065261602 -0.16665983 -0.16669142 -0.16665983
+		 -0.26812115 -0.16665983 -0.34890079 -0.16665983 -0.40928829 -0.16665983 -0.4573603
+		 -0.16665983 -0.5000211 -0.16665983 -0.59075409 -0.17322522 -0.54268199 -0.17267367
+		 -0.65114152 -0.17417663 -0.73192126 -0.17534798 0.49996817 -0.17596549 0.39853835
+		 -0.17534798 0.31775874 -0.17417663 0.25737125 -0.17322522 0.20929919 -0.17267367
+		 0.16663836 -0.17249694 0.12397753 -0.17267367 0.075905427 -0.17322522 0.015517995
+		 -0.17417663 -0.065261602 -0.17534798 -0.16669142 -0.17596549 -0.26812121 -0.17534798
+		 -0.34890082 -0.17417663 -0.40928823 -0.17322522 -0.45736036 -0.17267367 -0.5000211
+		 -0.17249694 -0.59075409 -0.18012539 -0.54268199 -0.17899466 -0.65114152 -0.18207547
+		 -0.73192108 -0.18447569 0.49996817 -0.18574074 0.39853832 -0.18447569 0.31775871
+		 -0.18207547 0.25737125 -0.18012539 0.20929919 -0.17899466 0.16663836 -0.17863226
+		 0.12397751 -0.17899466 0.075905457 -0.18012539 0.015517935 -0.18207547 -0.065261543
+		 -0.18447569 -0.16669142 -0.18574074 -0.26812121 -0.18447569 -0.34890079 -0.18207547
+		 -0.40928829 -0.18012539 -0.4573603 -0.17899466 -0.5000211 -0.17863226 -0.59075397
+		 -0.18776557 -0.54268199 -0.18599486 -0.65114152 -0.19081849 -0.7319212 -0.19457403
+		 0.49996817 -0.19655237 0.39853829 -0.19457403 0.31775868 -0.19081855 0.25737125 -0.18776563
+		 0.20929919 -0.18599486 0.16663836 -0.18542725 0.12397751 -0.18599486;
+	setAttr ".uvtk[250:401]" 0.075905442 -0.18776563 0.015518054 -0.19081849 -0.065261722
+		 -0.19457403 -0.16669142 -0.19655237 -0.26812121 -0.19457403 -0.34890079 -0.19081855
+		 -0.40928823 -0.18776563 -0.4573603 -0.18599486 -0.5000211 -0.18542725 -0.59075409
+		 -0.19672909 -0.54268199 -0.19421011 -0.65114152 -0.20106956 -0.73192108 -0.20640379
+		 0.49996817 -0.20921129 0.39853841 -0.20640379 0.31775868 -0.20106956 0.25737122 -0.19672909
+		 0.20929919 -0.19421011 0.16663836 -0.19340244 0.12397753 -0.19421011 0.075905487
+		 -0.19672909 0.015517935 -0.20106956 -0.065261632 -0.20640379 -0.16669142 -0.20921129
+		 -0.26812118 -0.20640379 -0.34890082 -0.20106956 -0.40928823 -0.19672915 -0.4573603
+		 -0.19421011 -0.5000211 -0.19340244 -0.59075397 -0.20798525 -0.54268199 -0.20453236
+		 -0.65114152 -0.21392873 -0.7319212 -0.221221 0.49996817 -0.22505313 0.39853835 -0.221221
+		 0.31775868 -0.21392873 0.25737131 -0.20798528 0.20929919 -0.20453236 0.16663834 -0.20342469
+		 0.12397748 -0.20453236 0.075905427 -0.20798528 0.015518039 -0.21392873 -0.065261602
+		 -0.221221 -0.16669142 -0.2250531 -0.26812121 -0.221221 -0.34890079 -0.21392876 -0.40928823
+		 -0.20798528 -0.4573603 -0.20453236 -0.5000211 -0.20342469 -0.59075397 -0.2233794
+		 -0.54268199 -0.21866354 -0.65114152 -0.23148111 -0.7319212 -0.24139088 0.49996817
+		 -0.24658352 0.39853832 -0.24139088 0.31775874 -0.23148113 0.25737122 -0.2233794 0.20929919
+		 -0.21866363 0.16663834 -0.2171495 0.12397748 -0.21866363 0.075905398 -0.22337949
+		 0.01551795 -0.23148113 -0.065261602 -0.24139088 -0.16669142 -0.24658349 -0.26812121
+		 -0.24139088 -0.34890079 -0.23148113 -0.40928823 -0.22337946 -0.4573603 -0.21866357
+		 -0.5000211 -0.21714953 -0.59075409 -0.24704745 -0.54268199 -0.2404345 -0.65114152
+		 -0.25836149 -0.73192126 -0.27211097 0.49996817 -0.27927229 0.39853841 -0.27211097
+		 0.31775868 -0.25836149 0.25737122 -0.24704745 0.20929919 -0.24043456 0.16663831 -0.23830745
+		 0.12397748 -0.24043456 0.075905442 -0.24704745 0.01551801 -0.25836146 -0.065261662
+		 -0.27211094 -0.16669142 -0.27927223 -0.26812115 -0.27211094 -0.34890071 -0.25836149
+		 -0.40928823 -0.24704745 -0.4573603 -0.24043456 -0.5000211 -0.23830745 -0.59075397
+		 -0.29060185 -0.54268199 -0.28070313 -0.65114152 -0.30735216 -0.7319212 -0.32736474
+		 0.49996817 -0.33762783 0.39853832 -0.32736474 0.31775868 -0.30735216 0.25737125 -0.29060194
+		 0.20929912 -0.28070313 0.1666383 -0.27750331 0.12397748 -0.28070313 0.075905368 -0.29060194
+		 0.01551798 -0.30735213 -0.065261632 -0.32736465 -0.16669142 -0.33762774 -0.26812118
+		 -0.32736465 -0.34890079 -0.30735213 -0.4092882 -0.29060194 -0.4573603 -0.28070322
+		 -0.5000211 -0.27750331 -0.59075397 -0.40120083 -0.54268187 -0.38489908 -0.65114135
+		 -0.42759523 -0.73192096 -0.45718059 0.49996817 -0.47154838 0.39853808 -0.45718059
+		 0.31775856 -0.42759523 0.25737119 -0.40120083 0.20929907 -0.38489908 0.16663824 -0.37951857
+		 0.12397741 -0.38489905 0.075905278 -0.40120071 0.01551798 -0.42759499 -0.065261513
+		 -0.45718029 -0.16669142 -0.47154802 -0.26812133 -0.45718029 -0.34890079 -0.42759502
+		 -0.40928811 -0.40120071 -0.45736024 -0.38489905 -0.5000211 -0.37951857 -0.16664898
+		 0.49999923 -0.16664898 -0.83331895 -0.83335102 0.1382287 -0.83335102 0.0043081492
+		 -0.83335102 -0.054047406 -0.83335102 -0.086736143 -0.83335102 -0.10826656 -0.83335102
+		 -0.12410837 -0.83335102 -0.1367673 -0.83335102 -0.14757895 -0.83335102 -0.15735418
+		 -0.83335102 -0.16665983 -0.83335102 -0.17596549 -0.83335102 -0.18574074 -0.83335102
+		 -0.19655237 -0.83335102 -0.20921129 -0.83335102 -0.22505313 -0.83335102 -0.24658352
+		 -0.83335102 -0.27927229 -0.83335102 -0.33762783 -0.73192096 0.1238609 -0.83335102
+		 -0.47154838 -1.49996805 -0.83331895;
+createNode polySphProj -n "pasted__pasted__pasted__polySphProj3";
+	rename -uid "5BEA3882-49A3-95D5-5C05-63BDC2ADCBFB";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:399]";
+	setAttr ".ix" -type "matrix" 6.9243098218742967 0 0 0 0 0.60132874803740599 0 0 0 0 4.3429239258932437 0
+		 -30.4928654545133 40.874896044667139 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" -30.492864608764648 40.874897003173828 -7.152557373046875e-07 ;
+	setAttr ".r" 13.848621368408203;
+createNode polyTweakUV -n "pasted__pasted__pasted__polyTweakUV18";
+	rename -uid "D5BAC652-4535-E0BB-F6E5-09B5E2EF33F6";
+	setAttr ".uopa" yes;
+	setAttr -s 439 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" 0 -7.4505806e-09 -7.4505806e-09 -7.4505806e-09
+		 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09
+		 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -7.4505806e-09 0 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -1.4901161e-08
+		 -1.4901161e-08 -1.4901161e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08
+		 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 0 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -1.4901161e-08 -1.4901161e-08
+		 -1.4901161e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08
+		 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 0 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08
+		 -7.4505806e-09 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08 -7.4505806e-09
+		 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08
+		 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08
+		 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08;
+	setAttr ".uvtk[250:438]" -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08
+		 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -3.7252903e-09
+		 -1.1719548e-17 -7.4505806e-09 -1.1719548e-17 -1.4901161e-08 -1.1719548e-17 -1.4901161e-08
+		 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -2.9802322e-08
+		 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08
+		 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08
+		 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -1.1920929e-07
+		 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -1.1920929e-07
+		 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -3.7252903e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07;
+createNode polySphere -n "pasted__pasted__pasted__polySphere2";
+	rename -uid "F5DCF5EF-40DE-28A3-1248-4EA4B2EF1A87";
+createNode materialInfo -n "pasted__pasted__pasted__materialInfo16";
+	rename -uid "B60701F3-4A35-C099-5AA8-73B4DA47C865";
+createNode shadingEngine -n "pasted__pasted__pasted__set8";
+	rename -uid "7E9433F9-4E25-7D16-79E3-45A28987BAAE";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__pasted__pasted__LeafMaterial1";
+	rename -uid "AEBE5303-4226-719E-568C-0BB25CE3494A";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__pasted__pasted__file45";
+	rename -uid "27BC28AD-4F7E-67AD-F732-D0832A0ACD16";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__pasted__pasted__place2dTexture17";
+	rename -uid "80199EF2-4100-C3D5-1185-8D8CE73199C8";
+createNode bump2d -n "pasted__pasted__pasted__bump2d8";
+	rename -uid "848C5C78-43EA-FB56-F0E8-FCB39684B6FE";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__pasted__pasted__file46";
+	rename -uid "73669F95-4DCA-3B37-964C-E1AE093DE7B4";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__pasted__pasted__file47";
+	rename -uid "10D1FA86-4967-15F5-4162-F097C75EA9EA";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__pasted__pasted__multiplyDivide8";
+	rename -uid "1D6512E5-4E20-5853-663F-0D95554E9E71";
+createNode file -n "pasted__pasted__pasted__file49";
+	rename -uid "79566ED3-4CCA-6E11-ABC3-AC8A2A343DF0";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__pasted__pasted__displacementShader8";
+	rename -uid "8282622A-4276-AF3A-1CC6-C78A8C4E21C0";
+createNode file -n "pasted__pasted__pasted__file48";
+	rename -uid "B13CA751-45EB-225B-2148-12B9D781001B";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode polyTweakUV -n "pasted__pasted__pasted__polyTweakUV17";
+	rename -uid "9F2B621D-4DDE-33FA-6106-F6A0ACACB9DE";
+	setAttr ".uopa" yes;
+	setAttr -s 482 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" -0.39287868 0.12950313 -0.39057827
+		 0.12950313 -0.3902514 0.13084579 -0.39270681 0.13084579 -0.39311332 0.12826407 -0.39102459
+		 0.12826407 -0.3887527 0.12950313 -0.38830274 0.13084579 -0.39005196 0.13225895 -0.39260197
+		 0.13225895 -0.39542866 0.12950313 -0.39542866 0.13084579 -0.39340499 0.12715897 -0.39157939
+		 0.12715897 -0.38936698 0.12826407 -0.39542866 0.12826407 -0.38802826 0.13225895 -0.38998497
+		 0.1337077 -0.39256674 0.1337077 -0.39542866 0.13225895 -0.39797866 0.12950313 -0.3981505
+		 0.13084579 -0.39374647 0.12621516 -0.39222893 0.12621516 -0.39013058 0.12715897 -0.39542866
+		 0.12715897 -0.397744 0.12826407 -0.38793606 0.1337077 -0.39005196 0.13515651 -0.39260197
+		 0.13515651 -0.39542866 0.1337077 -0.39825535 0.13225895 -0.40027902 0.12950313 -0.40060592
+		 0.13084579 -0.39542866 0.12621516 -0.39745235 0.12715897 -0.3998327 0.12826407 -0.38802826
+		 0.13515651 -0.3902514 0.13656962 -0.39270681 0.13656962 -0.39542866 0.13515651 -0.39829057
+		 0.1337077 -0.40080535 0.13225895 -0.40210462 0.12950313 -0.40255457 0.13084579 -0.39542866
+		 0.12545571 -0.39412937 0.12545571 -0.39711085 0.12621516 -0.39927793 0.12715897 -0.4014903
+		 0.12826407 -0.38830274 0.13656962 -0.39057827 0.13791233 -0.39287868 0.13791233 -0.39542866
+		 0.13656962 -0.39825535 0.13515651 -0.40087235 0.1337077 -0.40282899 0.13225895 -0.39672795
+		 0.12545571 -0.39862838 0.12621516 -0.40072674 0.12715897 -0.3887527 0.13791233 -0.39102459
+		 0.13915139 -0.39311332 0.13915139 -0.39542866 0.13791233 -0.3981505 0.13656962 -0.40080535
+		 0.13515651 -0.40292126 0.1337077 -0.38936698 0.13915139 -0.39157939 0.14025652 -0.39340499
+		 0.14025652 -0.39542866 0.13915139 -0.39797866 0.13791233 -0.40060592 0.13656962 -0.40282899
+		 0.13515651 -0.39013058 0.14025652 -0.39222893 0.1412003 -0.39374647 0.1412003 -0.39542866
+		 0.14025652 -0.397744 0.13915139 -0.40027902 0.13791233 -0.40255457 0.13656962 -0.39542866
+		 0.1412003 -0.39745235 0.14025652 -0.3998327 0.13915139 -0.40210462 0.13791233 -0.39412937
+		 0.14195967 -0.39542866 0.14195967 -0.39711085 0.1412003 -0.39927793 0.14025652 -0.4014903
+		 0.13915139 -0.39672795 0.14195967 -0.39862838 0.1412003 -0.40072674 0.14025652 0.31282812
+		 0.54670149 0.31512851 0.54670149 0.31495664 0.54804415 0.31250119 0.54804415 0.31327441
+		 0.54546243 0.31536314 0.54546243 0.31767848 0.54670149 0.31767848 0.54804415 0.31485182
+		 0.54945737 0.31230181 0.54945737 0.31100249 0.54670149 0.3105526 0.54804415 0.31382918
+		 0.54435736 0.31565481 0.54435736 0.31767848 0.54546243 0.31161681 0.54546243 0.32022846
+		 0.54670149 0.32040036 0.54804415 0.31767848 0.54945737 0.31481656 0.55090618 0.31223479
+		 0.55090618 0.31027812 0.54945737 0.31447875 0.54341358 0.31599626 0.54341358 0.31767848
+		 0.54435736 0.3123804 0.54435736 0.31999385 0.54546243 0.3225289 0.54670149 0.32285577
+		 0.54804415 0.3205052 0.54945737 0.31767848 0.55090618 0.31485182 0.55235493 0.31230181
+		 0.55235493 0.31018585 0.55090618 0.31767848 0.54341358 0.31970215 0.54435736 0.32208252
+		 0.54546243 0.32435447 0.54670149 0.32480443 0.54804415 0.32305515 0.54945737 0.32054043
+		 0.55090618 0.31767848 0.55235493 0.31495664 0.55376804 0.31250119 0.55376804 0.31027812
+		 0.55235493 0.31637922 0.54265416 0.31767848 0.54265416 0.31936067 0.54341358 0.32152778
+		 0.54435736 0.32374012 0.54546243 0.32507885 0.54945737 0.3231222 0.55090618 0.3205052
+		 0.55235493 0.31767848 0.55376804 0.31512851 0.55511075 0.31282812 0.55511075 0.3105526
+		 0.55376804 0.31897777 0.54265416 0.32087821 0.54341358 0.32297659 0.54435736 0.32517111
+		 0.55090618 0.32305515 0.55235493 0.32040036 0.55376804 0.31767848 0.55511075 0.31536314
+		 0.55634987 0.31327441 0.55634987 0.31100249 0.55511075 0.32507885 0.55235493 0.32285577
+		 0.55376804 0.32022846 0.55511075 0.31767848 0.55634987 0.31565481 0.55745494 0.31382918
+		 0.55745494 0.31161681 0.55634987 0.32480443 0.55376804 0.3225289 0.55511075 0.31999385
+		 0.55634987 0.31767848 0.55745494 0.31599626 0.55839872 0.31447875 0.55839872 0.3123804
+		 0.55745494 0.32435447 0.55511075 0.32208252 0.55634987 0.31970215 0.55745494 0.31767848
+		 0.55839872 0.32374012 0.55634987 0.32152778 0.55745494 0.31936067 0.55839872 0.31767848
+		 0.55915809 0.31637922 0.55915809 0.32297659 0.55745494 0.32087821 0.55839872 0.31897777
+		 0.55915809 0.45335379 0.079300299 0.45121032 0.075093329 0.46311885 0.066441298 0.46735317
+		 0.074751735 0.43900114 0.083963796 0.44787166 0.071754649 0.45652366 0.059846193
+		 0.47443345 0.058220774 0.48065424 0.070429936 0.45409244 0.083963796 0.46881223 0.083963796
+		 0.44366467 0.069611162 0.44821325 0.055611834 0.46474415 0.048531547 0.48487565 0.050634027
+		 0.49292985 0.066441298 0.48279786 0.083963796 0.45335379 0.088627264 0.46735317 0.093175948
+		 0.43900114 0.068872496 0.43900114 0.054152757 0.45253503 0.0423107 0.47233093 0.038089402
+		 0.48065424 0.097497731 0.45121032 0.092834234 0.46311873 0.1014863 0.43433768 0.069611162
+		 0.42978907 0.055611834 0.43900114 0.040167131 0.45652366 0.030035146 0.47909689 0.028776743
+		 0.49418825 0.043868043 0.47443345 0.10970685 0.44787166 0.096172914 0.45652366 0.10808143
+		 0.43013066 0.071754649 0.42147869 0.059846193 0.42546725 0.0423107 0.43900114 0.027259856
+		 0.46008074 0.019087505 0.49292985 0.1014863 0.48487556 0.11729354 0.46474415 0.11939609
+		 0.44366467 0.098316491 0.44821325 0.11231574 0.42679209 0.075093329 0.41488355 0.066441298
+		 0.41325814 0.048531547 0.42147869 0.030035146 0.43900114 0.015748907 0.46311885 0.0097374227
+		 0.48487565 0.020823058 0.47233087 0.12983823 0.45253503 0.12561691 0.43900114 0.099055111
+		 0.43900114 0.11377481 0.42464843 0.079300299 0.41064918 0.074751735 0.40356889 0.058220774
+		 0.40567148 0.038089402 0.41792157 0.01908759 0.43900114 0.0059175342 0.46556297 0.0022149412
+		 0.48952475 0.014424093;
+	setAttr ".uvtk[250:481]" 0.49418813 0.12405953 0.47909686 0.13915083 0.45652366
+		 0.13789243 0.43900114 0.1277605 0.43433768 0.098316491 0.42978907 0.11231574 0.42390987
+		 0.083963796 0.40919012 0.083963796 0.39734808 0.070429936 0.3931267 0.050634116 0.39890546
+		 0.028776743 0.41488355 0.0097374227 0.43900114 -0.0019920319 0.46008074 0.14884001
+		 0.43900114 0.14066774 0.42546725 0.12561691 0.43013066 0.096172914 0.42147869 0.10808143
+		 0.42464843 0.088627264 0.41064918 0.093175948 0.39520451 0.083963796 0.38507259 0.066441298
+		 0.38381413 0.043868124 0.3931267 0.020823058 0.41243935 0.0022149412 0.48487556 0.14710453
+		 0.46311873 0.15819022 0.43900114 0.1521787 0.42147869 0.13789243 0.41325814 0.11939609
+		 0.42679209 0.092834234 0.41488355 0.1014863 0.39734808 0.097497731 0.38847759 0.014424093
+		 0.48952475 0.15350351 0.46556297 0.16571265 0.43900114 0.16201004 0.41792157 0.14884001
+		 0.40567148 0.12983823 0.40356889 0.10970685 0.43900114 0.16991964 0.41488355 0.15819022
+		 0.39890546 0.13915083 0.39312676 0.11729354 0.38507259 0.1014863 0.41243941 0.16571265
+		 0.39312676 0.14710456 0.38381413 0.12405953 0.38847759 0.15350351 -0.19599512 -0.30590984
+		 -0.21108642 -0.29081851 -0.21785241 -0.30013102 -0.20530769 -0.31267574 -0.23010257
+		 -0.28112918 -0.23365968 -0.29207683 -0.22543916 -0.31057331 -0.21574992 -0.32026249
+		 -0.20530769 -0.28286469 -0.22706452 -0.27177906 -0.2511822 -0.27779061 -0.2511822
+		 -0.28930154 -0.23764832 -0.3043524 -0.23365968 -0.32188791 -0.22706452 -0.3284831
+		 -0.1972535 -0.3284831 -0.20952907 -0.33247164 -0.20065859 -0.27646565 -0.2246204
+		 -0.26425666 -0.2511822 -0.26795918 -0.2722618 -0.28112918 -0.26870468 -0.29207683
+		 -0.2511822 -0.3022089 -0.24197012 -0.31765363 -0.24231173 -0.33379638 -0.23897305
+		 -0.33713514 -0.22283021 -0.33679336 -0.2511822 -0.26004958 -0.27529985 -0.27177906
+		 -0.29127795 -0.29081851 -0.28451192 -0.30013102 -0.26471615 -0.3043524 -0.2511822
+		 -0.31619447 -0.24651872 -0.33165288 -0.2511822 -0.34600556 -0.23682956 -0.34134203
+		 -0.20738551 -0.34600556 -0.22137111 -0.34600556 -0.27774402 -0.26425666 -0.29705667
+		 -0.28286481 -0.30636927 -0.30590984 -0.29705667 -0.31267574 -0.27692527 -0.31057331
+		 -0.2603943 -0.31765363 -0.2511822 -0.3309142 -0.2360909 -0.34600556 -0.20952907 -0.35953945
+		 -0.22283021 -0.35521773 -0.30170581 -0.27646583 -0.28661451 -0.32026249 -0.26870468
+		 -0.32188791 -0.25584567 -0.33165288 -0.23682956 -0.35066903 -0.21574992 -0.3717486
+		 -0.22706458 -0.36352801 -0.30511081 -0.3284831 -0.29283533 -0.33247164 -0.27529985
+		 -0.3284831 -0.26005268 -0.33379638 -0.23897305 -0.35487592 -0.20530778 -0.37933534
+		 -0.1972535 -0.36352801 -0.22543916 -0.38143775 -0.23365968 -0.37012318 -0.27953422
+		 -0.33679336 -0.26339129 -0.33713514 -0.24231173 -0.35821471 -0.2178525 -0.3918801
+		 -0.23764832 -0.38765869 -0.24197012 -0.37435746 -0.29497889 -0.34600556 -0.28099322
+		 -0.34600556 -0.26553491 -0.34134203 -0.24651872 -0.36035818 -0.21108648 -0.40119258
+		 -0.19599518 -0.38610125 -0.23365968 -0.39993423 -0.2511822 -0.38980216 -0.2511822
+		 -0.37581661 -0.29283533 -0.35953945 -0.27953422 -0.35521773 -0.26627353 -0.34600556
+		 -0.2511822 -0.36109686 -0.23010257 -0.41088188 -0.2511822 -0.40270954 -0.26471615
+		 -0.38765869 -0.2603943 -0.37435746 -0.28661451 -0.3717486 -0.27529985 -0.36352801
+		 -0.26553491 -0.35066903 -0.25584567 -0.36035818 -0.22706458 -0.420232 -0.20530778
+		 -0.40914625 -0.2511822 -0.41422048 -0.26870468 -0.39993423 -0.27692527 -0.38143775
+		 -0.26870468 -0.37012318 -0.30511081 -0.36352801 -0.29705665 -0.37933534 -0.26339129
+		 -0.35487592 -0.26005268 -0.35821471 -0.2246204 -0.42775437 -0.20065859 -0.41554523
+		 -0.2511822 -0.42405188 -0.2722618 -0.41088188 -0.28451192 -0.3918801 -0.2511822 -0.43196145
+		 -0.27529985 -0.420232 -0.29127795 -0.40119258 -0.30636927 -0.38610125 -0.277744 -0.42775437
+		 -0.29705665 -0.40914625 -0.30170581 -0.41554523 0.63656986 -0.43560243 0.63656986
+		 -0.44973201 0.64481688 -0.44867629 0.64481688 -0.43359458 0.63656986 -0.46539468
+		 0.64481688 -0.46539468 0.65349692 -0.44803241 0.65349692 -0.43236959 0.63656986 -0.48105729
+		 0.64481688 -0.48211306 0.65349692 -0.46539468 0.66239566 -0.44781584 0.66239566 -0.43195787
+		 0.63656986 -0.49518692 0.64481688 -0.49719477 0.65349692 -0.48275691 0.66239566 -0.46539468
+		 0.67129463 -0.44803241 0.67129463 -0.43236959 0.65349692 -0.49841976 0.66239566 -0.48297328
+		 0.67129463 -0.46539468 0.67997426 -0.44867629 0.67997426 -0.43359458 0.66239566 -0.49883145
+		 0.67129463 -0.48275691 0.67997426 -0.46539468 0.68822169 -0.44973201 0.68822169 -0.43560243
+		 0.67129463 -0.49841976 0.67997426 -0.48211306 0.68822169 -0.46539468 0.67997426 -0.49719477
+		 0.68822169 -0.48105729 0.68822169 -0.49518692 0.82891697 -0.56846762 0.82891697 -0.55433804
+		 0.82067001 -0.5553937 0.82067001 -0.57047546 0.82891697 -0.53867531 0.82067001 -0.53867531
+		 0.8119899 -0.55603755 0.8119899 -0.57170033 0.82891697 -0.52301252 0.82067001 -0.52195692
+		 0.8119899 -0.53867531 0.80309111 -0.55625403 0.80309111 -0.57211202 0.82891697 -0.508883
+		 0.82067001 -0.5068751 0.8119899 -0.52131307 0.80309111 -0.53867531 0.79419225 -0.55603755
+		 0.79419225 -0.57170033 0.8119899 -0.50565028 0.80309111 -0.52109659 0.79419225 -0.53867531
+		 0.78551263 -0.5553937 0.78551263 -0.57047546 0.80309111 -0.50523865 0.79419225 -0.52131307
+		 0.78551263 -0.53867531 0.77726519 -0.55433804 0.77726519 -0.56846762 0.79419225 -0.50565028
+		 0.78551263 -0.52195692 0.77726519 -0.53867531 0.78551263 -0.5068751 0.77726519 -0.52301252
+		 0.77726519 -0.508883;
+createNode polyAutoProj -n "pasted__pasted__pasted__polyAutoProj14";
+	rename -uid "C263C449-47C3-C8C0-EA8A-C9908F823525";
+	setAttr ".cch" yes;
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:399]";
+	setAttr ".ix" -type "matrix" 6.9243098218742967 0 0 0 0 0.60132874803740599 0 0 0 0 4.3429239258932437 0
+		 -30.4928654545133 40.874896044667139 0 1;
+	setAttr ".s" -type "double3" 13.8486212946327 13.8486212946327 13.8486212946327 ;
+	setAttr ".ps" 0.20000000298023224;
+	setAttr ".dl" yes;
+createNode polyTweakUV -n "pasted__pasted__pasted__polyTweakUV16";
+	rename -uid "53ABF867-4130-6E31-9395-9BB967973BEB";
+	setAttr ".uopa" yes;
+	setAttr -s 402 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" -0.54268187 0.051579416 -0.59075397
+		 0.067881152 -0.59075397 -0.042717814 -0.54268199 -0.052616537 -0.65114135 0.094275534
+		 -0.65114152 -0.025967509 -0.7319212 -0.005954951 0.49996817 0.1382287 0.49996817
+		 0.0043081492 0.39853808 0.12386093 0.39853832 -0.0059549212 0.31775856 0.094275549
+		 0.31775868 -0.025967479 0.25737119 0.067881152 0.25737125 -0.042717725 0.20929907
+		 0.051579416 0.20929912 -0.052616537 0.16663824 0.04619886 0.1666383 -0.055816352
+		 0.12397741 0.051579371 0.12397748 -0.052616537 0.075905278 0.067881033 0.075905368
+		 -0.042717755 0.01551798 0.09427534 0.01551798 -0.025967538 -0.065261513 0.1238606
+		 -0.065261632 -0.0059550405 -0.16669142 0.13822834 -0.16669142 0.0043080449 -0.26812133
+		 0.12386063 -0.26812118 -0.0059550107 -0.34890079 0.094275355 -0.34890079 -0.025967538
+		 -0.40928811 0.067881033 -0.4092882 -0.042717755 -0.45736024 0.051579371 -0.4573603
+		 -0.052616447 -0.5000211 0.04619886 -0.5000211 -0.055816352 -0.59075409 -0.08627224
+		 -0.54268199 -0.092885166 -0.65114152 -0.074958205 -0.73192126 -0.061208695 0.49996817
+		 -0.054047406 0.39853841 -0.061208695 0.31775868 -0.074958205 0.25737122 -0.08627224
+		 0.20929919 -0.092885137 0.16663831 -0.095012248 0.12397748 -0.092885137 0.075905442
+		 -0.08627224 0.01551801 -0.074958235 -0.065261662 -0.061208725 -0.16669142 -0.054047436
+		 -0.26812115 -0.061208725 -0.34890071 -0.074958175 -0.40928823 -0.08627224 -0.4573603
+		 -0.092885137 -0.5000211 -0.095012248 -0.59075397 -0.10994023 -0.54268199 -0.11465612
+		 -0.65114152 -0.10183856 -0.7319212 -0.09192881 0.49996817 -0.086736143 0.39853832
+		 -0.09192878 0.31775874 -0.10183853 0.25737122 -0.10994023 0.20929919 -0.11465606
+		 0.16663834 -0.1161702 0.12397748 -0.11465606 0.075905398 -0.1099402 0.01551795 -0.10183856
+		 -0.065261602 -0.09192881 -0.16669142 -0.086736172 -0.26812121 -0.09192881 -0.34890079
+		 -0.10183856 -0.40928823 -0.10994023 -0.4573603 -0.11465609 -0.5000211 -0.11617017
+		 -0.59075397 -0.12533444 -0.54268199 -0.12878734 -0.65114152 -0.11939096 -0.7319212
+		 -0.11209869 0.49996817 -0.10826656 0.39853835 -0.11209866 0.31775868 -0.11939096
+		 0.25737131 -0.12533438 0.20929919 -0.12878731 0.16663834 -0.12989497 0.12397748 -0.12878731
+		 0.075905427 -0.12533441 0.015518039 -0.11939096 -0.065261602 -0.11209869 -0.16669142
+		 -0.10826656 -0.26812121 -0.11209869 -0.34890079 -0.11939093 -0.40928823 -0.12533441
+		 -0.4573603 -0.12878731 -0.5000211 -0.12989497 -0.59075409 -0.13659057 -0.54268199
+		 -0.13910955 -0.65114152 -0.13225013 -0.73192108 -0.12691587 0.49996817 -0.12410837
+		 0.39853841 -0.12691587 0.31775868 -0.13225013 0.25737122 -0.13659057 0.20929919 -0.13910955
+		 0.16663836 -0.13991722 0.12397753 -0.13910955 0.075905487 -0.13659057 0.015517935
+		 -0.13225013 -0.065261632 -0.12691587 -0.16669142 -0.12410837 -0.26812118 -0.12691587
+		 -0.34890082 -0.13225013 -0.40928823 -0.13659054 -0.4573603 -0.13910955 -0.5000211
+		 -0.13991722 -0.59075397 -0.1455541 -0.54268199 -0.14732483 -0.65114152 -0.14250118
+		 -0.7319212 -0.13874567 0.49996817 -0.1367673 0.39853829 -0.13874567 0.31775868 -0.14250118
+		 0.25737125 -0.14555407 0.20929919 -0.1473248 0.16663836 -0.14789242 0.12397751 -0.1473248
+		 0.075905442 -0.14555407 0.015518054 -0.14250118 -0.065261722 -0.13874567 -0.16669142
+		 -0.13676733 -0.26812121 -0.13874567 -0.34890079 -0.14250115 -0.40928823 -0.14555407
+		 -0.4573603 -0.1473248 -0.5000211 -0.14789242 -0.59075409 -0.15319431 -0.54268199
+		 -0.15432504 -0.65114152 -0.15124422 -0.73192108 -0.148844 0.49996817 -0.14757895
+		 0.39853832 -0.148844 0.31775871 -0.15124422 0.25737125 -0.15319431 0.20929919 -0.15432504
+		 0.16663836 -0.1546874 0.12397751 -0.15432504 0.075905457 -0.15319431 0.015517935
+		 -0.15124419 -0.065261543 -0.148844 -0.16669142 -0.14757895 -0.26812121 -0.148844
+		 -0.34890079 -0.15124419 -0.40928829 -0.15319431 -0.4573603 -0.15432504 -0.5000211
+		 -0.1546874 -0.59075409 -0.16009447 -0.54268199 -0.16064599 -0.65114152 -0.15914303
+		 -0.73192126 -0.15797171 0.49996817 -0.15735418 0.39853835 -0.15797171 0.31775874
+		 -0.15914303 0.25737125 -0.16009447 0.20929919 -0.16064599 0.16663836 -0.16082275
+		 0.12397753 -0.16064599 0.075905427 -0.16009447 0.015517995 -0.15914303 -0.065261602
+		 -0.15797171 -0.16669142 -0.15735418 -0.26812121 -0.15797171 -0.34890082 -0.15914303
+		 -0.40928823 -0.16009447 -0.45736036 -0.16064599 -0.5000211 -0.16082275 -0.59075409
+		 -0.16665983 -0.54268199 -0.16665983 -0.65114158 -0.16665983 -0.7319212 -0.16665983
+		 0.49996817 -0.16665983 0.39853835 -0.16665983 0.31775871 -0.16665983 0.25737125 -0.16665983
+		 0.20929919 -0.16665983 0.16663836 -0.16665983 0.12397753 -0.16665983 0.075905442
+		 -0.16665983 0.015518039 -0.16665983 -0.065261602 -0.16665983 -0.16669142 -0.16665983
+		 -0.26812115 -0.16665983 -0.34890079 -0.16665983 -0.40928829 -0.16665983 -0.4573603
+		 -0.16665983 -0.5000211 -0.16665983 -0.59075409 -0.17322522 -0.54268199 -0.17267367
+		 -0.65114152 -0.17417663 -0.73192126 -0.17534798 0.49996817 -0.17596549 0.39853835
+		 -0.17534798 0.31775874 -0.17417663 0.25737125 -0.17322522 0.20929919 -0.17267367
+		 0.16663836 -0.17249694 0.12397753 -0.17267367 0.075905427 -0.17322522 0.015517995
+		 -0.17417663 -0.065261602 -0.17534798 -0.16669142 -0.17596549 -0.26812121 -0.17534798
+		 -0.34890082 -0.17417663 -0.40928823 -0.17322522 -0.45736036 -0.17267367 -0.5000211
+		 -0.17249694 -0.59075409 -0.18012539 -0.54268199 -0.17899466 -0.65114152 -0.18207547
+		 -0.73192108 -0.18447569 0.49996817 -0.18574074 0.39853832 -0.18447569 0.31775871
+		 -0.18207547 0.25737125 -0.18012539 0.20929919 -0.17899466 0.16663836 -0.17863226
+		 0.12397751 -0.17899466 0.075905457 -0.18012539 0.015517935 -0.18207547 -0.065261543
+		 -0.18447569 -0.16669142 -0.18574074 -0.26812121 -0.18447569 -0.34890079 -0.18207547
+		 -0.40928829 -0.18012539 -0.4573603 -0.17899466 -0.5000211 -0.17863226 -0.59075397
+		 -0.18776557 -0.54268199 -0.18599486 -0.65114152 -0.19081849 -0.7319212 -0.19457403
+		 0.49996817 -0.19655237 0.39853829 -0.19457403 0.31775868 -0.19081855 0.25737125 -0.18776563
+		 0.20929919 -0.18599486 0.16663836 -0.18542725 0.12397751 -0.18599486;
+	setAttr ".uvtk[250:401]" 0.075905442 -0.18776563 0.015518054 -0.19081849 -0.065261722
+		 -0.19457403 -0.16669142 -0.19655237 -0.26812121 -0.19457403 -0.34890079 -0.19081855
+		 -0.40928823 -0.18776563 -0.4573603 -0.18599486 -0.5000211 -0.18542725 -0.59075409
+		 -0.19672909 -0.54268199 -0.19421011 -0.65114152 -0.20106956 -0.73192108 -0.20640379
+		 0.49996817 -0.20921129 0.39853841 -0.20640379 0.31775868 -0.20106956 0.25737122 -0.19672909
+		 0.20929919 -0.19421011 0.16663836 -0.19340244 0.12397753 -0.19421011 0.075905487
+		 -0.19672909 0.015517935 -0.20106956 -0.065261632 -0.20640379 -0.16669142 -0.20921129
+		 -0.26812118 -0.20640379 -0.34890082 -0.20106956 -0.40928823 -0.19672915 -0.4573603
+		 -0.19421011 -0.5000211 -0.19340244 -0.59075397 -0.20798525 -0.54268199 -0.20453236
+		 -0.65114152 -0.21392873 -0.7319212 -0.221221 0.49996817 -0.22505313 0.39853835 -0.221221
+		 0.31775868 -0.21392873 0.25737131 -0.20798528 0.20929919 -0.20453236 0.16663834 -0.20342469
+		 0.12397748 -0.20453236 0.075905427 -0.20798528 0.015518039 -0.21392873 -0.065261602
+		 -0.221221 -0.16669142 -0.2250531 -0.26812121 -0.221221 -0.34890079 -0.21392876 -0.40928823
+		 -0.20798528 -0.4573603 -0.20453236 -0.5000211 -0.20342469 -0.59075397 -0.2233794
+		 -0.54268199 -0.21866354 -0.65114152 -0.23148111 -0.7319212 -0.24139088 0.49996817
+		 -0.24658352 0.39853832 -0.24139088 0.31775874 -0.23148113 0.25737122 -0.2233794 0.20929919
+		 -0.21866363 0.16663834 -0.2171495 0.12397748 -0.21866363 0.075905398 -0.22337949
+		 0.01551795 -0.23148113 -0.065261602 -0.24139088 -0.16669142 -0.24658349 -0.26812121
+		 -0.24139088 -0.34890079 -0.23148113 -0.40928823 -0.22337946 -0.4573603 -0.21866357
+		 -0.5000211 -0.21714953 -0.59075409 -0.24704745 -0.54268199 -0.2404345 -0.65114152
+		 -0.25836149 -0.73192126 -0.27211097 0.49996817 -0.27927229 0.39853841 -0.27211097
+		 0.31775868 -0.25836149 0.25737122 -0.24704745 0.20929919 -0.24043456 0.16663831 -0.23830745
+		 0.12397748 -0.24043456 0.075905442 -0.24704745 0.01551801 -0.25836146 -0.065261662
+		 -0.27211094 -0.16669142 -0.27927223 -0.26812115 -0.27211094 -0.34890071 -0.25836149
+		 -0.40928823 -0.24704745 -0.4573603 -0.24043456 -0.5000211 -0.23830745 -0.59075397
+		 -0.29060185 -0.54268199 -0.28070313 -0.65114152 -0.30735216 -0.7319212 -0.32736474
+		 0.49996817 -0.33762783 0.39853832 -0.32736474 0.31775868 -0.30735216 0.25737125 -0.29060194
+		 0.20929912 -0.28070313 0.1666383 -0.27750331 0.12397748 -0.28070313 0.075905368 -0.29060194
+		 0.01551798 -0.30735213 -0.065261632 -0.32736465 -0.16669142 -0.33762774 -0.26812118
+		 -0.32736465 -0.34890079 -0.30735213 -0.4092882 -0.29060194 -0.4573603 -0.28070322
+		 -0.5000211 -0.27750331 -0.59075397 -0.40120083 -0.54268187 -0.38489908 -0.65114135
+		 -0.42759523 -0.73192096 -0.45718059 0.49996817 -0.47154838 0.39853808 -0.45718059
+		 0.31775856 -0.42759523 0.25737119 -0.40120083 0.20929907 -0.38489908 0.16663824 -0.37951857
+		 0.12397741 -0.38489905 0.075905278 -0.40120071 0.01551798 -0.42759499 -0.065261513
+		 -0.45718029 -0.16669142 -0.47154802 -0.26812133 -0.45718029 -0.34890079 -0.42759502
+		 -0.40928811 -0.40120071 -0.45736024 -0.38489905 -0.5000211 -0.37951857 -0.16664898
+		 0.49999923 -0.16664898 -0.83331895 -0.83335102 0.1382287 -0.83335102 0.0043081492
+		 -0.83335102 -0.054047406 -0.83335102 -0.086736143 -0.83335102 -0.10826656 -0.83335102
+		 -0.12410837 -0.83335102 -0.1367673 -0.83335102 -0.14757895 -0.83335102 -0.15735418
+		 -0.83335102 -0.16665983 -0.83335102 -0.17596549 -0.83335102 -0.18574074 -0.83335102
+		 -0.19655237 -0.83335102 -0.20921129 -0.83335102 -0.22505313 -0.83335102 -0.24658352
+		 -0.83335102 -0.27927229 -0.83335102 -0.33762783 -0.73192096 0.1238609 -0.83335102
+		 -0.47154838 -1.49996805 -0.83331895;
+createNode polySphProj -n "pasted__pasted__pasted__polySphProj2";
+	rename -uid "051821D1-43DF-BFC7-37D3-809E0B691744";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:399]";
+	setAttr ".ix" -type "matrix" 6.9243098218742967 0 0 0 0 0.60132874803740599 0 0 0 0 4.3429239258932437 0
+		 -30.4928654545133 40.874896044667139 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" -30.492864608764648 40.874897003173828 -7.152557373046875e-07 ;
+	setAttr ".r" 13.848621368408203;
+createNode polyTweakUV -n "pasted__pasted__pasted__polyTweakUV15";
+	rename -uid "49154037-469B-9796-67CA-E0B786390173";
+	setAttr ".uopa" yes;
+	setAttr -s 439 ".uvtk";
+	setAttr ".uvtk[0:249]" -type "float2" 0 -7.4505806e-09 -7.4505806e-09 -7.4505806e-09
+		 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09
+		 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -7.4505806e-09 0 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -1.4901161e-08
+		 -1.4901161e-08 -1.4901161e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08
+		 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 0 -1.4901161e-08 -7.4505806e-09 -1.4901161e-08 -1.4901161e-08 -1.4901161e-08
+		 -1.4901161e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08
+		 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 0 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08
+		 -7.4505806e-09 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08 -7.4505806e-09
+		 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 0 -2.9802322e-08 -7.4505806e-09 -2.9802322e-08
+		 -1.4901161e-08 -2.9802322e-08 -1.4901161e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08
+		 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08 -7.4505806e-09
+		 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08;
+	setAttr ".uvtk[250:438]" -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 0 -5.9604645e-08 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08
+		 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -5.9604645e-08
+		 -7.4505806e-09 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08 -1.4901161e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08 -2.9802322e-08 -5.9604645e-08
+		 -2.9802322e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08
+		 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 0 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07
+		 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07
+		 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 0 -1.1920929e-07 -7.4505806e-09 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -3.7252903e-09
+		 -1.1719548e-17 -7.4505806e-09 -1.1719548e-17 -1.4901161e-08 -1.1719548e-17 -1.4901161e-08
+		 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -2.9802322e-08
+		 -1.1719548e-17 -2.9802322e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08
+		 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08
+		 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -5.9604645e-08 -1.1719548e-17 -1.1920929e-07
+		 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -1.1920929e-07
+		 -1.1719548e-17 -1.1920929e-07 -1.1719548e-17 -3.7252903e-09 -1.1920929e-07 -7.4505806e-09
+		 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -1.4901161e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08 -1.1920929e-07 -2.9802322e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -5.9604645e-08
+		 -1.1920929e-07 -5.9604645e-08 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07 -1.1920929e-07
+		 -1.1920929e-07;
+createNode polySphere -n "pasted__pasted__pasted__polySphere1";
+	rename -uid "3C6D1DEA-4070-D909-289A-B5B8824E761D";
+createNode materialInfo -n "pasted__pasted__pasted__materialInfo15";
+	rename -uid "F273E8F0-414F-2B64-65D3-ADB5968EBF2D";
+createNode shadingEngine -n "pasted__pasted__pasted__set7";
+	rename -uid "7E410494-4862-017C-39DE-4C95B2A58C0B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__pasted__pasted__LeafMaterial";
+	rename -uid "A9A3EDE8-49E3-84AB-D49F-BC8DA1D0B2A2";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__pasted__pasted__file40";
+	rename -uid "573BAA54-4318-C440-0327-8B8FAF59C069";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__pasted__pasted__place2dTexture16";
+	rename -uid "B19D0FB4-423E-6236-3592-64B8144A4D8E";
+createNode bump2d -n "pasted__pasted__pasted__bump2d7";
+	rename -uid "F033D6A4-4B04-D921-930D-09B920D8F3FA";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__pasted__pasted__file41";
+	rename -uid "494D3A36-489C-2D20-7FCF-198AD800B70C";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "pasted__pasted__pasted__file42";
+	rename -uid "088BC4E7-45F6-3CED-B76B-C99BFEC33802";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__pasted__pasted__multiplyDivide7";
+	rename -uid "1919DDF7-4AC9-F767-4E68-C0A468E27F32";
+createNode file -n "pasted__pasted__pasted__file44";
+	rename -uid "2355A101-44B6-1E52-1CFB-07A4F9E67FDB";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__pasted__pasted__displacementShader7";
+	rename -uid "9312AFAC-495B-C9D8-5D16-EDB995686542";
+createNode file -n "pasted__pasted__pasted__file43";
+	rename -uid "A8497DDC-4FCC-2775-8A6D-05960796ECFD";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/leaf_lambert2_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode materialInfo -n "pasted__materialInfo14";
+	rename -uid "315E45A5-4BA6-3CE3-BEC5-549E9E09313B";
+createNode shadingEngine -n "pasted__set6";
+	rename -uid "4F8F1EB9-489D-0898-135F-84BE01A015F6";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "pasted__RaindropMaterial";
+	rename -uid "66ECACDE-4375-D832-DF54-7094520CC3D7";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode file -n "pasted__file35";
+	rename -uid "F4B52511-4CAF-4912-1BE0-CEAF5358B403";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode place2dTexture -n "pasted__place2dTexture15";
+	rename -uid "EC2248BE-45F6-8835-95A9-E2B878DBB751";
+createNode file -n "pasted__file36";
+	rename -uid "99F3170F-425C-5BBF-CB63-7E8842E466ED";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode bump2d -n "pasted__bump2d6";
+	rename -uid "F222BEEC-4EE7-1A46-5308-3FA325673702";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode file -n "pasted__file37";
+	rename -uid "E58A7A76-43B9-AD4E-7732-4F9A360AA955";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode multiplyDivide -n "pasted__multiplyDivide6";
+	rename -uid "CECF86E0-4207-2ED8-AB29-BAB7EB2BFF7E";
+createNode file -n "pasted__file39";
+	rename -uid "1274BAA7-461C-9B6D-AF44-55A0010BC80F";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode displacementShader -n "pasted__displacementShader6";
+	rename -uid "A4159509-4A6D-0FBC-8376-36A741A11DA3";
+createNode file -n "pasted__file38";
+	rename -uid "2A94879E-4A32-B6C9-0DE2-C6A83CF3FAE3";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode polySphere -n "polySphere2";
+	rename -uid "F35449B4-44BE-B287-9655-E999A57F36A1";
+createNode blinn -n "blinn9";
+	rename -uid "65EE7CE1-4649-2E69-1F88-958556E6DF5D";
+createNode shadingEngine -n "blinn9SG";
+	rename -uid "93EE03B3-4BFC-3518-8CD0-8C8DD205EC40";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo18";
+	rename -uid "D715ABAF-44A5-DE91-642E-FD938910022C";
+createNode place2dTexture -n "place2dTexture18";
+	rename -uid "798F6ECE-4ADD-BAF2-0DD2-34B1639DF5CD";
+createNode file -n "file50";
+	rename -uid "A220D2DB-4E77-5D72-BF0F-CA9DF4572AED";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Roughness.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "file51";
+	rename -uid "881628E2-4FDC-9116-138C-BC99A8C566C6";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Normal.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "file52";
+	rename -uid "3B70AF02-4542-EC6E-53B3-BE862A38F11C";
+	setAttr ".ail" yes;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Metallic.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "file53";
+	rename -uid "6B296838-44A2-EA45-C5AA-25A019262FCF";
+	setAttr ".ail" yes;
+	setAttr ".ao" -0.5;
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_Height.png";
+	setAttr ".cs" -type "string" "Raw";
+createNode file -n "file54";
+	rename -uid "E075AF47-40CB-24E4-B9EF-D5B283C96446";
+	setAttr ".ftn" -type "string" "C:/Users/monke/OneDrive/Desktop/Animations/Mushroom Animation project//sourceimages/Raindrop_blinn7_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode aiStandardSurface -n "aiStandardSurface3";
+	rename -uid "97A33F14-495A-0B0B-1D77-A8AD76977358";
+	setAttr ".emission" 1;
+	setAttr ".emission_color" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "set9";
+	rename -uid "7436A568-4CEC-F947-A186-BA825B7B0B68";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo19";
+	rename -uid "55A99131-47B7-76E0-8A29-9094F70955E0";
+createNode bump2d -n "bump2d9";
+	rename -uid "B87FAACA-4031-30E6-D2E2-56BC86C95672";
+	setAttr ".bi" 1;
+	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
+createNode displacementShader -n "displacementShader9";
+	rename -uid "C14071C7-4977-F711-5BD0-E39DC101F9B3";
+createNode multiplyDivide -n "multiplyDivide9";
+	rename -uid "53DB9648-4D9D-1AD9-DEDC-B2AFB4AD272E";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "FB8E24A2-4281-D4A3-08B3-CF825BC7B2C0";
+	rename -uid "6C14B098-47B9-DD45-DE07-048ACFBDF70B";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" 136.30951839307022 -12.499999503294573 ;
-	setAttr ".tgi[0].vh" -type "double2" 479.16664762629483 762.49996970097357 ;
+	setAttr ".tgi[0].vl" -type "double2" 137.49999453624113 -13.095237574880068 ;
+	setAttr ".tgi[0].vh" -type "double2" 480.35712376946577 761.90473162938804 ;
 	setAttr -s 59 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 408.76617431640625;
-	setAttr ".tgi[0].ni[0].y" 38.116611480712891;
+	setAttr ".tgi[0].ni[0].x" -292.85714721679688;
+	setAttr ".tgi[0].ni[0].y" 14.285714149475098;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 190;
-	setAttr ".tgi[0].ni[1].y" 420;
+	setAttr ".tgi[0].ni[1].x" 408.76617431640625;
+	setAttr ".tgi[0].ni[1].y" 38.116611480712891;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" 220.51416015625;
-	setAttr ".tgi[0].ni[2].y" -86.622726440429688;
+	setAttr ".tgi[0].ni[2].x" 410;
+	setAttr ".tgi[0].ni[2].y" -131.42857360839844;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" 190;
-	setAttr ".tgi[0].ni[3].y" 91.428573608398438;
-	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" -292.85714721679688;
-	setAttr ".tgi[0].ni[4].y" 14.285714149475098;
+	setAttr ".tgi[0].ni[3].x" 812.85711669921875;
+	setAttr ".tgi[0].ni[3].y" 45.714286804199219;
+	setAttr ".tgi[0].ni[3].nvs" 2387;
+	setAttr ".tgi[0].ni[4].x" 78.571426391601562;
+	setAttr ".tgi[0].ni[4].y" 291.42855834960938;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 1161.4285888671875;
-	setAttr ".tgi[0].ni[5].y" 155.71427917480469;
+	setAttr ".tgi[0].ni[5].x" 410;
+	setAttr ".tgi[0].ni[5].y" 591.4285888671875;
 	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" 748.5714111328125;
-	setAttr ".tgi[0].ni[6].y" 577.14288330078125;
-	setAttr ".tgi[0].ni[6].nvs" 2387;
-	setAttr ".tgi[0].ni[7].x" 812.85711669921875;
-	setAttr ".tgi[0].ni[7].y" 45.714286804199219;
-	setAttr ".tgi[0].ni[7].nvs" 2387;
-	setAttr ".tgi[0].ni[8].x" 812.85711669921875;
-	setAttr ".tgi[0].ni[8].y" 45.714286804199219;
-	setAttr ".tgi[0].ni[8].nvs" 2387;
-	setAttr ".tgi[0].ni[9].x" 14.285714149475098;
-	setAttr ".tgi[0].ni[9].y" -212.85714721679688;
+	setAttr ".tgi[0].ni[6].x" 220.51416015625;
+	setAttr ".tgi[0].ni[6].y" -86.622726440429688;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" 410;
+	setAttr ".tgi[0].ni[7].y" 44.285713195800781;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" 410;
+	setAttr ".tgi[0].ni[8].y" -131.42857360839844;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" 190;
+	setAttr ".tgi[0].ni[9].y" 595.71429443359375;
 	setAttr ".tgi[0].ni[9].nvs" 1923;
-	setAttr ".tgi[0].ni[10].x" 190;
-	setAttr ".tgi[0].ni[10].y" 812.85711669921875;
+	setAttr ".tgi[0].ni[10].x" 748.5714111328125;
+	setAttr ".tgi[0].ni[10].y" 752.85711669921875;
 	setAttr ".tgi[0].ni[10].nvs" 1923;
-	setAttr ".tgi[0].ni[11].x" 510;
-	setAttr ".tgi[0].ni[11].y" 772.85711669921875;
+	setAttr ".tgi[0].ni[11].x" 14.285714149475098;
+	setAttr ".tgi[0].ni[11].y" -212.85714721679688;
 	setAttr ".tgi[0].ni[11].nvs" 1923;
-	setAttr ".tgi[0].ni[12].x" 748.5714111328125;
-	setAttr ".tgi[0].ni[12].y" 752.85711669921875;
-	setAttr ".tgi[0].ni[12].nvs" 1923;
+	setAttr ".tgi[0].ni[12].x" 510;
+	setAttr ".tgi[0].ni[12].y" 597.14288330078125;
+	setAttr ".tgi[0].ni[12].nvs" 2387;
 	setAttr ".tgi[0].ni[13].x" -464.28570556640625;
 	setAttr ".tgi[0].ni[13].y" 565.71429443359375;
 	setAttr ".tgi[0].ni[13].nvs" 1923;
-	setAttr ".tgi[0].ni[14].x" 510;
-	setAttr ".tgi[0].ni[14].y" 597.14288330078125;
-	setAttr ".tgi[0].ni[14].nvs" 2387;
-	setAttr ".tgi[0].ni[15].x" 410;
-	setAttr ".tgi[0].ni[15].y" 591.4285888671875;
+	setAttr ".tgi[0].ni[14].x" -124.28571319580078;
+	setAttr ".tgi[0].ni[14].y" 338.57144165039062;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" 510;
+	setAttr ".tgi[0].ni[15].y" 772.85711669921875;
 	setAttr ".tgi[0].ni[15].nvs" 1923;
-	setAttr ".tgi[0].ni[16].x" 410;
-	setAttr ".tgi[0].ni[16].y" -131.42857360839844;
-	setAttr ".tgi[0].ni[16].nvs" 1923;
-	setAttr ".tgi[0].ni[17].x" 190;
-	setAttr ".tgi[0].ni[17].y" 595.71429443359375;
+	setAttr ".tgi[0].ni[16].x" 542.85711669921875;
+	setAttr ".tgi[0].ni[16].y" 597.14288330078125;
+	setAttr ".tgi[0].ni[16].nvs" 2387;
+	setAttr ".tgi[0].ni[17].x" 1161.4285888671875;
+	setAttr ".tgi[0].ni[17].y" 155.71427917480469;
 	setAttr ".tgi[0].ni[17].nvs" 1923;
-	setAttr ".tgi[0].ni[18].x" 410;
-	setAttr ".tgi[0].ni[18].y" -131.42857360839844;
+	setAttr ".tgi[0].ni[18].x" 190;
+	setAttr ".tgi[0].ni[18].y" 91.428573608398438;
 	setAttr ".tgi[0].ni[18].nvs" 1923;
-	setAttr ".tgi[0].ni[19].x" 812.85711669921875;
-	setAttr ".tgi[0].ni[19].y" 221.42857360839844;
+	setAttr ".tgi[0].ni[19].x" 190;
+	setAttr ".tgi[0].ni[19].y" 420;
 	setAttr ".tgi[0].ni[19].nvs" 1923;
-	setAttr ".tgi[0].ni[20].x" 410;
-	setAttr ".tgi[0].ni[20].y" 262.85714721679688;
-	setAttr ".tgi[0].ni[20].nvs" 1923;
-	setAttr ".tgi[0].ni[21].x" 78.571426391601562;
-	setAttr ".tgi[0].ni[21].y" 291.42855834960938;
+	setAttr ".tgi[0].ni[20].x" 812.85711669921875;
+	setAttr ".tgi[0].ni[20].y" 45.714286804199219;
+	setAttr ".tgi[0].ni[20].nvs" 2387;
+	setAttr ".tgi[0].ni[21].x" 190;
+	setAttr ".tgi[0].ni[21].y" 812.85711669921875;
 	setAttr ".tgi[0].ni[21].nvs" 1923;
-	setAttr ".tgi[0].ni[22].x" 190;
-	setAttr ".tgi[0].ni[22].y" 267.14285278320312;
+	setAttr ".tgi[0].ni[22].x" 812.85711669921875;
+	setAttr ".tgi[0].ni[22].y" 221.42857360839844;
 	setAttr ".tgi[0].ni[22].nvs" 1923;
-	setAttr ".tgi[0].ni[23].x" 190;
-	setAttr ".tgi[0].ni[23].y" 267.14285278320312;
+	setAttr ".tgi[0].ni[23].x" 410;
+	setAttr ".tgi[0].ni[23].y" 262.85714721679688;
 	setAttr ".tgi[0].ni[23].nvs" 1923;
-	setAttr ".tgi[0].ni[24].x" -124.28571319580078;
-	setAttr ".tgi[0].ni[24].y" 338.57144165039062;
-	setAttr ".tgi[0].ni[24].nvs" 1923;
-	setAttr ".tgi[0].ni[25].x" -157.14285278320312;
-	setAttr ".tgi[0].ni[25].y" 628.5714111328125;
+	setAttr ".tgi[0].ni[24].x" 748.5714111328125;
+	setAttr ".tgi[0].ni[24].y" 577.14288330078125;
+	setAttr ".tgi[0].ni[24].nvs" 2387;
+	setAttr ".tgi[0].ni[25].x" -292.85714721679688;
+	setAttr ".tgi[0].ni[25].y" 14.285714149475098;
 	setAttr ".tgi[0].ni[25].nvs" 1923;
-	setAttr ".tgi[0].ni[26].x" 410;
-	setAttr ".tgi[0].ni[26].y" -284.28570556640625;
+	setAttr ".tgi[0].ni[26].x" 1111.1019287109375;
+	setAttr ".tgi[0].ni[26].y" 667.94915771484375;
 	setAttr ".tgi[0].ni[26].nvs" 1923;
-	setAttr ".tgi[0].ni[27].x" -124.28571319580078;
-	setAttr ".tgi[0].ni[27].y" 628.5714111328125;
+	setAttr ".tgi[0].ni[27].x" 891.4285888671875;
+	setAttr ".tgi[0].ni[27].y" 707.14288330078125;
 	setAttr ".tgi[0].ni[27].nvs" 1923;
-	setAttr ".tgi[0].ni[28].x" 410;
-	setAttr ".tgi[0].ni[28].y" 87.142860412597656;
+	setAttr ".tgi[0].ni[28].x" 14.285714149475098;
+	setAttr ".tgi[0].ni[28].y" 77.142860412597656;
 	setAttr ".tgi[0].ni[28].nvs" 1923;
-	setAttr ".tgi[0].ni[29].x" 1111.1019287109375;
-	setAttr ".tgi[0].ni[29].y" 667.94915771484375;
+	setAttr ".tgi[0].ni[29].x" 410;
+	setAttr ".tgi[0].ni[29].y" -460;
 	setAttr ".tgi[0].ni[29].nvs" 1923;
-	setAttr ".tgi[0].ni[30].x" 858.5714111328125;
-	setAttr ".tgi[0].ni[30].y" 707.14288330078125;
+	setAttr ".tgi[0].ni[30].x" -124.28571319580078;
+	setAttr ".tgi[0].ni[30].y" 628.5714111328125;
 	setAttr ".tgi[0].ni[30].nvs" 1923;
-	setAttr ".tgi[0].ni[31].x" 648.5714111328125;
-	setAttr ".tgi[0].ni[31].y" -124.28571319580078;
+	setAttr ".tgi[0].ni[31].x" 858.5714111328125;
+	setAttr ".tgi[0].ni[31].y" 707.14288330078125;
 	setAttr ".tgi[0].ni[31].nvs" 1923;
-	setAttr ".tgi[0].ni[32].x" 14.285714149475098;
-	setAttr ".tgi[0].ni[32].y" 77.142860412597656;
+	setAttr ".tgi[0].ni[32].x" 648.5714111328125;
+	setAttr ".tgi[0].ni[32].y" -124.28571319580078;
 	setAttr ".tgi[0].ni[32].nvs" 1923;
-	setAttr ".tgi[0].ni[33].x" 34.285713195800781;
-	setAttr ".tgi[0].ni[33].y" -101.42857360839844;
+	setAttr ".tgi[0].ni[33].x" -272.85714721679688;
+	setAttr ".tgi[0].ni[33].y" -124.28571319580078;
 	setAttr ".tgi[0].ni[33].nvs" 1923;
-	setAttr ".tgi[0].ni[34].x" 410;
-	setAttr ".tgi[0].ni[34].y" -460;
+	setAttr ".tgi[0].ni[34].x" 1161.4285888671875;
+	setAttr ".tgi[0].ni[34].y" 155.71427917480469;
 	setAttr ".tgi[0].ni[34].nvs" 1923;
-	setAttr ".tgi[0].ni[35].x" 1161.4285888671875;
-	setAttr ".tgi[0].ni[35].y" 155.71427917480469;
+	setAttr ".tgi[0].ni[35].x" 190;
+	setAttr ".tgi[0].ni[35].y" 267.14285278320312;
 	setAttr ".tgi[0].ni[35].nvs" 1923;
-	setAttr ".tgi[0].ni[36].x" 190;
-	setAttr ".tgi[0].ni[36].y" 91.428573608398438;
+	setAttr ".tgi[0].ni[36].x" -157.14285278320312;
+	setAttr ".tgi[0].ni[36].y" 628.5714111328125;
 	setAttr ".tgi[0].ni[36].nvs" 1923;
-	setAttr ".tgi[0].ni[37].x" -272.85714721679688;
-	setAttr ".tgi[0].ni[37].y" -124.28571319580078;
+	setAttr ".tgi[0].ni[37].x" 410;
+	setAttr ".tgi[0].ni[37].y" -284.28570556640625;
 	setAttr ".tgi[0].ni[37].nvs" 1923;
-	setAttr ".tgi[0].ni[38].x" 410;
-	setAttr ".tgi[0].ni[38].y" 261.42855834960938;
+	setAttr ".tgi[0].ni[38].x" -157.14285278320312;
+	setAttr ".tgi[0].ni[38].y" 338.57144165039062;
 	setAttr ".tgi[0].ni[38].nvs" 1923;
-	setAttr ".tgi[0].ni[39].x" 891.4285888671875;
-	setAttr ".tgi[0].ni[39].y" 707.14288330078125;
+	setAttr ".tgi[0].ni[39].x" 410;
+	setAttr ".tgi[0].ni[39].y" 87.142860412597656;
 	setAttr ".tgi[0].ni[39].nvs" 1923;
-	setAttr ".tgi[0].ni[40].x" 410;
-	setAttr ".tgi[0].ni[40].y" -460;
+	setAttr ".tgi[0].ni[40].x" 34.285713195800781;
+	setAttr ".tgi[0].ni[40].y" -101.42857360839844;
 	setAttr ".tgi[0].ni[40].nvs" 1923;
-	setAttr ".tgi[0].ni[41].x" -292.85714721679688;
-	setAttr ".tgi[0].ni[41].y" 14.285714149475098;
+	setAttr ".tgi[0].ni[41].x" 14.285714149475098;
+	setAttr ".tgi[0].ni[41].y" 77.142860412597656;
 	setAttr ".tgi[0].ni[41].nvs" 1923;
 	setAttr ".tgi[0].ni[42].x" 190;
-	setAttr ".tgi[0].ni[42].y" 420;
+	setAttr ".tgi[0].ni[42].y" 91.428573608398438;
 	setAttr ".tgi[0].ni[42].nvs" 1923;
-	setAttr ".tgi[0].ni[43].x" 14.285714149475098;
-	setAttr ".tgi[0].ni[43].y" 77.142860412597656;
+	setAttr ".tgi[0].ni[43].x" 410;
+	setAttr ".tgi[0].ni[43].y" 415.71429443359375;
 	setAttr ".tgi[0].ni[43].nvs" 1923;
-	setAttr ".tgi[0].ni[44].x" 410;
-	setAttr ".tgi[0].ni[44].y" -284.28570556640625;
+	setAttr ".tgi[0].ni[44].x" -228.57142639160156;
+	setAttr ".tgi[0].ni[44].y" 518.5714111328125;
 	setAttr ".tgi[0].ni[44].nvs" 1923;
-	setAttr ".tgi[0].ni[45].x" 410;
-	setAttr ".tgi[0].ni[45].y" 778.5714111328125;
+	setAttr ".tgi[0].ni[45].x" 542.85711669921875;
+	setAttr ".tgi[0].ni[45].y" 772.85711669921875;
 	setAttr ".tgi[0].ni[45].nvs" 1923;
-	setAttr ".tgi[0].ni[46].x" -157.14285278320312;
-	setAttr ".tgi[0].ni[46].y" 338.57144165039062;
+	setAttr ".tgi[0].ni[46].x" 14.285714149475098;
+	setAttr ".tgi[0].ni[46].y" -212.85714721679688;
 	setAttr ".tgi[0].ni[46].nvs" 1923;
 	setAttr ".tgi[0].ni[47].x" 410;
-	setAttr ".tgi[0].ni[47].y" 44.285713195800781;
+	setAttr ".tgi[0].ni[47].y" 778.5714111328125;
 	setAttr ".tgi[0].ni[47].nvs" 1923;
-	setAttr ".tgi[0].ni[48].x" 542.85711669921875;
-	setAttr ".tgi[0].ni[48].y" 597.14288330078125;
-	setAttr ".tgi[0].ni[48].nvs" 2387;
-	setAttr ".tgi[0].ni[49].x" 812.85711669921875;
-	setAttr ".tgi[0].ni[49].y" 221.42857360839844;
+	setAttr ".tgi[0].ni[48].x" 190;
+	setAttr ".tgi[0].ni[48].y" 420;
+	setAttr ".tgi[0].ni[48].nvs" 1923;
+	setAttr ".tgi[0].ni[49].x" 410;
+	setAttr ".tgi[0].ni[49].y" -284.28570556640625;
 	setAttr ".tgi[0].ni[49].nvs" 1923;
-	setAttr ".tgi[0].ni[50].x" 190;
-	setAttr ".tgi[0].ni[50].y" 595.71429443359375;
+	setAttr ".tgi[0].ni[50].x" 410;
+	setAttr ".tgi[0].ni[50].y" 261.42855834960938;
 	setAttr ".tgi[0].ni[50].nvs" 1923;
-	setAttr ".tgi[0].ni[51].x" -228.57142639160156;
-	setAttr ".tgi[0].ni[51].y" 518.5714111328125;
+	setAttr ".tgi[0].ni[51].x" -431.42855834960938;
+	setAttr ".tgi[0].ni[51].y" 565.71429443359375;
 	setAttr ".tgi[0].ni[51].nvs" 1923;
-	setAttr ".tgi[0].ni[52].x" 410;
-	setAttr ".tgi[0].ni[52].y" 261.42855834960938;
+	setAttr ".tgi[0].ni[52].x" 190;
+	setAttr ".tgi[0].ni[52].y" 595.71429443359375;
 	setAttr ".tgi[0].ni[52].nvs" 1923;
-	setAttr ".tgi[0].ni[53].x" 542.85711669921875;
-	setAttr ".tgi[0].ni[53].y" 772.85711669921875;
+	setAttr ".tgi[0].ni[53].x" 190;
+	setAttr ".tgi[0].ni[53].y" 267.14285278320312;
 	setAttr ".tgi[0].ni[53].nvs" 1923;
-	setAttr ".tgi[0].ni[54].x" -431.42855834960938;
-	setAttr ".tgi[0].ni[54].y" 565.71429443359375;
+	setAttr ".tgi[0].ni[54].x" 78.571426391601562;
+	setAttr ".tgi[0].ni[54].y" 581.4285888671875;
 	setAttr ".tgi[0].ni[54].nvs" 1923;
 	setAttr ".tgi[0].ni[55].x" 410;
-	setAttr ".tgi[0].ni[55].y" 415.71429443359375;
+	setAttr ".tgi[0].ni[55].y" 261.42855834960938;
 	setAttr ".tgi[0].ni[55].nvs" 1923;
 	setAttr ".tgi[0].ni[56].x" 190;
 	setAttr ".tgi[0].ni[56].y" 812.85711669921875;
 	setAttr ".tgi[0].ni[56].nvs" 1923;
-	setAttr ".tgi[0].ni[57].x" 14.285714149475098;
-	setAttr ".tgi[0].ni[57].y" -212.85714721679688;
+	setAttr ".tgi[0].ni[57].x" 812.85711669921875;
+	setAttr ".tgi[0].ni[57].y" 221.42857360839844;
 	setAttr ".tgi[0].ni[57].nvs" 1923;
-	setAttr ".tgi[0].ni[58].x" 78.571426391601562;
-	setAttr ".tgi[0].ni[58].y" 581.4285888671875;
+	setAttr ".tgi[0].ni[58].x" 410;
+	setAttr ".tgi[0].ni[58].y" -460;
 	setAttr ".tgi[0].ni[58].nvs" 1923;
+createNode groupId -n "groupId4";
+	rename -uid "DFB7255F-4E0B-F7FF-0650-D6A2BAFA9AC6";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId13";
+	rename -uid "FB1EB0A5-4438-6699-251E-1FAF59BE84EC";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId11";
+	rename -uid "FBFEF94C-4B72-AD73-5A4E-4E8D243639D8";
+	setAttr ".ihi" 0;
 select -ne :time1;
 	setAttr ".o" -3;
 	setAttr ".unw" -3;
@@ -4810,18 +6672,19 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 21 ".st";
+	setAttr -s 32 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 32 ".s";
+	setAttr -s 53 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 37 ".u";
+	setAttr -s 67 ".u";
 select -ne :defaultRenderingList1;
 select -ne :lightList1;
+	setAttr -s 2 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 51 ".tx";
+	setAttr -s 101 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -4838,6 +6701,7 @@ select -ne :defaultRenderGlobals;
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
 select -ne :defaultLightSet;
+	setAttr -s 2 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -4862,25 +6726,25 @@ connectAttr "polyTweakUV4.uvtk[0]" "pConeShape1.uvst[0].uvtw";
 connectAttr "groupId2.id" "pConeShape1.ciog.cog[0].cgid";
 connectAttr "polyTweakUV1.out" "pasted__pCylinderShape1.i";
 connectAttr "polyTweakUV1.uvtk[0]" "pasted__pCylinderShape1.uvst[0].uvtw";
-connectAttr "groupParts3.og" "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.i"
+connectAttr "groupParts3.og" "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.i"
 		;
-connectAttr "groupId5.id" "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.iog.og[0].gid"
+connectAttr "groupId5.id" "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.iog.og[0].gid"
 		;
-connectAttr ":initialShadingGroup.mwc" "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.iog.og[0].gco"
+connectAttr ":initialShadingGroup.mwc" "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.iog.og[0].gco"
 		;
-connectAttr "polyTweakUV5.uvtk[0]" "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.uvst[0].uvtw"
+connectAttr "polyTweakUV5.uvtk[0]" "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.uvst[0].uvtw"
 		;
-connectAttr "groupId6.id" "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.ciog.cog[0].cgid"
+connectAttr "groupId6.id" "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.ciog.cog[0].cgid"
 		;
-connectAttr "groupParts4.og" "|group|pasted__pCone1|transform1|pasted__pConeShape1.i"
+connectAttr "groupParts4.og" "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.i"
 		;
-connectAttr "groupId7.id" "|group|pasted__pCone1|transform1|pasted__pConeShape1.iog.og[0].gid"
+connectAttr "groupId7.id" "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.iog.og[0].gid"
 		;
-connectAttr ":initialShadingGroup.mwc" "|group|pasted__pCone1|transform1|pasted__pConeShape1.iog.og[0].gco"
+connectAttr ":initialShadingGroup.mwc" "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.iog.og[0].gco"
 		;
-connectAttr "polyTweakUV6.uvtk[0]" "|group|pasted__pCone1|transform1|pasted__pConeShape1.uvst[0].uvtw"
+connectAttr "polyTweakUV6.uvtk[0]" "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.uvst[0].uvtw"
 		;
-connectAttr "groupId8.id" "|group|pasted__pCone1|transform1|pasted__pConeShape1.ciog.cog[0].cgid"
+connectAttr "groupId8.id" "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.ciog.cog[0].cgid"
 		;
 connectAttr "polyTweakUV7.out" "pPlaneShape1.i";
 connectAttr "polyTweakUV7.uvtk[0]" "pPlaneShape1.uvst[0].uvtw";
@@ -4904,7 +6768,7 @@ connectAttr "polyTweakUV2.uvtk[0]" "|Mushroom|pasted__pCone1|transform6|pasted__
 		;
 connectAttr "groupId11.id" "|Mushroom|pasted__pCone1|transform6|pasted__pConeShape1.ciog.cog[0].cgid"
 		;
-connectAttr "polyCut5.out" "TreeStumpShape.i";
+connectAttr "deleteComponent4.og" "TreeStumpShape.i";
 connectAttr "polyTweakUV13.uvtk[0]" "TreeStumpShape.uvst[0].uvtw";
 connectAttr "polyTweakUV11.out" "Mushroom1Shape.i";
 connectAttr "polyTweakUV11.uvtk[0]" "Mushroom1Shape.uvst[0].uvtw";
@@ -4917,6 +6781,21 @@ connectAttr "polyTweakUV14.uvtk[0]" "pCylinderShape3.uvst[0].uvtw";
 connectAttr "polyTweakUV17.out" "pSphereShape1.i";
 connectAttr "polyTweakUV17.uvtk[0]" "pSphereShape1.uvst[0].uvtw";
 connectAttr "polyCylinder5.out" "pCylinderShape4.i";
+connectAttr "pasted__pasted__polyTweakUV23.out" "pasted__pasted__pSphereShape1.i"
+		;
+connectAttr "pasted__pasted__polyTweakUV23.uvtk[0]" "pasted__pasted__pSphereShape1.uvst[0].uvtw"
+		;
+connectAttr "pasted__pasted__polyCylinder5.out" "pasted__pasted__pCylinderShape4.i"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV17.out" "|group6|pasted__group4|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.i"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV17.uvtk[0]" "|group6|pasted__group4|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.uvst[0].uvtw"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV20.out" "|group6|pasted__group5|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.i"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV20.uvtk[0]" "|group6|pasted__group5|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.uvst[0].uvtw"
+		;
+connectAttr "polySphere2.out" "pSphereShape2.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
@@ -4938,6 +6817,17 @@ relationship "link" ":lightLinker1" "set6.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "set7.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "set8.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "blinn8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__set7.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__set8.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__pasted__set7.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__pasted__set8.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__pasted__set9.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__pasted__set10.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__pasted__pasted__set7.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__pasted__pasted__set8.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "pasted__set6.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "blinn9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "set9.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
@@ -4959,6 +6849,17 @@ relationship "shadowLink" ":lightLinker1" "set6.message" ":defaultLightSet.messa
 relationship "shadowLink" ":lightLinker1" "set7.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "set8.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "blinn8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__set7.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__set8.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__pasted__set7.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__pasted__set8.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__pasted__set9.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__pasted__set10.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__pasted__pasted__set7.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__pasted__pasted__set8.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "pasted__set6.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "blinn9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "set9.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "polyCylinder2.out" "polyExtrudeFace1.ip";
@@ -4992,43 +6893,43 @@ connectAttr "pConeShape1.wm" "polyExtrudeFace10.mp";
 connectAttr "polyExtrudeFace9.out" "polyTweak9.ip";
 connectAttr "pasted__polyCylinder1.out" "pasted__deleteComponent1.ig";
 connectAttr "pasted__polyTweak9.out" "pasted__polyExtrudeFace10.ip";
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace10.mp"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace10.mp"
 		;
 connectAttr "pasted__polyExtrudeFace9.out" "pasted__polyTweak9.ip";
 connectAttr "pasted__polyTweak8.out" "pasted__polyExtrudeFace9.ip";
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace9.mp"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace9.mp"
 		;
 connectAttr "pasted__polyExtrudeFace8.out" "pasted__polyTweak8.ip";
 connectAttr "pasted__polyTweak7.out" "pasted__polyExtrudeFace8.ip";
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace8.mp"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace8.mp"
 		;
 connectAttr "pasted__polyExtrudeFace7.out" "pasted__polyTweak7.ip";
 connectAttr "pasted__polyTweak6.out" "pasted__polyExtrudeFace7.ip";
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace7.mp"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace7.mp"
 		;
 connectAttr "pasted__polyExtrudeFace6.out" "pasted__polyTweak6.ip";
 connectAttr "pasted__polyTweak5.out" "pasted__polyExtrudeFace6.ip";
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace6.mp"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.wm" "pasted__polyExtrudeFace6.mp"
 		;
 connectAttr "pasted__polyCone1.out" "pasted__polyTweak5.ip";
 connectAttr "pasted__polyTweak4.out" "pasted__polyExtrudeFace5.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace5.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace5.mp"
 		;
 connectAttr "pasted__polyExtrudeFace4.out" "pasted__polyTweak4.ip";
 connectAttr "pasted__polyTweak3.out" "pasted__polyExtrudeFace4.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace4.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace4.mp"
 		;
 connectAttr "pasted__polyExtrudeFace3.out" "pasted__polyTweak3.ip";
 connectAttr "pasted__polyTweak2.out" "pasted__polyExtrudeFace3.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace3.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace3.mp"
 		;
 connectAttr "pasted__polyExtrudeFace2.out" "pasted__polyTweak2.ip";
 connectAttr "pasted__polyTweak1.out" "pasted__polyExtrudeFace2.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace2.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace2.mp"
 		;
 connectAttr "pasted__polyExtrudeFace1.out" "pasted__polyTweak1.ip";
 connectAttr "pasted__polyCylinder2.out" "pasted__polyExtrudeFace1.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace1.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace1.mp"
 		;
 connectAttr "pasted__polyTweak13.out" "pasted__polyExtrudeFace15.ip";
 connectAttr "|Mushroom|pasted__pCylinder2|transform5|pasted__pCylinderShape2.wm" "pasted__polyExtrudeFace15.mp"
@@ -5089,7 +6990,7 @@ connectAttr "polyTweak14.out" "polyCylProj1.ip";
 connectAttr "pCylinderShape2.wm" "polyCylProj1.mp";
 connectAttr "polyExtrudeFace5.out" "polyTweak14.ip";
 connectAttr "polyTweak15.out" "polyCylProj2.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyCylProj2.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyCylProj2.mp"
 		;
 connectAttr "pasted__polyExtrudeFace5.out" "polyTweak15.ip";
 connectAttr "polyTweak16.out" "polyCylProj3.ip";
@@ -5097,7 +6998,7 @@ connectAttr "|Mushroom|pasted__pCylinder2|transform5|pasted__pCylinderShape2.wm"
 		;
 connectAttr "pasted__polyExtrudeFace15.out" "polyTweak16.ip";
 connectAttr "polyCylProj2.out" "polyCylProj4.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyCylProj4.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyCylProj4.mp"
 		;
 connectAttr "polyCylProj1.out" "polyCylProj5.ip";
 connectAttr "pCylinderShape2.wm" "polyCylProj5.mp";
@@ -5138,10 +7039,10 @@ connectAttr "pConeShape1.wm" "polyAutoProj5.mp";
 connectAttr "transformGeometry9.og" "polyAutoProj6.ip";
 connectAttr "pCylinderShape2.wm" "polyAutoProj6.mp";
 connectAttr "transformGeometry5.og" "polyAutoProj7.ip";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyAutoProj7.mp"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyAutoProj7.mp"
 		;
 connectAttr "transformGeometry6.og" "polyAutoProj8.ip";
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.wm" "polyAutoProj8.mp"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.wm" "polyAutoProj8.mp"
 		;
 connectAttr "transformGeometry10.og" "polyAutoProj9.ip";
 connectAttr "TreeStumpShape.wm" "polyAutoProj9.mp";
@@ -5156,15 +7057,15 @@ connectAttr "polyAutoProj6.out" "polyTweakUV9.ip";
 connectAttr "polyAutoProj9.out" "polyTweakUV10.ip";
 connectAttr "pConeShape1.o" "polyUnite1.ip[0]";
 connectAttr "pCylinderShape2.o" "polyUnite1.ip[1]";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.o" "polyUnite1.ip[2]"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.o" "polyUnite1.ip[2]"
 		;
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.o" "polyUnite1.ip[3]"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.o" "polyUnite1.ip[3]"
 		;
 connectAttr "pConeShape1.wm" "polyUnite1.im[0]";
 connectAttr "pCylinderShape2.wm" "polyUnite1.im[1]";
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyUnite1.im[2]"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.wm" "polyUnite1.im[2]"
 		;
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.wm" "polyUnite1.im[3]"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.wm" "polyUnite1.im[3]"
 		;
 connectAttr "polyTweakUV4.out" "groupParts1.ig";
 connectAttr "groupId1.id" "groupParts1.gi";
@@ -6269,6 +8170,7 @@ connectAttr "multiplyDivide6.o" "RaindropMaterial.base_color";
 connectAttr "RaindropMaterial.out" "set6.ss";
 connectAttr "displacementShader6.d" "set6.ds";
 connectAttr "pConeShape2.iog" "set6.dsm" -na;
+connectAttr "pSphereShape2.iog" "set6.dsm" -na;
 connectAttr "set6.msg" "materialInfo14.sg";
 connectAttr "RaindropMaterial.msg" "materialInfo14.m";
 connectAttr "RaindropMaterial.msg" "materialInfo14.t" -na;
@@ -6524,123 +8426,1627 @@ connectAttr "file49.oc" "multiplyDivide8.i1";
 connectAttr "blinn8.oc" "blinn8SG.ss";
 connectAttr "blinn8SG.msg" "materialInfo17.sg";
 connectAttr "blinn8.msg" "materialInfo17.m";
-connectAttr "file25.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "polyTweak29.out" "polyCut6.ip";
+connectAttr "TreeStumpShape.wm" "polyCut6.mp";
+connectAttr "polyCut5.out" "polyTweak29.ip";
+connectAttr "polyCut6.out" "deleteComponent1.ig";
+connectAttr "deleteComponent1.og" "deleteComponent2.ig";
+connectAttr "deleteComponent2.og" "deleteComponent3.ig";
+connectAttr "deleteComponent3.og" "deleteComponent4.ig";
+connectAttr "pasted__set7.msg" "pasted__materialInfo15.sg";
+connectAttr "pasted__LeafMaterial.msg" "pasted__materialInfo15.m";
+connectAttr "pasted__LeafMaterial.msg" "pasted__materialInfo15.t" -na;
+connectAttr "pasted__LeafMaterial.out" "pasted__set7.ss";
+connectAttr "pasted__displacementShader7.d" "pasted__set7.ds";
+connectAttr "pasted__file40.oa" "pasted__LeafMaterial.specular_roughness";
+connectAttr "pasted__bump2d7.o" "pasted__LeafMaterial.n";
+connectAttr "pasted__file42.oa" "pasted__LeafMaterial.metalness";
+connectAttr "pasted__multiplyDivide7.o" "pasted__LeafMaterial.base_color";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file40.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file40.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file40.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file40.ws";
+connectAttr "pasted__place2dTexture16.o" "pasted__file40.uv";
+connectAttr "pasted__place2dTexture16.ofs" "pasted__file40.fs";
+connectAttr "pasted__place2dTexture16.c" "pasted__file40.c";
+connectAttr "pasted__place2dTexture16.tf" "pasted__file40.tf";
+connectAttr "pasted__place2dTexture16.rf" "pasted__file40.rf";
+connectAttr "pasted__place2dTexture16.mu" "pasted__file40.mu";
+connectAttr "pasted__place2dTexture16.mv" "pasted__file40.mv";
+connectAttr "pasted__place2dTexture16.s" "pasted__file40.s";
+connectAttr "pasted__place2dTexture16.wu" "pasted__file40.wu";
+connectAttr "pasted__place2dTexture16.wv" "pasted__file40.wv";
+connectAttr "pasted__place2dTexture16.re" "pasted__file40.re";
+connectAttr "pasted__place2dTexture16.of" "pasted__file40.of";
+connectAttr "pasted__place2dTexture16.r" "pasted__file40.ro";
+connectAttr "pasted__place2dTexture16.n" "pasted__file40.n";
+connectAttr "pasted__place2dTexture16.vt1" "pasted__file40.vt1";
+connectAttr "pasted__place2dTexture16.vt2" "pasted__file40.vt2";
+connectAttr "pasted__place2dTexture16.vt3" "pasted__file40.vt3";
+connectAttr "pasted__place2dTexture16.vc1" "pasted__file40.vc1";
+connectAttr "pasted__file41.oa" "pasted__bump2d7.bv";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file41.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file41.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file41.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file41.ws";
+connectAttr "pasted__place2dTexture16.o" "pasted__file41.uv";
+connectAttr "pasted__place2dTexture16.ofs" "pasted__file41.fs";
+connectAttr "pasted__place2dTexture16.c" "pasted__file41.c";
+connectAttr "pasted__place2dTexture16.tf" "pasted__file41.tf";
+connectAttr "pasted__place2dTexture16.rf" "pasted__file41.rf";
+connectAttr "pasted__place2dTexture16.mu" "pasted__file41.mu";
+connectAttr "pasted__place2dTexture16.mv" "pasted__file41.mv";
+connectAttr "pasted__place2dTexture16.s" "pasted__file41.s";
+connectAttr "pasted__place2dTexture16.wu" "pasted__file41.wu";
+connectAttr "pasted__place2dTexture16.wv" "pasted__file41.wv";
+connectAttr "pasted__place2dTexture16.re" "pasted__file41.re";
+connectAttr "pasted__place2dTexture16.of" "pasted__file41.of";
+connectAttr "pasted__place2dTexture16.r" "pasted__file41.ro";
+connectAttr "pasted__place2dTexture16.n" "pasted__file41.n";
+connectAttr "pasted__place2dTexture16.vt1" "pasted__file41.vt1";
+connectAttr "pasted__place2dTexture16.vt2" "pasted__file41.vt2";
+connectAttr "pasted__place2dTexture16.vt3" "pasted__file41.vt3";
+connectAttr "pasted__place2dTexture16.vc1" "pasted__file41.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file42.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file42.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file42.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file42.ws";
+connectAttr "pasted__place2dTexture16.o" "pasted__file42.uv";
+connectAttr "pasted__place2dTexture16.ofs" "pasted__file42.fs";
+connectAttr "pasted__place2dTexture16.c" "pasted__file42.c";
+connectAttr "pasted__place2dTexture16.tf" "pasted__file42.tf";
+connectAttr "pasted__place2dTexture16.rf" "pasted__file42.rf";
+connectAttr "pasted__place2dTexture16.mu" "pasted__file42.mu";
+connectAttr "pasted__place2dTexture16.mv" "pasted__file42.mv";
+connectAttr "pasted__place2dTexture16.s" "pasted__file42.s";
+connectAttr "pasted__place2dTexture16.wu" "pasted__file42.wu";
+connectAttr "pasted__place2dTexture16.wv" "pasted__file42.wv";
+connectAttr "pasted__place2dTexture16.re" "pasted__file42.re";
+connectAttr "pasted__place2dTexture16.of" "pasted__file42.of";
+connectAttr "pasted__place2dTexture16.r" "pasted__file42.ro";
+connectAttr "pasted__place2dTexture16.n" "pasted__file42.n";
+connectAttr "pasted__place2dTexture16.vt1" "pasted__file42.vt1";
+connectAttr "pasted__place2dTexture16.vt2" "pasted__file42.vt2";
+connectAttr "pasted__place2dTexture16.vt3" "pasted__file42.vt3";
+connectAttr "pasted__place2dTexture16.vc1" "pasted__file42.vc1";
+connectAttr "pasted__file44.oc" "pasted__multiplyDivide7.i1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file44.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file44.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file44.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file44.ws";
+connectAttr "pasted__place2dTexture16.o" "pasted__file44.uv";
+connectAttr "pasted__place2dTexture16.ofs" "pasted__file44.fs";
+connectAttr "pasted__place2dTexture16.c" "pasted__file44.c";
+connectAttr "pasted__place2dTexture16.tf" "pasted__file44.tf";
+connectAttr "pasted__place2dTexture16.rf" "pasted__file44.rf";
+connectAttr "pasted__place2dTexture16.mu" "pasted__file44.mu";
+connectAttr "pasted__place2dTexture16.mv" "pasted__file44.mv";
+connectAttr "pasted__place2dTexture16.s" "pasted__file44.s";
+connectAttr "pasted__place2dTexture16.wu" "pasted__file44.wu";
+connectAttr "pasted__place2dTexture16.wv" "pasted__file44.wv";
+connectAttr "pasted__place2dTexture16.re" "pasted__file44.re";
+connectAttr "pasted__place2dTexture16.of" "pasted__file44.of";
+connectAttr "pasted__place2dTexture16.r" "pasted__file44.ro";
+connectAttr "pasted__place2dTexture16.n" "pasted__file44.n";
+connectAttr "pasted__place2dTexture16.vt1" "pasted__file44.vt1";
+connectAttr "pasted__place2dTexture16.vt2" "pasted__file44.vt2";
+connectAttr "pasted__place2dTexture16.vt3" "pasted__file44.vt3";
+connectAttr "pasted__place2dTexture16.vc1" "pasted__file44.vc1";
+connectAttr "pasted__file43.oa" "pasted__displacementShader7.d";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file43.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file43.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file43.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file43.ws";
+connectAttr "pasted__place2dTexture16.o" "pasted__file43.uv";
+connectAttr "pasted__place2dTexture16.ofs" "pasted__file43.fs";
+connectAttr "pasted__place2dTexture16.c" "pasted__file43.c";
+connectAttr "pasted__place2dTexture16.tf" "pasted__file43.tf";
+connectAttr "pasted__place2dTexture16.rf" "pasted__file43.rf";
+connectAttr "pasted__place2dTexture16.mu" "pasted__file43.mu";
+connectAttr "pasted__place2dTexture16.mv" "pasted__file43.mv";
+connectAttr "pasted__place2dTexture16.s" "pasted__file43.s";
+connectAttr "pasted__place2dTexture16.wu" "pasted__file43.wu";
+connectAttr "pasted__place2dTexture16.wv" "pasted__file43.wv";
+connectAttr "pasted__place2dTexture16.re" "pasted__file43.re";
+connectAttr "pasted__place2dTexture16.of" "pasted__file43.of";
+connectAttr "pasted__place2dTexture16.r" "pasted__file43.ro";
+connectAttr "pasted__place2dTexture16.n" "pasted__file43.n";
+connectAttr "pasted__place2dTexture16.vt1" "pasted__file43.vt1";
+connectAttr "pasted__place2dTexture16.vt2" "pasted__file43.vt2";
+connectAttr "pasted__place2dTexture16.vt3" "pasted__file43.vt3";
+connectAttr "pasted__place2dTexture16.vc1" "pasted__file43.vc1";
+connectAttr "pasted__set8.msg" "pasted__materialInfo16.sg";
+connectAttr "pasted__aiStandardSurface2.msg" "pasted__materialInfo16.m";
+connectAttr "pasted__aiStandardSurface2.msg" "pasted__materialInfo16.t" -na;
+connectAttr "pasted__aiStandardSurface2.out" "pasted__set8.ss";
+connectAttr "pasted__displacementShader8.d" "pasted__set8.ds";
+connectAttr "pasted__file45.oa" "pasted__aiStandardSurface2.specular_roughness";
+connectAttr "pasted__bump2d8.o" "pasted__aiStandardSurface2.n";
+connectAttr "pasted__file47.oa" "pasted__aiStandardSurface2.metalness";
+connectAttr "pasted__multiplyDivide8.o" "pasted__aiStandardSurface2.base_color";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file45.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file45.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file45.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file45.ws";
+connectAttr "pasted__place2dTexture17.o" "pasted__file45.uv";
+connectAttr "pasted__place2dTexture17.ofs" "pasted__file45.fs";
+connectAttr "pasted__place2dTexture17.c" "pasted__file45.c";
+connectAttr "pasted__place2dTexture17.tf" "pasted__file45.tf";
+connectAttr "pasted__place2dTexture17.rf" "pasted__file45.rf";
+connectAttr "pasted__place2dTexture17.mu" "pasted__file45.mu";
+connectAttr "pasted__place2dTexture17.mv" "pasted__file45.mv";
+connectAttr "pasted__place2dTexture17.s" "pasted__file45.s";
+connectAttr "pasted__place2dTexture17.wu" "pasted__file45.wu";
+connectAttr "pasted__place2dTexture17.wv" "pasted__file45.wv";
+connectAttr "pasted__place2dTexture17.re" "pasted__file45.re";
+connectAttr "pasted__place2dTexture17.of" "pasted__file45.of";
+connectAttr "pasted__place2dTexture17.r" "pasted__file45.ro";
+connectAttr "pasted__place2dTexture17.n" "pasted__file45.n";
+connectAttr "pasted__place2dTexture17.vt1" "pasted__file45.vt1";
+connectAttr "pasted__place2dTexture17.vt2" "pasted__file45.vt2";
+connectAttr "pasted__place2dTexture17.vt3" "pasted__file45.vt3";
+connectAttr "pasted__place2dTexture17.vc1" "pasted__file45.vc1";
+connectAttr "pasted__file46.oa" "pasted__bump2d8.bv";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file46.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file46.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file46.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file46.ws";
+connectAttr "pasted__place2dTexture17.o" "pasted__file46.uv";
+connectAttr "pasted__place2dTexture17.ofs" "pasted__file46.fs";
+connectAttr "pasted__place2dTexture17.c" "pasted__file46.c";
+connectAttr "pasted__place2dTexture17.tf" "pasted__file46.tf";
+connectAttr "pasted__place2dTexture17.rf" "pasted__file46.rf";
+connectAttr "pasted__place2dTexture17.mu" "pasted__file46.mu";
+connectAttr "pasted__place2dTexture17.mv" "pasted__file46.mv";
+connectAttr "pasted__place2dTexture17.s" "pasted__file46.s";
+connectAttr "pasted__place2dTexture17.wu" "pasted__file46.wu";
+connectAttr "pasted__place2dTexture17.wv" "pasted__file46.wv";
+connectAttr "pasted__place2dTexture17.re" "pasted__file46.re";
+connectAttr "pasted__place2dTexture17.of" "pasted__file46.of";
+connectAttr "pasted__place2dTexture17.r" "pasted__file46.ro";
+connectAttr "pasted__place2dTexture17.n" "pasted__file46.n";
+connectAttr "pasted__place2dTexture17.vt1" "pasted__file46.vt1";
+connectAttr "pasted__place2dTexture17.vt2" "pasted__file46.vt2";
+connectAttr "pasted__place2dTexture17.vt3" "pasted__file46.vt3";
+connectAttr "pasted__place2dTexture17.vc1" "pasted__file46.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file47.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file47.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file47.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file47.ws";
+connectAttr "pasted__place2dTexture17.o" "pasted__file47.uv";
+connectAttr "pasted__place2dTexture17.ofs" "pasted__file47.fs";
+connectAttr "pasted__place2dTexture17.c" "pasted__file47.c";
+connectAttr "pasted__place2dTexture17.tf" "pasted__file47.tf";
+connectAttr "pasted__place2dTexture17.rf" "pasted__file47.rf";
+connectAttr "pasted__place2dTexture17.mu" "pasted__file47.mu";
+connectAttr "pasted__place2dTexture17.mv" "pasted__file47.mv";
+connectAttr "pasted__place2dTexture17.s" "pasted__file47.s";
+connectAttr "pasted__place2dTexture17.wu" "pasted__file47.wu";
+connectAttr "pasted__place2dTexture17.wv" "pasted__file47.wv";
+connectAttr "pasted__place2dTexture17.re" "pasted__file47.re";
+connectAttr "pasted__place2dTexture17.of" "pasted__file47.of";
+connectAttr "pasted__place2dTexture17.r" "pasted__file47.ro";
+connectAttr "pasted__place2dTexture17.n" "pasted__file47.n";
+connectAttr "pasted__place2dTexture17.vt1" "pasted__file47.vt1";
+connectAttr "pasted__place2dTexture17.vt2" "pasted__file47.vt2";
+connectAttr "pasted__place2dTexture17.vt3" "pasted__file47.vt3";
+connectAttr "pasted__place2dTexture17.vc1" "pasted__file47.vc1";
+connectAttr "pasted__file49.oc" "pasted__multiplyDivide8.i1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file49.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file49.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file49.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file49.ws";
+connectAttr "pasted__place2dTexture17.o" "pasted__file49.uv";
+connectAttr "pasted__place2dTexture17.ofs" "pasted__file49.fs";
+connectAttr "pasted__place2dTexture17.c" "pasted__file49.c";
+connectAttr "pasted__place2dTexture17.tf" "pasted__file49.tf";
+connectAttr "pasted__place2dTexture17.rf" "pasted__file49.rf";
+connectAttr "pasted__place2dTexture17.mu" "pasted__file49.mu";
+connectAttr "pasted__place2dTexture17.mv" "pasted__file49.mv";
+connectAttr "pasted__place2dTexture17.s" "pasted__file49.s";
+connectAttr "pasted__place2dTexture17.wu" "pasted__file49.wu";
+connectAttr "pasted__place2dTexture17.wv" "pasted__file49.wv";
+connectAttr "pasted__place2dTexture17.re" "pasted__file49.re";
+connectAttr "pasted__place2dTexture17.of" "pasted__file49.of";
+connectAttr "pasted__place2dTexture17.r" "pasted__file49.ro";
+connectAttr "pasted__place2dTexture17.n" "pasted__file49.n";
+connectAttr "pasted__place2dTexture17.vt1" "pasted__file49.vt1";
+connectAttr "pasted__place2dTexture17.vt2" "pasted__file49.vt2";
+connectAttr "pasted__place2dTexture17.vt3" "pasted__file49.vt3";
+connectAttr "pasted__place2dTexture17.vc1" "pasted__file49.vc1";
+connectAttr "pasted__file48.oa" "pasted__displacementShader8.d";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file48.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file48.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file48.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file48.ws";
+connectAttr "pasted__place2dTexture17.o" "pasted__file48.uv";
+connectAttr "pasted__place2dTexture17.ofs" "pasted__file48.fs";
+connectAttr "pasted__place2dTexture17.c" "pasted__file48.c";
+connectAttr "pasted__place2dTexture17.tf" "pasted__file48.tf";
+connectAttr "pasted__place2dTexture17.rf" "pasted__file48.rf";
+connectAttr "pasted__place2dTexture17.mu" "pasted__file48.mu";
+connectAttr "pasted__place2dTexture17.mv" "pasted__file48.mv";
+connectAttr "pasted__place2dTexture17.s" "pasted__file48.s";
+connectAttr "pasted__place2dTexture17.wu" "pasted__file48.wu";
+connectAttr "pasted__place2dTexture17.wv" "pasted__file48.wv";
+connectAttr "pasted__place2dTexture17.re" "pasted__file48.re";
+connectAttr "pasted__place2dTexture17.of" "pasted__file48.of";
+connectAttr "pasted__place2dTexture17.r" "pasted__file48.ro";
+connectAttr "pasted__place2dTexture17.n" "pasted__file48.n";
+connectAttr "pasted__place2dTexture17.vt1" "pasted__file48.vt1";
+connectAttr "pasted__place2dTexture17.vt2" "pasted__file48.vt2";
+connectAttr "pasted__place2dTexture17.vt3" "pasted__file48.vt3";
+connectAttr "pasted__place2dTexture17.vc1" "pasted__file48.vc1";
+connectAttr "pasted__pasted__set7.msg" "pasted__pasted__materialInfo15.sg";
+connectAttr "pasted__pasted__LeafMaterial.msg" "pasted__pasted__materialInfo15.m"
 		;
-connectAttr "bump2d7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "pasted__pasted__LeafMaterial.msg" "pasted__pasted__materialInfo15.t"
+		 -na;
+connectAttr "pasted__pasted__LeafMaterial.out" "pasted__pasted__set7.ss";
+connectAttr "pasted__pasted__displacementShader7.d" "pasted__pasted__set7.ds";
+connectAttr "pasted__pasted__file40.oa" "pasted__pasted__LeafMaterial.specular_roughness"
 		;
-connectAttr "TreeTrunk.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "pasted__pasted__bump2d7.o" "pasted__pasted__LeafMaterial.n";
+connectAttr "pasted__pasted__file42.oa" "pasted__pasted__LeafMaterial.metalness"
 		;
-connectAttr "multiplyDivide8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "pasted__pasted__multiplyDivide7.o" "pasted__pasted__LeafMaterial.base_color"
 		;
-connectAttr "place2dTexture12.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file40.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file40.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file40.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file40.ws";
+connectAttr "pasted__pasted__place2dTexture16.o" "pasted__pasted__file40.uv";
+connectAttr "pasted__pasted__place2dTexture16.ofs" "pasted__pasted__file40.fs";
+connectAttr "pasted__pasted__place2dTexture16.c" "pasted__pasted__file40.c";
+connectAttr "pasted__pasted__place2dTexture16.tf" "pasted__pasted__file40.tf";
+connectAttr "pasted__pasted__place2dTexture16.rf" "pasted__pasted__file40.rf";
+connectAttr "pasted__pasted__place2dTexture16.mu" "pasted__pasted__file40.mu";
+connectAttr "pasted__pasted__place2dTexture16.mv" "pasted__pasted__file40.mv";
+connectAttr "pasted__pasted__place2dTexture16.s" "pasted__pasted__file40.s";
+connectAttr "pasted__pasted__place2dTexture16.wu" "pasted__pasted__file40.wu";
+connectAttr "pasted__pasted__place2dTexture16.wv" "pasted__pasted__file40.wv";
+connectAttr "pasted__pasted__place2dTexture16.re" "pasted__pasted__file40.re";
+connectAttr "pasted__pasted__place2dTexture16.of" "pasted__pasted__file40.of";
+connectAttr "pasted__pasted__place2dTexture16.r" "pasted__pasted__file40.ro";
+connectAttr "pasted__pasted__place2dTexture16.n" "pasted__pasted__file40.n";
+connectAttr "pasted__pasted__place2dTexture16.vt1" "pasted__pasted__file40.vt1";
+connectAttr "pasted__pasted__place2dTexture16.vt2" "pasted__pasted__file40.vt2";
+connectAttr "pasted__pasted__place2dTexture16.vt3" "pasted__pasted__file40.vt3";
+connectAttr "pasted__pasted__place2dTexture16.vc1" "pasted__pasted__file40.vc1";
+connectAttr "pasted__pasted__file41.oa" "pasted__pasted__bump2d7.bv";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file41.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file41.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file41.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file41.ws";
+connectAttr "pasted__pasted__place2dTexture16.o" "pasted__pasted__file41.uv";
+connectAttr "pasted__pasted__place2dTexture16.ofs" "pasted__pasted__file41.fs";
+connectAttr "pasted__pasted__place2dTexture16.c" "pasted__pasted__file41.c";
+connectAttr "pasted__pasted__place2dTexture16.tf" "pasted__pasted__file41.tf";
+connectAttr "pasted__pasted__place2dTexture16.rf" "pasted__pasted__file41.rf";
+connectAttr "pasted__pasted__place2dTexture16.mu" "pasted__pasted__file41.mu";
+connectAttr "pasted__pasted__place2dTexture16.mv" "pasted__pasted__file41.mv";
+connectAttr "pasted__pasted__place2dTexture16.s" "pasted__pasted__file41.s";
+connectAttr "pasted__pasted__place2dTexture16.wu" "pasted__pasted__file41.wu";
+connectAttr "pasted__pasted__place2dTexture16.wv" "pasted__pasted__file41.wv";
+connectAttr "pasted__pasted__place2dTexture16.re" "pasted__pasted__file41.re";
+connectAttr "pasted__pasted__place2dTexture16.of" "pasted__pasted__file41.of";
+connectAttr "pasted__pasted__place2dTexture16.r" "pasted__pasted__file41.ro";
+connectAttr "pasted__pasted__place2dTexture16.n" "pasted__pasted__file41.n";
+connectAttr "pasted__pasted__place2dTexture16.vt1" "pasted__pasted__file41.vt1";
+connectAttr "pasted__pasted__place2dTexture16.vt2" "pasted__pasted__file41.vt2";
+connectAttr "pasted__pasted__place2dTexture16.vt3" "pasted__pasted__file41.vt3";
+connectAttr "pasted__pasted__place2dTexture16.vc1" "pasted__pasted__file41.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file42.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file42.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file42.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file42.ws";
+connectAttr "pasted__pasted__place2dTexture16.o" "pasted__pasted__file42.uv";
+connectAttr "pasted__pasted__place2dTexture16.ofs" "pasted__pasted__file42.fs";
+connectAttr "pasted__pasted__place2dTexture16.c" "pasted__pasted__file42.c";
+connectAttr "pasted__pasted__place2dTexture16.tf" "pasted__pasted__file42.tf";
+connectAttr "pasted__pasted__place2dTexture16.rf" "pasted__pasted__file42.rf";
+connectAttr "pasted__pasted__place2dTexture16.mu" "pasted__pasted__file42.mu";
+connectAttr "pasted__pasted__place2dTexture16.mv" "pasted__pasted__file42.mv";
+connectAttr "pasted__pasted__place2dTexture16.s" "pasted__pasted__file42.s";
+connectAttr "pasted__pasted__place2dTexture16.wu" "pasted__pasted__file42.wu";
+connectAttr "pasted__pasted__place2dTexture16.wv" "pasted__pasted__file42.wv";
+connectAttr "pasted__pasted__place2dTexture16.re" "pasted__pasted__file42.re";
+connectAttr "pasted__pasted__place2dTexture16.of" "pasted__pasted__file42.of";
+connectAttr "pasted__pasted__place2dTexture16.r" "pasted__pasted__file42.ro";
+connectAttr "pasted__pasted__place2dTexture16.n" "pasted__pasted__file42.n";
+connectAttr "pasted__pasted__place2dTexture16.vt1" "pasted__pasted__file42.vt1";
+connectAttr "pasted__pasted__place2dTexture16.vt2" "pasted__pasted__file42.vt2";
+connectAttr "pasted__pasted__place2dTexture16.vt3" "pasted__pasted__file42.vt3";
+connectAttr "pasted__pasted__place2dTexture16.vc1" "pasted__pasted__file42.vc1";
+connectAttr "pasted__pasted__file44.oc" "pasted__pasted__multiplyDivide7.i1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file44.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file44.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file44.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file44.ws";
+connectAttr "pasted__pasted__place2dTexture16.o" "pasted__pasted__file44.uv";
+connectAttr "pasted__pasted__place2dTexture16.ofs" "pasted__pasted__file44.fs";
+connectAttr "pasted__pasted__place2dTexture16.c" "pasted__pasted__file44.c";
+connectAttr "pasted__pasted__place2dTexture16.tf" "pasted__pasted__file44.tf";
+connectAttr "pasted__pasted__place2dTexture16.rf" "pasted__pasted__file44.rf";
+connectAttr "pasted__pasted__place2dTexture16.mu" "pasted__pasted__file44.mu";
+connectAttr "pasted__pasted__place2dTexture16.mv" "pasted__pasted__file44.mv";
+connectAttr "pasted__pasted__place2dTexture16.s" "pasted__pasted__file44.s";
+connectAttr "pasted__pasted__place2dTexture16.wu" "pasted__pasted__file44.wu";
+connectAttr "pasted__pasted__place2dTexture16.wv" "pasted__pasted__file44.wv";
+connectAttr "pasted__pasted__place2dTexture16.re" "pasted__pasted__file44.re";
+connectAttr "pasted__pasted__place2dTexture16.of" "pasted__pasted__file44.of";
+connectAttr "pasted__pasted__place2dTexture16.r" "pasted__pasted__file44.ro";
+connectAttr "pasted__pasted__place2dTexture16.n" "pasted__pasted__file44.n";
+connectAttr "pasted__pasted__place2dTexture16.vt1" "pasted__pasted__file44.vt1";
+connectAttr "pasted__pasted__place2dTexture16.vt2" "pasted__pasted__file44.vt2";
+connectAttr "pasted__pasted__place2dTexture16.vt3" "pasted__pasted__file44.vt3";
+connectAttr "pasted__pasted__place2dTexture16.vc1" "pasted__pasted__file44.vc1";
+connectAttr "pasted__pasted__file43.oa" "pasted__pasted__displacementShader7.d";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file43.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file43.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file43.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file43.ws";
+connectAttr "pasted__pasted__place2dTexture16.o" "pasted__pasted__file43.uv";
+connectAttr "pasted__pasted__place2dTexture16.ofs" "pasted__pasted__file43.fs";
+connectAttr "pasted__pasted__place2dTexture16.c" "pasted__pasted__file43.c";
+connectAttr "pasted__pasted__place2dTexture16.tf" "pasted__pasted__file43.tf";
+connectAttr "pasted__pasted__place2dTexture16.rf" "pasted__pasted__file43.rf";
+connectAttr "pasted__pasted__place2dTexture16.mu" "pasted__pasted__file43.mu";
+connectAttr "pasted__pasted__place2dTexture16.mv" "pasted__pasted__file43.mv";
+connectAttr "pasted__pasted__place2dTexture16.s" "pasted__pasted__file43.s";
+connectAttr "pasted__pasted__place2dTexture16.wu" "pasted__pasted__file43.wu";
+connectAttr "pasted__pasted__place2dTexture16.wv" "pasted__pasted__file43.wv";
+connectAttr "pasted__pasted__place2dTexture16.re" "pasted__pasted__file43.re";
+connectAttr "pasted__pasted__place2dTexture16.of" "pasted__pasted__file43.of";
+connectAttr "pasted__pasted__place2dTexture16.r" "pasted__pasted__file43.ro";
+connectAttr "pasted__pasted__place2dTexture16.n" "pasted__pasted__file43.n";
+connectAttr "pasted__pasted__place2dTexture16.vt1" "pasted__pasted__file43.vt1";
+connectAttr "pasted__pasted__place2dTexture16.vt2" "pasted__pasted__file43.vt2";
+connectAttr "pasted__pasted__place2dTexture16.vt3" "pasted__pasted__file43.vt3";
+connectAttr "pasted__pasted__place2dTexture16.vc1" "pasted__pasted__file43.vc1";
+connectAttr "pasted__pasted__set8.msg" "pasted__pasted__materialInfo16.sg";
+connectAttr "pasted__pasted__LeafMaterial1.msg" "pasted__pasted__materialInfo16.m"
 		;
-connectAttr "set3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "pasted__pasted__LeafMaterial1.msg" "pasted__pasted__materialInfo16.t"
+		 -na;
+connectAttr "pasted__pasted__LeafMaterial1.out" "pasted__pasted__set8.ss";
+connectAttr "pasted__pasted__displacementShader8.d" "pasted__pasted__set8.ds";
+connectAttr "pasted__pasted__file45.oa" "pasted__pasted__LeafMaterial1.specular_roughness"
 		;
-connectAttr "GroundMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "pasted__pasted__bump2d8.o" "pasted__pasted__LeafMaterial1.n";
+connectAttr "pasted__pasted__file47.oa" "pasted__pasted__LeafMaterial1.metalness"
 		;
-connectAttr "Mushroom2Material.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "pasted__pasted__multiplyDivide8.o" "pasted__pasted__LeafMaterial1.base_color"
 		;
-connectAttr "Mushroom1Material.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file45.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file45.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file45.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file45.ws";
+connectAttr "pasted__pasted__place2dTexture17.o" "pasted__pasted__file45.uv";
+connectAttr "pasted__pasted__place2dTexture17.ofs" "pasted__pasted__file45.fs";
+connectAttr "pasted__pasted__place2dTexture17.c" "pasted__pasted__file45.c";
+connectAttr "pasted__pasted__place2dTexture17.tf" "pasted__pasted__file45.tf";
+connectAttr "pasted__pasted__place2dTexture17.rf" "pasted__pasted__file45.rf";
+connectAttr "pasted__pasted__place2dTexture17.mu" "pasted__pasted__file45.mu";
+connectAttr "pasted__pasted__place2dTexture17.mv" "pasted__pasted__file45.mv";
+connectAttr "pasted__pasted__place2dTexture17.s" "pasted__pasted__file45.s";
+connectAttr "pasted__pasted__place2dTexture17.wu" "pasted__pasted__file45.wu";
+connectAttr "pasted__pasted__place2dTexture17.wv" "pasted__pasted__file45.wv";
+connectAttr "pasted__pasted__place2dTexture17.re" "pasted__pasted__file45.re";
+connectAttr "pasted__pasted__place2dTexture17.of" "pasted__pasted__file45.of";
+connectAttr "pasted__pasted__place2dTexture17.r" "pasted__pasted__file45.ro";
+connectAttr "pasted__pasted__place2dTexture17.n" "pasted__pasted__file45.n";
+connectAttr "pasted__pasted__place2dTexture17.vt1" "pasted__pasted__file45.vt1";
+connectAttr "pasted__pasted__place2dTexture17.vt2" "pasted__pasted__file45.vt2";
+connectAttr "pasted__pasted__place2dTexture17.vt3" "pasted__pasted__file45.vt3";
+connectAttr "pasted__pasted__place2dTexture17.vc1" "pasted__pasted__file45.vc1";
+connectAttr "pasted__pasted__file46.oa" "pasted__pasted__bump2d8.bv";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file46.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file46.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file46.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file46.ws";
+connectAttr "pasted__pasted__place2dTexture17.o" "pasted__pasted__file46.uv";
+connectAttr "pasted__pasted__place2dTexture17.ofs" "pasted__pasted__file46.fs";
+connectAttr "pasted__pasted__place2dTexture17.c" "pasted__pasted__file46.c";
+connectAttr "pasted__pasted__place2dTexture17.tf" "pasted__pasted__file46.tf";
+connectAttr "pasted__pasted__place2dTexture17.rf" "pasted__pasted__file46.rf";
+connectAttr "pasted__pasted__place2dTexture17.mu" "pasted__pasted__file46.mu";
+connectAttr "pasted__pasted__place2dTexture17.mv" "pasted__pasted__file46.mv";
+connectAttr "pasted__pasted__place2dTexture17.s" "pasted__pasted__file46.s";
+connectAttr "pasted__pasted__place2dTexture17.wu" "pasted__pasted__file46.wu";
+connectAttr "pasted__pasted__place2dTexture17.wv" "pasted__pasted__file46.wv";
+connectAttr "pasted__pasted__place2dTexture17.re" "pasted__pasted__file46.re";
+connectAttr "pasted__pasted__place2dTexture17.of" "pasted__pasted__file46.of";
+connectAttr "pasted__pasted__place2dTexture17.r" "pasted__pasted__file46.ro";
+connectAttr "pasted__pasted__place2dTexture17.n" "pasted__pasted__file46.n";
+connectAttr "pasted__pasted__place2dTexture17.vt1" "pasted__pasted__file46.vt1";
+connectAttr "pasted__pasted__place2dTexture17.vt2" "pasted__pasted__file46.vt2";
+connectAttr "pasted__pasted__place2dTexture17.vt3" "pasted__pasted__file46.vt3";
+connectAttr "pasted__pasted__place2dTexture17.vc1" "pasted__pasted__file46.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file47.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file47.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file47.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file47.ws";
+connectAttr "pasted__pasted__place2dTexture17.o" "pasted__pasted__file47.uv";
+connectAttr "pasted__pasted__place2dTexture17.ofs" "pasted__pasted__file47.fs";
+connectAttr "pasted__pasted__place2dTexture17.c" "pasted__pasted__file47.c";
+connectAttr "pasted__pasted__place2dTexture17.tf" "pasted__pasted__file47.tf";
+connectAttr "pasted__pasted__place2dTexture17.rf" "pasted__pasted__file47.rf";
+connectAttr "pasted__pasted__place2dTexture17.mu" "pasted__pasted__file47.mu";
+connectAttr "pasted__pasted__place2dTexture17.mv" "pasted__pasted__file47.mv";
+connectAttr "pasted__pasted__place2dTexture17.s" "pasted__pasted__file47.s";
+connectAttr "pasted__pasted__place2dTexture17.wu" "pasted__pasted__file47.wu";
+connectAttr "pasted__pasted__place2dTexture17.wv" "pasted__pasted__file47.wv";
+connectAttr "pasted__pasted__place2dTexture17.re" "pasted__pasted__file47.re";
+connectAttr "pasted__pasted__place2dTexture17.of" "pasted__pasted__file47.of";
+connectAttr "pasted__pasted__place2dTexture17.r" "pasted__pasted__file47.ro";
+connectAttr "pasted__pasted__place2dTexture17.n" "pasted__pasted__file47.n";
+connectAttr "pasted__pasted__place2dTexture17.vt1" "pasted__pasted__file47.vt1";
+connectAttr "pasted__pasted__place2dTexture17.vt2" "pasted__pasted__file47.vt2";
+connectAttr "pasted__pasted__place2dTexture17.vt3" "pasted__pasted__file47.vt3";
+connectAttr "pasted__pasted__place2dTexture17.vc1" "pasted__pasted__file47.vc1";
+connectAttr "pasted__pasted__file49.oc" "pasted__pasted__multiplyDivide8.i1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file49.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file49.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file49.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file49.ws";
+connectAttr "pasted__pasted__place2dTexture17.o" "pasted__pasted__file49.uv";
+connectAttr "pasted__pasted__place2dTexture17.ofs" "pasted__pasted__file49.fs";
+connectAttr "pasted__pasted__place2dTexture17.c" "pasted__pasted__file49.c";
+connectAttr "pasted__pasted__place2dTexture17.tf" "pasted__pasted__file49.tf";
+connectAttr "pasted__pasted__place2dTexture17.rf" "pasted__pasted__file49.rf";
+connectAttr "pasted__pasted__place2dTexture17.mu" "pasted__pasted__file49.mu";
+connectAttr "pasted__pasted__place2dTexture17.mv" "pasted__pasted__file49.mv";
+connectAttr "pasted__pasted__place2dTexture17.s" "pasted__pasted__file49.s";
+connectAttr "pasted__pasted__place2dTexture17.wu" "pasted__pasted__file49.wu";
+connectAttr "pasted__pasted__place2dTexture17.wv" "pasted__pasted__file49.wv";
+connectAttr "pasted__pasted__place2dTexture17.re" "pasted__pasted__file49.re";
+connectAttr "pasted__pasted__place2dTexture17.of" "pasted__pasted__file49.of";
+connectAttr "pasted__pasted__place2dTexture17.r" "pasted__pasted__file49.ro";
+connectAttr "pasted__pasted__place2dTexture17.n" "pasted__pasted__file49.n";
+connectAttr "pasted__pasted__place2dTexture17.vt1" "pasted__pasted__file49.vt1";
+connectAttr "pasted__pasted__place2dTexture17.vt2" "pasted__pasted__file49.vt2";
+connectAttr "pasted__pasted__place2dTexture17.vt3" "pasted__pasted__file49.vt3";
+connectAttr "pasted__pasted__place2dTexture17.vc1" "pasted__pasted__file49.vc1";
+connectAttr "pasted__pasted__file48.oa" "pasted__pasted__displacementShader8.d";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file48.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file48.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file48.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file48.ws";
+connectAttr "pasted__pasted__place2dTexture17.o" "pasted__pasted__file48.uv";
+connectAttr "pasted__pasted__place2dTexture17.ofs" "pasted__pasted__file48.fs";
+connectAttr "pasted__pasted__place2dTexture17.c" "pasted__pasted__file48.c";
+connectAttr "pasted__pasted__place2dTexture17.tf" "pasted__pasted__file48.tf";
+connectAttr "pasted__pasted__place2dTexture17.rf" "pasted__pasted__file48.rf";
+connectAttr "pasted__pasted__place2dTexture17.mu" "pasted__pasted__file48.mu";
+connectAttr "pasted__pasted__place2dTexture17.mv" "pasted__pasted__file48.mv";
+connectAttr "pasted__pasted__place2dTexture17.s" "pasted__pasted__file48.s";
+connectAttr "pasted__pasted__place2dTexture17.wu" "pasted__pasted__file48.wu";
+connectAttr "pasted__pasted__place2dTexture17.wv" "pasted__pasted__file48.wv";
+connectAttr "pasted__pasted__place2dTexture17.re" "pasted__pasted__file48.re";
+connectAttr "pasted__pasted__place2dTexture17.of" "pasted__pasted__file48.of";
+connectAttr "pasted__pasted__place2dTexture17.r" "pasted__pasted__file48.ro";
+connectAttr "pasted__pasted__place2dTexture17.n" "pasted__pasted__file48.n";
+connectAttr "pasted__pasted__place2dTexture17.vt1" "pasted__pasted__file48.vt1";
+connectAttr "pasted__pasted__place2dTexture17.vt2" "pasted__pasted__file48.vt2";
+connectAttr "pasted__pasted__place2dTexture17.vt3" "pasted__pasted__file48.vt3";
+connectAttr "pasted__pasted__place2dTexture17.vc1" "pasted__pasted__file48.vc1";
+connectAttr "pasted__pasted__polyAutoProj16.out" "pasted__pasted__polyTweakUV23.ip"
 		;
-connectAttr "file24.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+connectAttr "pasted__pasted__polyTweakUV22.out" "pasted__pasted__polyAutoProj16.ip"
 		;
-connectAttr "file48.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+connectAttr "pasted__pasted__pSphereShape1.wm" "pasted__pasted__polyAutoProj16.mp"
 		;
-connectAttr "displacementShader7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+connectAttr "pasted__pasted__polySphProj4.out" "pasted__pasted__polyTweakUV22.ip"
 		;
-connectAttr "displacementShader2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+connectAttr "pasted__pasted__polyTweakUV21.out" "pasted__pasted__polySphProj4.ip"
+		;
+connectAttr "pasted__pasted__pSphereShape1.wm" "pasted__pasted__polySphProj4.mp"
+		;
+connectAttr "pasted__pasted__polySphere3.out" "pasted__pasted__polyTweakUV21.ip"
+		;
+connectAttr "pasted__pasted__set9.msg" "pasted__pasted__materialInfo17.sg";
+connectAttr "pasted__pasted__LeafMaterial2.msg" "pasted__pasted__materialInfo17.m"
+		;
+connectAttr "pasted__pasted__LeafMaterial2.msg" "pasted__pasted__materialInfo17.t"
+		 -na;
+connectAttr "pasted__pasted__LeafMaterial2.out" "pasted__pasted__set9.ss";
+connectAttr "pasted__pasted__displacementShader9.d" "pasted__pasted__set9.ds";
+connectAttr "pasted__pasted__pSphereShape1.iog" "pasted__pasted__set9.dsm" -na;
+connectAttr "pasted__pasted__file50.oa" "pasted__pasted__LeafMaterial2.specular_roughness"
+		;
+connectAttr "pasted__pasted__bump2d9.o" "pasted__pasted__LeafMaterial2.n";
+connectAttr "pasted__pasted__file52.oa" "pasted__pasted__LeafMaterial2.metalness"
+		;
+connectAttr "pasted__pasted__multiplyDivide9.o" "pasted__pasted__LeafMaterial2.base_color"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file50.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file50.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file50.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file50.ws";
+connectAttr "pasted__pasted__place2dTexture18.o" "pasted__pasted__file50.uv";
+connectAttr "pasted__pasted__place2dTexture18.ofs" "pasted__pasted__file50.fs";
+connectAttr "pasted__pasted__place2dTexture18.c" "pasted__pasted__file50.c";
+connectAttr "pasted__pasted__place2dTexture18.tf" "pasted__pasted__file50.tf";
+connectAttr "pasted__pasted__place2dTexture18.rf" "pasted__pasted__file50.rf";
+connectAttr "pasted__pasted__place2dTexture18.mu" "pasted__pasted__file50.mu";
+connectAttr "pasted__pasted__place2dTexture18.mv" "pasted__pasted__file50.mv";
+connectAttr "pasted__pasted__place2dTexture18.s" "pasted__pasted__file50.s";
+connectAttr "pasted__pasted__place2dTexture18.wu" "pasted__pasted__file50.wu";
+connectAttr "pasted__pasted__place2dTexture18.wv" "pasted__pasted__file50.wv";
+connectAttr "pasted__pasted__place2dTexture18.re" "pasted__pasted__file50.re";
+connectAttr "pasted__pasted__place2dTexture18.of" "pasted__pasted__file50.of";
+connectAttr "pasted__pasted__place2dTexture18.r" "pasted__pasted__file50.ro";
+connectAttr "pasted__pasted__place2dTexture18.n" "pasted__pasted__file50.n";
+connectAttr "pasted__pasted__place2dTexture18.vt1" "pasted__pasted__file50.vt1";
+connectAttr "pasted__pasted__place2dTexture18.vt2" "pasted__pasted__file50.vt2";
+connectAttr "pasted__pasted__place2dTexture18.vt3" "pasted__pasted__file50.vt3";
+connectAttr "pasted__pasted__place2dTexture18.vc1" "pasted__pasted__file50.vc1";
+connectAttr "pasted__pasted__file51.oa" "pasted__pasted__bump2d9.bv";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file51.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file51.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file51.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file51.ws";
+connectAttr "pasted__pasted__place2dTexture18.o" "pasted__pasted__file51.uv";
+connectAttr "pasted__pasted__place2dTexture18.ofs" "pasted__pasted__file51.fs";
+connectAttr "pasted__pasted__place2dTexture18.c" "pasted__pasted__file51.c";
+connectAttr "pasted__pasted__place2dTexture18.tf" "pasted__pasted__file51.tf";
+connectAttr "pasted__pasted__place2dTexture18.rf" "pasted__pasted__file51.rf";
+connectAttr "pasted__pasted__place2dTexture18.mu" "pasted__pasted__file51.mu";
+connectAttr "pasted__pasted__place2dTexture18.mv" "pasted__pasted__file51.mv";
+connectAttr "pasted__pasted__place2dTexture18.s" "pasted__pasted__file51.s";
+connectAttr "pasted__pasted__place2dTexture18.wu" "pasted__pasted__file51.wu";
+connectAttr "pasted__pasted__place2dTexture18.wv" "pasted__pasted__file51.wv";
+connectAttr "pasted__pasted__place2dTexture18.re" "pasted__pasted__file51.re";
+connectAttr "pasted__pasted__place2dTexture18.of" "pasted__pasted__file51.of";
+connectAttr "pasted__pasted__place2dTexture18.r" "pasted__pasted__file51.ro";
+connectAttr "pasted__pasted__place2dTexture18.n" "pasted__pasted__file51.n";
+connectAttr "pasted__pasted__place2dTexture18.vt1" "pasted__pasted__file51.vt1";
+connectAttr "pasted__pasted__place2dTexture18.vt2" "pasted__pasted__file51.vt2";
+connectAttr "pasted__pasted__place2dTexture18.vt3" "pasted__pasted__file51.vt3";
+connectAttr "pasted__pasted__place2dTexture18.vc1" "pasted__pasted__file51.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file52.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file52.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file52.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file52.ws";
+connectAttr "pasted__pasted__place2dTexture18.o" "pasted__pasted__file52.uv";
+connectAttr "pasted__pasted__place2dTexture18.ofs" "pasted__pasted__file52.fs";
+connectAttr "pasted__pasted__place2dTexture18.c" "pasted__pasted__file52.c";
+connectAttr "pasted__pasted__place2dTexture18.tf" "pasted__pasted__file52.tf";
+connectAttr "pasted__pasted__place2dTexture18.rf" "pasted__pasted__file52.rf";
+connectAttr "pasted__pasted__place2dTexture18.mu" "pasted__pasted__file52.mu";
+connectAttr "pasted__pasted__place2dTexture18.mv" "pasted__pasted__file52.mv";
+connectAttr "pasted__pasted__place2dTexture18.s" "pasted__pasted__file52.s";
+connectAttr "pasted__pasted__place2dTexture18.wu" "pasted__pasted__file52.wu";
+connectAttr "pasted__pasted__place2dTexture18.wv" "pasted__pasted__file52.wv";
+connectAttr "pasted__pasted__place2dTexture18.re" "pasted__pasted__file52.re";
+connectAttr "pasted__pasted__place2dTexture18.of" "pasted__pasted__file52.of";
+connectAttr "pasted__pasted__place2dTexture18.r" "pasted__pasted__file52.ro";
+connectAttr "pasted__pasted__place2dTexture18.n" "pasted__pasted__file52.n";
+connectAttr "pasted__pasted__place2dTexture18.vt1" "pasted__pasted__file52.vt1";
+connectAttr "pasted__pasted__place2dTexture18.vt2" "pasted__pasted__file52.vt2";
+connectAttr "pasted__pasted__place2dTexture18.vt3" "pasted__pasted__file52.vt3";
+connectAttr "pasted__pasted__place2dTexture18.vc1" "pasted__pasted__file52.vc1";
+connectAttr "pasted__pasted__file54.oc" "pasted__pasted__multiplyDivide9.i1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file54.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file54.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file54.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file54.ws";
+connectAttr "pasted__pasted__place2dTexture18.o" "pasted__pasted__file54.uv";
+connectAttr "pasted__pasted__place2dTexture18.ofs" "pasted__pasted__file54.fs";
+connectAttr "pasted__pasted__place2dTexture18.c" "pasted__pasted__file54.c";
+connectAttr "pasted__pasted__place2dTexture18.tf" "pasted__pasted__file54.tf";
+connectAttr "pasted__pasted__place2dTexture18.rf" "pasted__pasted__file54.rf";
+connectAttr "pasted__pasted__place2dTexture18.mu" "pasted__pasted__file54.mu";
+connectAttr "pasted__pasted__place2dTexture18.mv" "pasted__pasted__file54.mv";
+connectAttr "pasted__pasted__place2dTexture18.s" "pasted__pasted__file54.s";
+connectAttr "pasted__pasted__place2dTexture18.wu" "pasted__pasted__file54.wu";
+connectAttr "pasted__pasted__place2dTexture18.wv" "pasted__pasted__file54.wv";
+connectAttr "pasted__pasted__place2dTexture18.re" "pasted__pasted__file54.re";
+connectAttr "pasted__pasted__place2dTexture18.of" "pasted__pasted__file54.of";
+connectAttr "pasted__pasted__place2dTexture18.r" "pasted__pasted__file54.ro";
+connectAttr "pasted__pasted__place2dTexture18.n" "pasted__pasted__file54.n";
+connectAttr "pasted__pasted__place2dTexture18.vt1" "pasted__pasted__file54.vt1";
+connectAttr "pasted__pasted__place2dTexture18.vt2" "pasted__pasted__file54.vt2";
+connectAttr "pasted__pasted__place2dTexture18.vt3" "pasted__pasted__file54.vt3";
+connectAttr "pasted__pasted__place2dTexture18.vc1" "pasted__pasted__file54.vc1";
+connectAttr "pasted__pasted__file53.oa" "pasted__pasted__displacementShader9.d";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file53.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file53.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file53.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file53.ws";
+connectAttr "pasted__pasted__place2dTexture18.o" "pasted__pasted__file53.uv";
+connectAttr "pasted__pasted__place2dTexture18.ofs" "pasted__pasted__file53.fs";
+connectAttr "pasted__pasted__place2dTexture18.c" "pasted__pasted__file53.c";
+connectAttr "pasted__pasted__place2dTexture18.tf" "pasted__pasted__file53.tf";
+connectAttr "pasted__pasted__place2dTexture18.rf" "pasted__pasted__file53.rf";
+connectAttr "pasted__pasted__place2dTexture18.mu" "pasted__pasted__file53.mu";
+connectAttr "pasted__pasted__place2dTexture18.mv" "pasted__pasted__file53.mv";
+connectAttr "pasted__pasted__place2dTexture18.s" "pasted__pasted__file53.s";
+connectAttr "pasted__pasted__place2dTexture18.wu" "pasted__pasted__file53.wu";
+connectAttr "pasted__pasted__place2dTexture18.wv" "pasted__pasted__file53.wv";
+connectAttr "pasted__pasted__place2dTexture18.re" "pasted__pasted__file53.re";
+connectAttr "pasted__pasted__place2dTexture18.of" "pasted__pasted__file53.of";
+connectAttr "pasted__pasted__place2dTexture18.r" "pasted__pasted__file53.ro";
+connectAttr "pasted__pasted__place2dTexture18.n" "pasted__pasted__file53.n";
+connectAttr "pasted__pasted__place2dTexture18.vt1" "pasted__pasted__file53.vt1";
+connectAttr "pasted__pasted__place2dTexture18.vt2" "pasted__pasted__file53.vt2";
+connectAttr "pasted__pasted__place2dTexture18.vt3" "pasted__pasted__file53.vt3";
+connectAttr "pasted__pasted__place2dTexture18.vc1" "pasted__pasted__file53.vc1";
+connectAttr "pasted__pasted__set10.msg" "pasted__pasted__materialInfo18.sg";
+connectAttr "pasted__pasted__aiStandardSurface2.msg" "pasted__pasted__materialInfo18.m"
+		;
+connectAttr "pasted__pasted__aiStandardSurface2.msg" "pasted__pasted__materialInfo18.t"
+		 -na;
+connectAttr "pasted__pasted__aiStandardSurface2.out" "pasted__pasted__set10.ss";
+connectAttr "pasted__pasted__displacementShader10.d" "pasted__pasted__set10.ds";
+connectAttr "pasted__pasted__pCylinderShape4.iog" "pasted__pasted__set10.dsm" -na
+		;
+connectAttr "pasted__pasted__file55.oa" "pasted__pasted__aiStandardSurface2.specular_roughness"
+		;
+connectAttr "pasted__pasted__bump2d10.o" "pasted__pasted__aiStandardSurface2.n";
+connectAttr "pasted__pasted__file57.oa" "pasted__pasted__aiStandardSurface2.metalness"
+		;
+connectAttr "pasted__pasted__multiplyDivide10.o" "pasted__pasted__aiStandardSurface2.base_color"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file55.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file55.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file55.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file55.ws";
+connectAttr "pasted__pasted__place2dTexture19.o" "pasted__pasted__file55.uv";
+connectAttr "pasted__pasted__place2dTexture19.ofs" "pasted__pasted__file55.fs";
+connectAttr "pasted__pasted__place2dTexture19.c" "pasted__pasted__file55.c";
+connectAttr "pasted__pasted__place2dTexture19.tf" "pasted__pasted__file55.tf";
+connectAttr "pasted__pasted__place2dTexture19.rf" "pasted__pasted__file55.rf";
+connectAttr "pasted__pasted__place2dTexture19.mu" "pasted__pasted__file55.mu";
+connectAttr "pasted__pasted__place2dTexture19.mv" "pasted__pasted__file55.mv";
+connectAttr "pasted__pasted__place2dTexture19.s" "pasted__pasted__file55.s";
+connectAttr "pasted__pasted__place2dTexture19.wu" "pasted__pasted__file55.wu";
+connectAttr "pasted__pasted__place2dTexture19.wv" "pasted__pasted__file55.wv";
+connectAttr "pasted__pasted__place2dTexture19.re" "pasted__pasted__file55.re";
+connectAttr "pasted__pasted__place2dTexture19.of" "pasted__pasted__file55.of";
+connectAttr "pasted__pasted__place2dTexture19.r" "pasted__pasted__file55.ro";
+connectAttr "pasted__pasted__place2dTexture19.n" "pasted__pasted__file55.n";
+connectAttr "pasted__pasted__place2dTexture19.vt1" "pasted__pasted__file55.vt1";
+connectAttr "pasted__pasted__place2dTexture19.vt2" "pasted__pasted__file55.vt2";
+connectAttr "pasted__pasted__place2dTexture19.vt3" "pasted__pasted__file55.vt3";
+connectAttr "pasted__pasted__place2dTexture19.vc1" "pasted__pasted__file55.vc1";
+connectAttr "pasted__pasted__file56.oa" "pasted__pasted__bump2d10.bv";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file56.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file56.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file56.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file56.ws";
+connectAttr "pasted__pasted__place2dTexture19.o" "pasted__pasted__file56.uv";
+connectAttr "pasted__pasted__place2dTexture19.ofs" "pasted__pasted__file56.fs";
+connectAttr "pasted__pasted__place2dTexture19.c" "pasted__pasted__file56.c";
+connectAttr "pasted__pasted__place2dTexture19.tf" "pasted__pasted__file56.tf";
+connectAttr "pasted__pasted__place2dTexture19.rf" "pasted__pasted__file56.rf";
+connectAttr "pasted__pasted__place2dTexture19.mu" "pasted__pasted__file56.mu";
+connectAttr "pasted__pasted__place2dTexture19.mv" "pasted__pasted__file56.mv";
+connectAttr "pasted__pasted__place2dTexture19.s" "pasted__pasted__file56.s";
+connectAttr "pasted__pasted__place2dTexture19.wu" "pasted__pasted__file56.wu";
+connectAttr "pasted__pasted__place2dTexture19.wv" "pasted__pasted__file56.wv";
+connectAttr "pasted__pasted__place2dTexture19.re" "pasted__pasted__file56.re";
+connectAttr "pasted__pasted__place2dTexture19.of" "pasted__pasted__file56.of";
+connectAttr "pasted__pasted__place2dTexture19.r" "pasted__pasted__file56.ro";
+connectAttr "pasted__pasted__place2dTexture19.n" "pasted__pasted__file56.n";
+connectAttr "pasted__pasted__place2dTexture19.vt1" "pasted__pasted__file56.vt1";
+connectAttr "pasted__pasted__place2dTexture19.vt2" "pasted__pasted__file56.vt2";
+connectAttr "pasted__pasted__place2dTexture19.vt3" "pasted__pasted__file56.vt3";
+connectAttr "pasted__pasted__place2dTexture19.vc1" "pasted__pasted__file56.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file57.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file57.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file57.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file57.ws";
+connectAttr "pasted__pasted__place2dTexture19.o" "pasted__pasted__file57.uv";
+connectAttr "pasted__pasted__place2dTexture19.ofs" "pasted__pasted__file57.fs";
+connectAttr "pasted__pasted__place2dTexture19.c" "pasted__pasted__file57.c";
+connectAttr "pasted__pasted__place2dTexture19.tf" "pasted__pasted__file57.tf";
+connectAttr "pasted__pasted__place2dTexture19.rf" "pasted__pasted__file57.rf";
+connectAttr "pasted__pasted__place2dTexture19.mu" "pasted__pasted__file57.mu";
+connectAttr "pasted__pasted__place2dTexture19.mv" "pasted__pasted__file57.mv";
+connectAttr "pasted__pasted__place2dTexture19.s" "pasted__pasted__file57.s";
+connectAttr "pasted__pasted__place2dTexture19.wu" "pasted__pasted__file57.wu";
+connectAttr "pasted__pasted__place2dTexture19.wv" "pasted__pasted__file57.wv";
+connectAttr "pasted__pasted__place2dTexture19.re" "pasted__pasted__file57.re";
+connectAttr "pasted__pasted__place2dTexture19.of" "pasted__pasted__file57.of";
+connectAttr "pasted__pasted__place2dTexture19.r" "pasted__pasted__file57.ro";
+connectAttr "pasted__pasted__place2dTexture19.n" "pasted__pasted__file57.n";
+connectAttr "pasted__pasted__place2dTexture19.vt1" "pasted__pasted__file57.vt1";
+connectAttr "pasted__pasted__place2dTexture19.vt2" "pasted__pasted__file57.vt2";
+connectAttr "pasted__pasted__place2dTexture19.vt3" "pasted__pasted__file57.vt3";
+connectAttr "pasted__pasted__place2dTexture19.vc1" "pasted__pasted__file57.vc1";
+connectAttr "pasted__pasted__file59.oc" "pasted__pasted__multiplyDivide10.i1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file59.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file59.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file59.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file59.ws";
+connectAttr "pasted__pasted__place2dTexture19.o" "pasted__pasted__file59.uv";
+connectAttr "pasted__pasted__place2dTexture19.ofs" "pasted__pasted__file59.fs";
+connectAttr "pasted__pasted__place2dTexture19.c" "pasted__pasted__file59.c";
+connectAttr "pasted__pasted__place2dTexture19.tf" "pasted__pasted__file59.tf";
+connectAttr "pasted__pasted__place2dTexture19.rf" "pasted__pasted__file59.rf";
+connectAttr "pasted__pasted__place2dTexture19.mu" "pasted__pasted__file59.mu";
+connectAttr "pasted__pasted__place2dTexture19.mv" "pasted__pasted__file59.mv";
+connectAttr "pasted__pasted__place2dTexture19.s" "pasted__pasted__file59.s";
+connectAttr "pasted__pasted__place2dTexture19.wu" "pasted__pasted__file59.wu";
+connectAttr "pasted__pasted__place2dTexture19.wv" "pasted__pasted__file59.wv";
+connectAttr "pasted__pasted__place2dTexture19.re" "pasted__pasted__file59.re";
+connectAttr "pasted__pasted__place2dTexture19.of" "pasted__pasted__file59.of";
+connectAttr "pasted__pasted__place2dTexture19.r" "pasted__pasted__file59.ro";
+connectAttr "pasted__pasted__place2dTexture19.n" "pasted__pasted__file59.n";
+connectAttr "pasted__pasted__place2dTexture19.vt1" "pasted__pasted__file59.vt1";
+connectAttr "pasted__pasted__place2dTexture19.vt2" "pasted__pasted__file59.vt2";
+connectAttr "pasted__pasted__place2dTexture19.vt3" "pasted__pasted__file59.vt3";
+connectAttr "pasted__pasted__place2dTexture19.vc1" "pasted__pasted__file59.vc1";
+connectAttr "pasted__pasted__file58.oa" "pasted__pasted__displacementShader10.d"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__file58.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__file58.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__file58.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__file58.ws";
+connectAttr "pasted__pasted__place2dTexture19.o" "pasted__pasted__file58.uv";
+connectAttr "pasted__pasted__place2dTexture19.ofs" "pasted__pasted__file58.fs";
+connectAttr "pasted__pasted__place2dTexture19.c" "pasted__pasted__file58.c";
+connectAttr "pasted__pasted__place2dTexture19.tf" "pasted__pasted__file58.tf";
+connectAttr "pasted__pasted__place2dTexture19.rf" "pasted__pasted__file58.rf";
+connectAttr "pasted__pasted__place2dTexture19.mu" "pasted__pasted__file58.mu";
+connectAttr "pasted__pasted__place2dTexture19.mv" "pasted__pasted__file58.mv";
+connectAttr "pasted__pasted__place2dTexture19.s" "pasted__pasted__file58.s";
+connectAttr "pasted__pasted__place2dTexture19.wu" "pasted__pasted__file58.wu";
+connectAttr "pasted__pasted__place2dTexture19.wv" "pasted__pasted__file58.wv";
+connectAttr "pasted__pasted__place2dTexture19.re" "pasted__pasted__file58.re";
+connectAttr "pasted__pasted__place2dTexture19.of" "pasted__pasted__file58.of";
+connectAttr "pasted__pasted__place2dTexture19.r" "pasted__pasted__file58.ro";
+connectAttr "pasted__pasted__place2dTexture19.n" "pasted__pasted__file58.n";
+connectAttr "pasted__pasted__place2dTexture19.vt1" "pasted__pasted__file58.vt1";
+connectAttr "pasted__pasted__place2dTexture19.vt2" "pasted__pasted__file58.vt2";
+connectAttr "pasted__pasted__place2dTexture19.vt3" "pasted__pasted__file58.vt3";
+connectAttr "pasted__pasted__place2dTexture19.vc1" "pasted__pasted__file58.vc1";
+connectAttr "pasted__pasted__pasted__polyAutoProj15.out" "pasted__pasted__pasted__polyTweakUV20.ip"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV19.out" "pasted__pasted__pasted__polyAutoProj15.ip"
+		;
+connectAttr "|group6|pasted__group5|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.wm" "pasted__pasted__pasted__polyAutoProj15.mp"
+		;
+connectAttr "pasted__pasted__pasted__polySphProj3.out" "pasted__pasted__pasted__polyTweakUV19.ip"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV18.out" "pasted__pasted__pasted__polySphProj3.ip"
+		;
+connectAttr "|group6|pasted__group5|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.wm" "pasted__pasted__pasted__polySphProj3.mp"
+		;
+connectAttr "pasted__pasted__pasted__polySphere2.out" "pasted__pasted__pasted__polyTweakUV18.ip"
+		;
+connectAttr "pasted__pasted__pasted__set8.msg" "pasted__pasted__pasted__materialInfo16.sg"
+		;
+connectAttr "pasted__pasted__pasted__LeafMaterial1.msg" "pasted__pasted__pasted__materialInfo16.m"
+		;
+connectAttr "pasted__pasted__pasted__LeafMaterial1.msg" "pasted__pasted__pasted__materialInfo16.t"
+		 -na;
+connectAttr "pasted__pasted__pasted__LeafMaterial1.out" "pasted__pasted__pasted__set8.ss"
+		;
+connectAttr "pasted__pasted__pasted__displacementShader8.d" "pasted__pasted__pasted__set8.ds"
+		;
+connectAttr "|group6|pasted__group5|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.iog" "pasted__pasted__pasted__set8.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__file45.oa" "pasted__pasted__pasted__LeafMaterial1.specular_roughness"
+		;
+connectAttr "pasted__pasted__pasted__bump2d8.o" "pasted__pasted__pasted__LeafMaterial1.n"
+		;
+connectAttr "pasted__pasted__pasted__file47.oa" "pasted__pasted__pasted__LeafMaterial1.metalness"
+		;
+connectAttr "pasted__pasted__pasted__multiplyDivide8.o" "pasted__pasted__pasted__LeafMaterial1.base_color"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file45.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file45.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file45.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file45.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture17.o" "pasted__pasted__pasted__file45.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.ofs" "pasted__pasted__pasted__file45.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.c" "pasted__pasted__pasted__file45.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.tf" "pasted__pasted__pasted__file45.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.rf" "pasted__pasted__pasted__file45.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mu" "pasted__pasted__pasted__file45.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mv" "pasted__pasted__pasted__file45.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.s" "pasted__pasted__pasted__file45.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wu" "pasted__pasted__pasted__file45.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wv" "pasted__pasted__pasted__file45.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.re" "pasted__pasted__pasted__file45.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.of" "pasted__pasted__pasted__file45.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.r" "pasted__pasted__pasted__file45.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.n" "pasted__pasted__pasted__file45.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt1" "pasted__pasted__pasted__file45.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt2" "pasted__pasted__pasted__file45.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt3" "pasted__pasted__pasted__file45.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vc1" "pasted__pasted__pasted__file45.vc1"
+		;
+connectAttr "pasted__pasted__pasted__file46.oa" "pasted__pasted__pasted__bump2d8.bv"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file46.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file46.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file46.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file46.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture17.o" "pasted__pasted__pasted__file46.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.ofs" "pasted__pasted__pasted__file46.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.c" "pasted__pasted__pasted__file46.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.tf" "pasted__pasted__pasted__file46.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.rf" "pasted__pasted__pasted__file46.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mu" "pasted__pasted__pasted__file46.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mv" "pasted__pasted__pasted__file46.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.s" "pasted__pasted__pasted__file46.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wu" "pasted__pasted__pasted__file46.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wv" "pasted__pasted__pasted__file46.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.re" "pasted__pasted__pasted__file46.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.of" "pasted__pasted__pasted__file46.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.r" "pasted__pasted__pasted__file46.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.n" "pasted__pasted__pasted__file46.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt1" "pasted__pasted__pasted__file46.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt2" "pasted__pasted__pasted__file46.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt3" "pasted__pasted__pasted__file46.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vc1" "pasted__pasted__pasted__file46.vc1"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file47.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file47.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file47.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file47.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture17.o" "pasted__pasted__pasted__file47.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.ofs" "pasted__pasted__pasted__file47.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.c" "pasted__pasted__pasted__file47.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.tf" "pasted__pasted__pasted__file47.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.rf" "pasted__pasted__pasted__file47.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mu" "pasted__pasted__pasted__file47.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mv" "pasted__pasted__pasted__file47.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.s" "pasted__pasted__pasted__file47.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wu" "pasted__pasted__pasted__file47.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wv" "pasted__pasted__pasted__file47.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.re" "pasted__pasted__pasted__file47.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.of" "pasted__pasted__pasted__file47.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.r" "pasted__pasted__pasted__file47.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.n" "pasted__pasted__pasted__file47.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt1" "pasted__pasted__pasted__file47.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt2" "pasted__pasted__pasted__file47.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt3" "pasted__pasted__pasted__file47.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vc1" "pasted__pasted__pasted__file47.vc1"
+		;
+connectAttr "pasted__pasted__pasted__file49.oc" "pasted__pasted__pasted__multiplyDivide8.i1"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file49.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file49.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file49.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file49.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture17.o" "pasted__pasted__pasted__file49.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.ofs" "pasted__pasted__pasted__file49.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.c" "pasted__pasted__pasted__file49.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.tf" "pasted__pasted__pasted__file49.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.rf" "pasted__pasted__pasted__file49.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mu" "pasted__pasted__pasted__file49.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mv" "pasted__pasted__pasted__file49.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.s" "pasted__pasted__pasted__file49.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wu" "pasted__pasted__pasted__file49.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wv" "pasted__pasted__pasted__file49.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.re" "pasted__pasted__pasted__file49.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.of" "pasted__pasted__pasted__file49.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.r" "pasted__pasted__pasted__file49.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.n" "pasted__pasted__pasted__file49.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt1" "pasted__pasted__pasted__file49.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt2" "pasted__pasted__pasted__file49.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt3" "pasted__pasted__pasted__file49.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vc1" "pasted__pasted__pasted__file49.vc1"
+		;
+connectAttr "pasted__pasted__pasted__file48.oa" "pasted__pasted__pasted__displacementShader8.d"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file48.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file48.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file48.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file48.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture17.o" "pasted__pasted__pasted__file48.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.ofs" "pasted__pasted__pasted__file48.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.c" "pasted__pasted__pasted__file48.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.tf" "pasted__pasted__pasted__file48.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.rf" "pasted__pasted__pasted__file48.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mu" "pasted__pasted__pasted__file48.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.mv" "pasted__pasted__pasted__file48.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.s" "pasted__pasted__pasted__file48.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wu" "pasted__pasted__pasted__file48.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.wv" "pasted__pasted__pasted__file48.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.re" "pasted__pasted__pasted__file48.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.of" "pasted__pasted__pasted__file48.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.r" "pasted__pasted__pasted__file48.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.n" "pasted__pasted__pasted__file48.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt1" "pasted__pasted__pasted__file48.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt2" "pasted__pasted__pasted__file48.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vt3" "pasted__pasted__pasted__file48.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture17.vc1" "pasted__pasted__pasted__file48.vc1"
+		;
+connectAttr "pasted__pasted__pasted__polyAutoProj14.out" "pasted__pasted__pasted__polyTweakUV17.ip"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV16.out" "pasted__pasted__pasted__polyAutoProj14.ip"
+		;
+connectAttr "|group6|pasted__group4|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.wm" "pasted__pasted__pasted__polyAutoProj14.mp"
+		;
+connectAttr "pasted__pasted__pasted__polySphProj2.out" "pasted__pasted__pasted__polyTweakUV16.ip"
+		;
+connectAttr "pasted__pasted__pasted__polyTweakUV15.out" "pasted__pasted__pasted__polySphProj2.ip"
+		;
+connectAttr "|group6|pasted__group4|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.wm" "pasted__pasted__pasted__polySphProj2.mp"
+		;
+connectAttr "pasted__pasted__pasted__polySphere1.out" "pasted__pasted__pasted__polyTweakUV15.ip"
+		;
+connectAttr "pasted__pasted__pasted__set7.msg" "pasted__pasted__pasted__materialInfo15.sg"
+		;
+connectAttr "pasted__pasted__pasted__LeafMaterial.msg" "pasted__pasted__pasted__materialInfo15.m"
+		;
+connectAttr "pasted__pasted__pasted__LeafMaterial.msg" "pasted__pasted__pasted__materialInfo15.t"
+		 -na;
+connectAttr "pasted__pasted__pasted__LeafMaterial.out" "pasted__pasted__pasted__set7.ss"
+		;
+connectAttr "pasted__pasted__pasted__displacementShader7.d" "pasted__pasted__pasted__set7.ds"
+		;
+connectAttr "|group6|pasted__group4|pasted__pasted__group3|pasted__pasted__pasted__pSphere1|pasted__pasted__pasted__pSphereShape1.iog" "pasted__pasted__pasted__set7.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__file40.oa" "pasted__pasted__pasted__LeafMaterial.specular_roughness"
+		;
+connectAttr "pasted__pasted__pasted__bump2d7.o" "pasted__pasted__pasted__LeafMaterial.n"
+		;
+connectAttr "pasted__pasted__pasted__file42.oa" "pasted__pasted__pasted__LeafMaterial.metalness"
+		;
+connectAttr "pasted__pasted__pasted__multiplyDivide7.o" "pasted__pasted__pasted__LeafMaterial.base_color"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file40.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file40.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file40.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file40.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture16.o" "pasted__pasted__pasted__file40.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.ofs" "pasted__pasted__pasted__file40.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.c" "pasted__pasted__pasted__file40.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.tf" "pasted__pasted__pasted__file40.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.rf" "pasted__pasted__pasted__file40.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mu" "pasted__pasted__pasted__file40.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mv" "pasted__pasted__pasted__file40.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.s" "pasted__pasted__pasted__file40.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wu" "pasted__pasted__pasted__file40.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wv" "pasted__pasted__pasted__file40.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.re" "pasted__pasted__pasted__file40.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.of" "pasted__pasted__pasted__file40.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.r" "pasted__pasted__pasted__file40.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.n" "pasted__pasted__pasted__file40.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt1" "pasted__pasted__pasted__file40.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt2" "pasted__pasted__pasted__file40.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt3" "pasted__pasted__pasted__file40.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vc1" "pasted__pasted__pasted__file40.vc1"
+		;
+connectAttr "pasted__pasted__pasted__file41.oa" "pasted__pasted__pasted__bump2d7.bv"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file41.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file41.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file41.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file41.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture16.o" "pasted__pasted__pasted__file41.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.ofs" "pasted__pasted__pasted__file41.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.c" "pasted__pasted__pasted__file41.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.tf" "pasted__pasted__pasted__file41.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.rf" "pasted__pasted__pasted__file41.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mu" "pasted__pasted__pasted__file41.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mv" "pasted__pasted__pasted__file41.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.s" "pasted__pasted__pasted__file41.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wu" "pasted__pasted__pasted__file41.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wv" "pasted__pasted__pasted__file41.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.re" "pasted__pasted__pasted__file41.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.of" "pasted__pasted__pasted__file41.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.r" "pasted__pasted__pasted__file41.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.n" "pasted__pasted__pasted__file41.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt1" "pasted__pasted__pasted__file41.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt2" "pasted__pasted__pasted__file41.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt3" "pasted__pasted__pasted__file41.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vc1" "pasted__pasted__pasted__file41.vc1"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file42.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file42.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file42.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file42.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture16.o" "pasted__pasted__pasted__file42.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.ofs" "pasted__pasted__pasted__file42.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.c" "pasted__pasted__pasted__file42.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.tf" "pasted__pasted__pasted__file42.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.rf" "pasted__pasted__pasted__file42.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mu" "pasted__pasted__pasted__file42.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mv" "pasted__pasted__pasted__file42.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.s" "pasted__pasted__pasted__file42.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wu" "pasted__pasted__pasted__file42.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wv" "pasted__pasted__pasted__file42.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.re" "pasted__pasted__pasted__file42.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.of" "pasted__pasted__pasted__file42.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.r" "pasted__pasted__pasted__file42.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.n" "pasted__pasted__pasted__file42.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt1" "pasted__pasted__pasted__file42.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt2" "pasted__pasted__pasted__file42.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt3" "pasted__pasted__pasted__file42.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vc1" "pasted__pasted__pasted__file42.vc1"
+		;
+connectAttr "pasted__pasted__pasted__file44.oc" "pasted__pasted__pasted__multiplyDivide7.i1"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file44.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file44.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file44.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file44.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture16.o" "pasted__pasted__pasted__file44.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.ofs" "pasted__pasted__pasted__file44.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.c" "pasted__pasted__pasted__file44.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.tf" "pasted__pasted__pasted__file44.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.rf" "pasted__pasted__pasted__file44.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mu" "pasted__pasted__pasted__file44.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mv" "pasted__pasted__pasted__file44.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.s" "pasted__pasted__pasted__file44.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wu" "pasted__pasted__pasted__file44.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wv" "pasted__pasted__pasted__file44.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.re" "pasted__pasted__pasted__file44.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.of" "pasted__pasted__pasted__file44.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.r" "pasted__pasted__pasted__file44.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.n" "pasted__pasted__pasted__file44.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt1" "pasted__pasted__pasted__file44.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt2" "pasted__pasted__pasted__file44.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt3" "pasted__pasted__pasted__file44.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vc1" "pasted__pasted__pasted__file44.vc1"
+		;
+connectAttr "pasted__pasted__pasted__file43.oa" "pasted__pasted__pasted__displacementShader7.d"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__pasted__pasted__file43.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__pasted__pasted__file43.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__pasted__pasted__file43.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__pasted__pasted__file43.ws";
+connectAttr "pasted__pasted__pasted__place2dTexture16.o" "pasted__pasted__pasted__file43.uv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.ofs" "pasted__pasted__pasted__file43.fs"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.c" "pasted__pasted__pasted__file43.c"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.tf" "pasted__pasted__pasted__file43.tf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.rf" "pasted__pasted__pasted__file43.rf"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mu" "pasted__pasted__pasted__file43.mu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.mv" "pasted__pasted__pasted__file43.mv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.s" "pasted__pasted__pasted__file43.s"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wu" "pasted__pasted__pasted__file43.wu"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.wv" "pasted__pasted__pasted__file43.wv"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.re" "pasted__pasted__pasted__file43.re"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.of" "pasted__pasted__pasted__file43.of"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.r" "pasted__pasted__pasted__file43.ro"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.n" "pasted__pasted__pasted__file43.n"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt1" "pasted__pasted__pasted__file43.vt1"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt2" "pasted__pasted__pasted__file43.vt2"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vt3" "pasted__pasted__pasted__file43.vt3"
+		;
+connectAttr "pasted__pasted__pasted__place2dTexture16.vc1" "pasted__pasted__pasted__file43.vc1"
+		;
+connectAttr "pasted__set6.msg" "pasted__materialInfo14.sg";
+connectAttr "pasted__RaindropMaterial.msg" "pasted__materialInfo14.m";
+connectAttr "pasted__RaindropMaterial.msg" "pasted__materialInfo14.t" -na;
+connectAttr "pasted__RaindropMaterial.out" "pasted__set6.ss";
+connectAttr "pasted__displacementShader6.d" "pasted__set6.ds";
+connectAttr "pasted__file35.oa" "pasted__RaindropMaterial.metalness";
+connectAttr "pasted__file36.oa" "pasted__RaindropMaterial.specular_roughness";
+connectAttr "pasted__bump2d6.o" "pasted__RaindropMaterial.n";
+connectAttr "pasted__multiplyDivide6.o" "pasted__RaindropMaterial.base_color";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file35.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file35.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file35.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file35.ws";
+connectAttr "pasted__place2dTexture15.o" "pasted__file35.uv";
+connectAttr "pasted__place2dTexture15.ofs" "pasted__file35.fs";
+connectAttr "pasted__place2dTexture15.c" "pasted__file35.c";
+connectAttr "pasted__place2dTexture15.tf" "pasted__file35.tf";
+connectAttr "pasted__place2dTexture15.rf" "pasted__file35.rf";
+connectAttr "pasted__place2dTexture15.mu" "pasted__file35.mu";
+connectAttr "pasted__place2dTexture15.mv" "pasted__file35.mv";
+connectAttr "pasted__place2dTexture15.s" "pasted__file35.s";
+connectAttr "pasted__place2dTexture15.wu" "pasted__file35.wu";
+connectAttr "pasted__place2dTexture15.wv" "pasted__file35.wv";
+connectAttr "pasted__place2dTexture15.re" "pasted__file35.re";
+connectAttr "pasted__place2dTexture15.of" "pasted__file35.of";
+connectAttr "pasted__place2dTexture15.r" "pasted__file35.ro";
+connectAttr "pasted__place2dTexture15.n" "pasted__file35.n";
+connectAttr "pasted__place2dTexture15.vt1" "pasted__file35.vt1";
+connectAttr "pasted__place2dTexture15.vt2" "pasted__file35.vt2";
+connectAttr "pasted__place2dTexture15.vt3" "pasted__file35.vt3";
+connectAttr "pasted__place2dTexture15.vc1" "pasted__file35.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file36.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file36.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file36.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file36.ws";
+connectAttr "pasted__place2dTexture15.o" "pasted__file36.uv";
+connectAttr "pasted__place2dTexture15.ofs" "pasted__file36.fs";
+connectAttr "pasted__place2dTexture15.c" "pasted__file36.c";
+connectAttr "pasted__place2dTexture15.tf" "pasted__file36.tf";
+connectAttr "pasted__place2dTexture15.rf" "pasted__file36.rf";
+connectAttr "pasted__place2dTexture15.mu" "pasted__file36.mu";
+connectAttr "pasted__place2dTexture15.mv" "pasted__file36.mv";
+connectAttr "pasted__place2dTexture15.s" "pasted__file36.s";
+connectAttr "pasted__place2dTexture15.wu" "pasted__file36.wu";
+connectAttr "pasted__place2dTexture15.wv" "pasted__file36.wv";
+connectAttr "pasted__place2dTexture15.re" "pasted__file36.re";
+connectAttr "pasted__place2dTexture15.of" "pasted__file36.of";
+connectAttr "pasted__place2dTexture15.r" "pasted__file36.ro";
+connectAttr "pasted__place2dTexture15.n" "pasted__file36.n";
+connectAttr "pasted__place2dTexture15.vt1" "pasted__file36.vt1";
+connectAttr "pasted__place2dTexture15.vt2" "pasted__file36.vt2";
+connectAttr "pasted__place2dTexture15.vt3" "pasted__file36.vt3";
+connectAttr "pasted__place2dTexture15.vc1" "pasted__file36.vc1";
+connectAttr "pasted__file37.oa" "pasted__bump2d6.bv";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file37.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file37.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file37.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file37.ws";
+connectAttr "pasted__place2dTexture15.o" "pasted__file37.uv";
+connectAttr "pasted__place2dTexture15.ofs" "pasted__file37.fs";
+connectAttr "pasted__place2dTexture15.c" "pasted__file37.c";
+connectAttr "pasted__place2dTexture15.tf" "pasted__file37.tf";
+connectAttr "pasted__place2dTexture15.rf" "pasted__file37.rf";
+connectAttr "pasted__place2dTexture15.mu" "pasted__file37.mu";
+connectAttr "pasted__place2dTexture15.mv" "pasted__file37.mv";
+connectAttr "pasted__place2dTexture15.s" "pasted__file37.s";
+connectAttr "pasted__place2dTexture15.wu" "pasted__file37.wu";
+connectAttr "pasted__place2dTexture15.wv" "pasted__file37.wv";
+connectAttr "pasted__place2dTexture15.re" "pasted__file37.re";
+connectAttr "pasted__place2dTexture15.of" "pasted__file37.of";
+connectAttr "pasted__place2dTexture15.r" "pasted__file37.ro";
+connectAttr "pasted__place2dTexture15.n" "pasted__file37.n";
+connectAttr "pasted__place2dTexture15.vt1" "pasted__file37.vt1";
+connectAttr "pasted__place2dTexture15.vt2" "pasted__file37.vt2";
+connectAttr "pasted__place2dTexture15.vt3" "pasted__file37.vt3";
+connectAttr "pasted__place2dTexture15.vc1" "pasted__file37.vc1";
+connectAttr "pasted__file39.oc" "pasted__multiplyDivide6.i1";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file39.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file39.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file39.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file39.ws";
+connectAttr "pasted__place2dTexture15.o" "pasted__file39.uv";
+connectAttr "pasted__place2dTexture15.ofs" "pasted__file39.fs";
+connectAttr "pasted__place2dTexture15.c" "pasted__file39.c";
+connectAttr "pasted__place2dTexture15.tf" "pasted__file39.tf";
+connectAttr "pasted__place2dTexture15.rf" "pasted__file39.rf";
+connectAttr "pasted__place2dTexture15.mu" "pasted__file39.mu";
+connectAttr "pasted__place2dTexture15.mv" "pasted__file39.mv";
+connectAttr "pasted__place2dTexture15.s" "pasted__file39.s";
+connectAttr "pasted__place2dTexture15.wu" "pasted__file39.wu";
+connectAttr "pasted__place2dTexture15.wv" "pasted__file39.wv";
+connectAttr "pasted__place2dTexture15.re" "pasted__file39.re";
+connectAttr "pasted__place2dTexture15.of" "pasted__file39.of";
+connectAttr "pasted__place2dTexture15.r" "pasted__file39.ro";
+connectAttr "pasted__place2dTexture15.n" "pasted__file39.n";
+connectAttr "pasted__place2dTexture15.vt1" "pasted__file39.vt1";
+connectAttr "pasted__place2dTexture15.vt2" "pasted__file39.vt2";
+connectAttr "pasted__place2dTexture15.vt3" "pasted__file39.vt3";
+connectAttr "pasted__place2dTexture15.vc1" "pasted__file39.vc1";
+connectAttr "pasted__file38.oa" "pasted__displacementShader6.d";
+connectAttr ":defaultColorMgtGlobals.cme" "pasted__file38.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "pasted__file38.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "pasted__file38.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "pasted__file38.ws";
+connectAttr "pasted__place2dTexture15.o" "pasted__file38.uv";
+connectAttr "pasted__place2dTexture15.ofs" "pasted__file38.fs";
+connectAttr "pasted__place2dTexture15.c" "pasted__file38.c";
+connectAttr "pasted__place2dTexture15.tf" "pasted__file38.tf";
+connectAttr "pasted__place2dTexture15.rf" "pasted__file38.rf";
+connectAttr "pasted__place2dTexture15.mu" "pasted__file38.mu";
+connectAttr "pasted__place2dTexture15.mv" "pasted__file38.mv";
+connectAttr "pasted__place2dTexture15.s" "pasted__file38.s";
+connectAttr "pasted__place2dTexture15.wu" "pasted__file38.wu";
+connectAttr "pasted__place2dTexture15.wv" "pasted__file38.wv";
+connectAttr "pasted__place2dTexture15.re" "pasted__file38.re";
+connectAttr "pasted__place2dTexture15.of" "pasted__file38.of";
+connectAttr "pasted__place2dTexture15.r" "pasted__file38.ro";
+connectAttr "pasted__place2dTexture15.n" "pasted__file38.n";
+connectAttr "pasted__place2dTexture15.vt1" "pasted__file38.vt1";
+connectAttr "pasted__place2dTexture15.vt2" "pasted__file38.vt2";
+connectAttr "pasted__place2dTexture15.vt3" "pasted__file38.vt3";
+connectAttr "pasted__place2dTexture15.vc1" "pasted__file38.vc1";
+connectAttr "blinn9.oc" "blinn9SG.ss";
+connectAttr "blinn9SG.msg" "materialInfo18.sg";
+connectAttr "blinn9.msg" "materialInfo18.m";
+connectAttr ":defaultColorMgtGlobals.cme" "file50.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file50.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file50.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file50.ws";
+connectAttr "place2dTexture18.o" "file50.uv";
+connectAttr "place2dTexture18.ofs" "file50.fs";
+connectAttr "place2dTexture18.c" "file50.c";
+connectAttr "place2dTexture18.tf" "file50.tf";
+connectAttr "place2dTexture18.rf" "file50.rf";
+connectAttr "place2dTexture18.mu" "file50.mu";
+connectAttr "place2dTexture18.mv" "file50.mv";
+connectAttr "place2dTexture18.s" "file50.s";
+connectAttr "place2dTexture18.wu" "file50.wu";
+connectAttr "place2dTexture18.wv" "file50.wv";
+connectAttr "place2dTexture18.re" "file50.re";
+connectAttr "place2dTexture18.of" "file50.of";
+connectAttr "place2dTexture18.r" "file50.ro";
+connectAttr "place2dTexture18.n" "file50.n";
+connectAttr "place2dTexture18.vt1" "file50.vt1";
+connectAttr "place2dTexture18.vt2" "file50.vt2";
+connectAttr "place2dTexture18.vt3" "file50.vt3";
+connectAttr "place2dTexture18.vc1" "file50.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "file51.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file51.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file51.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file51.ws";
+connectAttr "place2dTexture18.o" "file51.uv";
+connectAttr "place2dTexture18.ofs" "file51.fs";
+connectAttr "place2dTexture18.c" "file51.c";
+connectAttr "place2dTexture18.tf" "file51.tf";
+connectAttr "place2dTexture18.rf" "file51.rf";
+connectAttr "place2dTexture18.mu" "file51.mu";
+connectAttr "place2dTexture18.mv" "file51.mv";
+connectAttr "place2dTexture18.s" "file51.s";
+connectAttr "place2dTexture18.wu" "file51.wu";
+connectAttr "place2dTexture18.wv" "file51.wv";
+connectAttr "place2dTexture18.re" "file51.re";
+connectAttr "place2dTexture18.of" "file51.of";
+connectAttr "place2dTexture18.r" "file51.ro";
+connectAttr "place2dTexture18.n" "file51.n";
+connectAttr "place2dTexture18.vt1" "file51.vt1";
+connectAttr "place2dTexture18.vt2" "file51.vt2";
+connectAttr "place2dTexture18.vt3" "file51.vt3";
+connectAttr "place2dTexture18.vc1" "file51.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "file52.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file52.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file52.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file52.ws";
+connectAttr "place2dTexture18.o" "file52.uv";
+connectAttr "place2dTexture18.ofs" "file52.fs";
+connectAttr "place2dTexture18.c" "file52.c";
+connectAttr "place2dTexture18.tf" "file52.tf";
+connectAttr "place2dTexture18.rf" "file52.rf";
+connectAttr "place2dTexture18.mu" "file52.mu";
+connectAttr "place2dTexture18.mv" "file52.mv";
+connectAttr "place2dTexture18.s" "file52.s";
+connectAttr "place2dTexture18.wu" "file52.wu";
+connectAttr "place2dTexture18.wv" "file52.wv";
+connectAttr "place2dTexture18.re" "file52.re";
+connectAttr "place2dTexture18.of" "file52.of";
+connectAttr "place2dTexture18.r" "file52.ro";
+connectAttr "place2dTexture18.n" "file52.n";
+connectAttr "place2dTexture18.vt1" "file52.vt1";
+connectAttr "place2dTexture18.vt2" "file52.vt2";
+connectAttr "place2dTexture18.vt3" "file52.vt3";
+connectAttr "place2dTexture18.vc1" "file52.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "file53.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file53.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file53.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file53.ws";
+connectAttr "place2dTexture18.o" "file53.uv";
+connectAttr "place2dTexture18.ofs" "file53.fs";
+connectAttr "place2dTexture18.c" "file53.c";
+connectAttr "place2dTexture18.tf" "file53.tf";
+connectAttr "place2dTexture18.rf" "file53.rf";
+connectAttr "place2dTexture18.mu" "file53.mu";
+connectAttr "place2dTexture18.mv" "file53.mv";
+connectAttr "place2dTexture18.s" "file53.s";
+connectAttr "place2dTexture18.wu" "file53.wu";
+connectAttr "place2dTexture18.wv" "file53.wv";
+connectAttr "place2dTexture18.re" "file53.re";
+connectAttr "place2dTexture18.of" "file53.of";
+connectAttr "place2dTexture18.r" "file53.ro";
+connectAttr "place2dTexture18.n" "file53.n";
+connectAttr "place2dTexture18.vt1" "file53.vt1";
+connectAttr "place2dTexture18.vt2" "file53.vt2";
+connectAttr "place2dTexture18.vt3" "file53.vt3";
+connectAttr "place2dTexture18.vc1" "file53.vc1";
+connectAttr ":defaultColorMgtGlobals.cme" "file54.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file54.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file54.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file54.ws";
+connectAttr "place2dTexture18.o" "file54.uv";
+connectAttr "place2dTexture18.ofs" "file54.fs";
+connectAttr "place2dTexture18.c" "file54.c";
+connectAttr "place2dTexture18.tf" "file54.tf";
+connectAttr "place2dTexture18.rf" "file54.rf";
+connectAttr "place2dTexture18.mu" "file54.mu";
+connectAttr "place2dTexture18.mv" "file54.mv";
+connectAttr "place2dTexture18.s" "file54.s";
+connectAttr "place2dTexture18.wu" "file54.wu";
+connectAttr "place2dTexture18.wv" "file54.wv";
+connectAttr "place2dTexture18.re" "file54.re";
+connectAttr "place2dTexture18.of" "file54.of";
+connectAttr "place2dTexture18.r" "file54.ro";
+connectAttr "place2dTexture18.n" "file54.n";
+connectAttr "place2dTexture18.vt1" "file54.vt1";
+connectAttr "place2dTexture18.vt2" "file54.vt2";
+connectAttr "place2dTexture18.vt3" "file54.vt3";
+connectAttr "place2dTexture18.vc1" "file54.vc1";
+connectAttr "file50.oa" "aiStandardSurface3.specular_roughness";
+connectAttr "bump2d9.o" "aiStandardSurface3.n";
+connectAttr "file52.oa" "aiStandardSurface3.metalness";
+connectAttr "multiplyDivide9.o" "aiStandardSurface3.base_color";
+connectAttr "aiStandardSurface3.out" "set9.ss";
+connectAttr "displacementShader9.d" "set9.ds";
+connectAttr "set9.msg" "materialInfo19.sg";
+connectAttr "aiStandardSurface3.msg" "materialInfo19.m";
+connectAttr "aiStandardSurface3.msg" "materialInfo19.t" -na;
+connectAttr "file51.oa" "bump2d9.bv";
+connectAttr "file53.oa" "displacementShader9.d";
+connectAttr "file54.oc" "multiplyDivide9.i1";
+connectAttr "place2dTexture12.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "file25.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "bump2d3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "Mushroom1Material.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "file19.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "file16.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "TreeTrunk.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "file20.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "bump2d4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "file45.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "displacementShader2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "file24.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "LeafMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
 		;
 connectAttr "place2dTexture17.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
 		;
-connectAttr "LeafMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+connectAttr "file44.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
 		;
-connectAttr "file16.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+connectAttr "displacementShader7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
 		;
-connectAttr "bump2d4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+connectAttr "aiStandardSurface2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
 		;
-connectAttr "file45.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+connectAttr "set3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
 		;
-connectAttr "bump2d3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+connectAttr "multiplyDivide8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
 		;
-connectAttr "displacementShader3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+connectAttr "bump2d7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
 		;
-connectAttr "file18.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+connectAttr "Mushroom2Material.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
 		;
-connectAttr "file19.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
+connectAttr "file48.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
 		;
-connectAttr "file42.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+connectAttr "displacementShader3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
 		;
-connectAttr "file47.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+connectAttr "file18.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
 		;
-connectAttr "file44.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
+connectAttr "GroundMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
 		;
-connectAttr "file46.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
+connectAttr "place2dTexture13.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
 		;
-connectAttr "file22.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[26].dn"
+connectAttr "set2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[26].dn"
 		;
-connectAttr "file41.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[27].dn"
+connectAttr "set8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[27].dn"
 		;
-connectAttr "multiplyDivide2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[28].dn"
+connectAttr "file21.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[28].dn"
 		;
-connectAttr "set2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[29].dn"
+connectAttr "multiplyDivide4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[29].dn"
 		;
-connectAttr "set7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[30].dn"
+connectAttr "file41.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[30].dn"
 		;
-connectAttr "blinn4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[31].dn"
+connectAttr "set7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[31].dn"
 		;
-connectAttr "file21.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
+connectAttr "blinn4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
 		;
-connectAttr "file3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[33].dn"
+connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[33].dn"
 		;
-connectAttr "multiplyDivide4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[34].dn"
+connectAttr "set4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[34].dn"
 		;
-connectAttr "set4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[35].dn"
+connectAttr "file47.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[35].dn"
 		;
-connectAttr "multiplyDivide7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[36].dn"
+connectAttr "file46.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[36].dn"
 		;
-connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[37].dn"
+connectAttr "file27.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[37].dn"
 		;
-connectAttr "file28.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[38].dn"
+connectAttr "file49.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[38].dn"
 		;
-connectAttr "set8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[39].dn"
+connectAttr "multiplyDivide2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[39].dn"
 		;
-connectAttr "multiplyDivide3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[40].dn"
+connectAttr "file3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[40].dn"
 		;
-connectAttr "place2dTexture13.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[41].dn"
+connectAttr "file26.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[41].dn"
 		;
-connectAttr "bump2d8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[42].dn"
+connectAttr "multiplyDivide7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[42].dn"
 		;
-connectAttr "file26.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[43].dn"
+connectAttr "bump2d2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[43].dn"
 		;
-connectAttr "file27.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[44].dn"
+connectAttr "place2dTexture11.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[44].dn"
 		;
-connectAttr "file15.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[45].dn"
+connectAttr "displacementShader8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[45].dn"
 		;
-connectAttr "file49.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[46].dn"
+connectAttr "file29.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[46].dn"
 		;
-connectAttr "file20.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[47].dn"
+connectAttr "file15.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[47].dn"
 		;
-connectAttr "aiStandardSurface2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[48].dn"
+connectAttr "bump2d8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[48].dn"
 		;
-connectAttr "displacementShader4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[49].dn"
+connectAttr "file22.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[49].dn"
 		;
-connectAttr "file40.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[50].dn"
+connectAttr "file23.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[50].dn"
 		;
-connectAttr "place2dTexture11.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[51].dn"
+connectAttr "place2dTexture16.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[51].dn"
 		;
-connectAttr "file23.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[52].dn"
+connectAttr "file40.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[52].dn"
 		;
-connectAttr "displacementShader8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[53].dn"
+connectAttr "file42.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[53].dn"
 		;
-connectAttr "place2dTexture16.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[54].dn"
+connectAttr "file17.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[54].dn"
 		;
-connectAttr "bump2d2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[55].dn"
+connectAttr "file28.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[55].dn"
 		;
 connectAttr "file43.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[56].dn"
 		;
-connectAttr "file29.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[57].dn"
+connectAttr "displacementShader4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[57].dn"
 		;
-connectAttr "file17.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[58].dn"
+connectAttr "multiplyDivide3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[58].dn"
 		;
 connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
 connectAttr "blinn2SG.pa" ":renderPartition.st" -na;
@@ -6662,6 +10068,17 @@ connectAttr "set6.pa" ":renderPartition.st" -na;
 connectAttr "set7.pa" ":renderPartition.st" -na;
 connectAttr "set8.pa" ":renderPartition.st" -na;
 connectAttr "blinn8SG.pa" ":renderPartition.st" -na;
+connectAttr "pasted__set7.pa" ":renderPartition.st" -na;
+connectAttr "pasted__set8.pa" ":renderPartition.st" -na;
+connectAttr "pasted__pasted__set7.pa" ":renderPartition.st" -na;
+connectAttr "pasted__pasted__set8.pa" ":renderPartition.st" -na;
+connectAttr "pasted__pasted__set9.pa" ":renderPartition.st" -na;
+connectAttr "pasted__pasted__set10.pa" ":renderPartition.st" -na;
+connectAttr "pasted__pasted__pasted__set7.pa" ":renderPartition.st" -na;
+connectAttr "pasted__pasted__pasted__set8.pa" ":renderPartition.st" -na;
+connectAttr "pasted__set6.pa" ":renderPartition.st" -na;
+connectAttr "blinn9SG.pa" ":renderPartition.st" -na;
+connectAttr "set9.pa" ":renderPartition.st" -na;
 connectAttr "Mushroom3.msg" ":defaultShaderList1.s" -na;
 connectAttr "Mushroom4.msg" ":defaultShaderList1.s" -na;
 connectAttr "Ground.msg" ":defaultShaderList1.s" -na;
@@ -6690,6 +10107,36 @@ connectAttr "displacementShader7.msg" ":defaultShaderList1.s" -na;
 connectAttr "aiStandardSurface2.msg" ":defaultShaderList1.s" -na;
 connectAttr "displacementShader8.msg" ":defaultShaderList1.s" -na;
 connectAttr "blinn8.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__LeafMaterial.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__displacementShader7.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__aiStandardSurface2.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__displacementShader8.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__pasted__LeafMaterial.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__pasted__displacementShader7.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "pasted__pasted__LeafMaterial1.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__pasted__displacementShader8.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "pasted__pasted__LeafMaterial2.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__pasted__displacementShader9.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "pasted__pasted__aiStandardSurface2.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "pasted__pasted__displacementShader10.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "pasted__pasted__pasted__LeafMaterial.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "pasted__pasted__pasted__displacementShader7.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "pasted__pasted__pasted__LeafMaterial1.msg" ":defaultShaderList1.s" 
+		-na;
+connectAttr "pasted__pasted__pasted__displacementShader8.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "pasted__RaindropMaterial.msg" ":defaultShaderList1.s" -na;
+connectAttr "pasted__displacementShader6.msg" ":defaultShaderList1.s" -na;
+connectAttr "blinn9.msg" ":defaultShaderList1.s" -na;
+connectAttr "aiStandardSurface3.msg" ":defaultShaderList1.s" -na;
+connectAttr "displacementShader9.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
@@ -6731,8 +10178,53 @@ connectAttr "multiplyDivide7.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture17.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "bump2d8.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "multiplyDivide8.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__place2dTexture16.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__bump2d7.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__multiplyDivide7.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__place2dTexture17.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__bump2d8.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__multiplyDivide8.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__pasted__place2dTexture16.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__bump2d7.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__pasted__multiplyDivide7.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__place2dTexture17.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__bump2d8.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__pasted__multiplyDivide8.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__place2dTexture18.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__bump2d9.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__pasted__multiplyDivide9.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__place2dTexture19.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__bump2d10.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__pasted__multiplyDivide10.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__pasted__place2dTexture16.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__pasted__bump2d7.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__pasted__multiplyDivide7.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__pasted__place2dTexture17.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__pasted__bump2d8.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__pasted__pasted__multiplyDivide8.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "pasted__place2dTexture15.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__bump2d6.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "pasted__multiplyDivide6.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture18.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d9.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "multiplyDivide9.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "directionalLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "pasted__directionalLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file3.msg" ":defaultTextureList1.tx" -na;
@@ -6785,18 +10277,68 @@ connectAttr "file46.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file47.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file48.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file49.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file40.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file41.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file42.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file43.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file44.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file45.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file46.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file47.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file48.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file49.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file40.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file41.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file42.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file43.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file44.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file45.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file46.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file47.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file48.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file49.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file50.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file51.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file52.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file53.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file54.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file55.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file56.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file57.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file58.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__file59.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file40.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file41.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file42.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file43.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file44.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file45.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file46.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file47.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file48.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__pasted__pasted__file49.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file35.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file36.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file37.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file38.msg" ":defaultTextureList1.tx" -na;
+connectAttr "pasted__file39.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file50.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file51.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file52.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file53.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file54.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pasted__pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pConeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pConeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinderShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinderShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.iog.og[0]" ":initialShadingGroup.dsm"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group|pasted__pCylinder2|transform2|pasted__pCylinderShape2.ciog.cog[0]" ":initialShadingGroup.dsm"
+connectAttr "|TinyMushroom|pasted__pCylinder2|transform2|pasted__pCylinderShape2.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.iog.og[0]" ":initialShadingGroup.dsm"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group|pasted__pCone1|transform1|pasted__pConeShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+connectAttr "|TinyMushroom|pasted__pCone1|transform1|pasted__pConeShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "|Mushroom|pasted__pCone1|transform6|pasted__pConeShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
@@ -6819,4 +10361,5 @@ connectAttr "groupId11.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId12.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId13.msg" ":initialShadingGroup.gn" -na;
 connectAttr "directionalLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "pasted__directionalLight1.iog" ":defaultLightSet.dsm" -na;
 // End of MushroomAnimation.ma
