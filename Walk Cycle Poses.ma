@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Walk Cycle Poses.ma
-//Last modified: Tue, Oct 17, 2023 10:10:23 PM
+//Last modified: Tue, Oct 17, 2023 10:15:04 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/monke/OneDrive/Desktop/GameProjects2/AnimationGits/PALBOT/scenes/PALBot.ma";
 file -r -ns "PALBot" -dr 1 -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/monke/OneDrive/Desktop/GameProjects2/AnimationGits/PALBOT/scenes/PALBot.ma";
@@ -14,23 +14,23 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "A524DF22-4F87-7607-D030-1C8EE0A05EDC";
+fileInfo "UUID" "1D3D523A-4A30-15DC-828C-FC86B1B26386";
 createNode transform -s -n "persp";
 	rename -uid "F440178B-4620-4198-E02F-8B961F217188";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 16.737585364027513 39.144796356807603 77.193242766533785 ;
-	setAttr ".r" -type "double3" -19.320952627763905 13.132305211672081 -2.1963622467245148e-13 ;
-	setAttr ".rp" -type "double3" -2.2204460492503131e-16 3.5527136788005009e-15 -7.1054273576010019e-15 ;
-	setAttr ".rpt" -type "double3" -6.7769732282931586e-15 -2.741792513113895e-15 -4.5954481957807976e-15 ;
+	setAttr ".t" -type "double3" 56.189134634098416 21.61049019303529 60.632034502334967 ;
+	setAttr ".r" -type "double3" -7.1701347864903999 43.105078421699915 -2.0692506942108396e-14 ;
+	setAttr ".rp" -type "double3" -1.4432899320127035e-15 -1.7763568394002505e-15 -1.4210854715202004e-14 ;
+	setAttr ".rpt" -type "double3" -1.4016611091460146e-14 -1.0954596759867663e-15 1.0112721221282441e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D181309A-4586-4A9A-9E84-2996ECD3C699";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 87.945477830043757;
+	setAttr ".coi" 83.262489736908918;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -2.1183214731063202 10.047198533407155 -3.6287322712718932 ;
+	setAttr ".tp" -type "double3" -0.26239303409580828 11.217992576680384 0.31733302408818531 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "8AD252FF-42C6-AF72-E2BF-4AB3E4FC376C";
@@ -3548,8 +3548,8 @@ createNode animCurveTA -n "PALbot_L_Thumb02_ctrl_rotateZ";
 	setAttr ".ktv[0]"  0 0;
 	setAttr ".kot[0]"  5;
 select -ne :time1;
-	setAttr ".o" 10;
-	setAttr ".unw" 10;
+	setAttr ".o" 24;
+	setAttr ".unw" 24;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
