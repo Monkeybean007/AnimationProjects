@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Walk Cycle Poses.ma
-//Last modified: Sun, Oct 22, 2023 06:46:56 PM
+//Last modified: Tue, Oct 31, 2023 03:37:09 PM
 //Codeset: 1252
 file -rdi 1 -ns "PALBot" -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/monke/OneDrive/Desktop/GameProjects2/AnimationGits/PALBOT/scenes/PALBot.ma";
 file -r -ns "PALBot" -dr 1 -rfn "PALBotRN" -op "v=0;" -typ "mayaAscii" "C:/Users/monke/OneDrive/Desktop/GameProjects2/AnimationGits/PALBOT/scenes/PALBot.ma";
@@ -14,24 +14,24 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "1A826071-4A05-3B0C-B425-8EBC59F392EB";
+fileInfo "UUID" "010047FA-4FE0-D632-93EF-BFBA14C26307";
 createNode transform -s -n "persp";
 	rename -uid "F440178B-4620-4198-E02F-8B961F217188";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 24.776897872750194 10.275640639239516 65.541206394956859 ;
-	setAttr ".r" -type "double3" -0.16609990004277425 20.580860263172358 4.6483406714815185e-12 ;
-	setAttr ".rp" -type "double3" 2.3314683517128287e-15 1.7763568394002505e-15 0 ;
-	setAttr ".rpt" -type "double3" 8.425437467900096e-16 -8.6101005786341157e-15 -4.2983069762109818e-16 ;
+	setAttr ".t" -type "double3" 42.630777240352323 10.275640639239514 55.611544043433383 ;
+	setAttr ".r" -type "double3" -0.16609990005997308 37.581501911624734 -2.3621066237327727e-11 ;
+	setAttr ".rp" -type "double3" 1.4210854715202004e-14 0 1.4210854715202004e-14 ;
+	setAttr ".rpt" -type "double3" 4.690263393962767e-15 -6.2463531172941626e-15 -9.3480939445388107e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D181309A-4586-4A9A-9E84-2996ECD3C699";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 67.465252487684523;
+	setAttr ".coi" 69.113565785497855;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 1.0610090539258366 10.08005981123064 2.3820529894535483 ;
+	setAttr ".tp" -type "double3" 0.47932738547983433 10.075281373919411 0.84020019573041793 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".dfg" yes;
 createNode transform -s -n "top";
@@ -54,16 +54,18 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "8F0E7726-4DF3-62CC-5304-FD9A3CCF64A1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 0 1000.1 ;
+	setAttr ".t" -type "double3" 1.1183306664531187 9.4737176316768394 1001.1320950519234 ;
+	setAttr ".rpt" -type "double3" 0 -1.5211666605098953e-14 1.3076605303154186e-14 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "9613DA81-4089-22D3-52F0-A79088921364";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".ow" 31.197569281405343;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
+	setAttr ".tp" -type "double3" -2.2206680938552382e-13 9.107367930597281 1.0320950519234202 ;
 	setAttr ".hc" -type "string" "viewSet -f %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
@@ -85,21 +87,21 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "5A010E29-4203-C261-7B63-0388BA7E3B7A";
+	rename -uid "94B417BA-4B79-1404-49EA-7DBA572E1FD6";
 	setAttr -s 17 ".lnk";
 	setAttr -s 17 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "D78E7FC1-41B2-9BCC-37D9-03BB6C83DA7E";
+	rename -uid "3A634680-477E-681C-1995-89B62A4B5DF6";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D6860277-4C5A-C5C2-761B-2188C1A02324";
+	rename -uid "F736D969-4449-AED8-59E9-11BF3FFF0A8F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "4FE57D31-4104-2596-1A77-6EB6ED5D43A1";
+	rename -uid "60093AE9-47E9-1A03-9E9B-5696F79490E4";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "C3524328-4F9F-C016-4A01-AB95145CE405";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "7E87438B-40DB-E4C5-1CDD-4FAF7A968B8D";
+	rename -uid "F587F4DF-49E8-6705-C39A-49B1572846C0";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "B43364F3-48F8-89D7-39C4-D6B8CFE659B2";
 	setAttr ".g" yes;
@@ -122,15 +124,15 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 789\n            -height 284\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
 		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n"
-		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
+		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 788\n            -height 284\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
 		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
 		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
-		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
-		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 789\n            -height 284\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
+		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 0\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 1\n            -cameras 1\n            -controlVertices 0\n            -hulls 0\n            -grid 1\n"
 		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 0\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1584\n            -height 613\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 1\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
@@ -547,11 +549,172 @@ createNode reference -n "PALBotRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PALBotRN"
 		"PALBotRN" 0
-		"PALBotRN" 376
+		"PALBotRN" 446
 		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_HeadGRP|PALBot:GLASS_clean|PALBot:GLASS_cleanShape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
-		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_cog_ctrl_offset|PALBot:PALbot_cog_ctrl" 
-		"secondary_vis" " -k 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_NeckGrp|PALBot:polySurface55|PALBot:polySurface55Shape" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_SpineGrp|PALBot:polySurface67|PALBot:polySurface83|PALBot:polySurfaceShape202" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_Left_LEGGRP|PALBot:PALbot_Left_foot_secondary_grp|PALBot:PALbot_Left_foot_secondary|PALBot:PALbot_Left_foot_secondaryShape" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_Left_LEGGRP|PALBot:PALbot_Right_foot_secondary_grp|PALBot:PALbot_Right_foot_secondary|PALBot:PALbot_Right_foot_secondaryShape" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_LeftFoot_Engine_fire_grp|PALBot:Engine_Fire|PALBot:Engine_FireShape" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_RightFoot_Engine_fire_grp|PALBot:Engine_Fire|PALBot:Engine_FireShape" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_RightARM_IK_GRP|PALBot:PALbot_RightARM_IKmod|PALBot:PALbot_RightARM_IKmodShape" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_MESH|PALBot:PALbot_LeftARM_IK_GRP|PALBot:PALbot_LeftARM_IKmod|PALBot:PALbot_LeftARM_IKmodShape" 
+		"visibility" " -k 0 1"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_RIG|PALBot:PALbot_SpineHANDLE" "translate" 
+		" -type \"double3\" 0.056837859331414123 12.74499230134854244 0.08817372293036245"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_RIG|PALBot:PALbot_SpineHANDLE" "rotate" 
+		" -type \"double3\" 0 -1.9090959015906186e-06 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_RIG|PALBot:PALbot_NeckHANDLE" "translate" 
+		" -type \"double3\" 0.055514576384258114 19.12914544960763763 0.088174853086716423"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_RIG|PALBot:PALbot_NeckHANDLE" "rotate" 
+		" -type \"double3\" -0.091453379523424305 -0.0015117512522706371 -0.1892507736406365"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset" 
+		"translate" " -type \"double3\" 0.15470754093700756 0 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset" 
+		"translateX" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset" 
+		"translateZ" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset" 
+		"rotate" " -type \"double3\" 0 180 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_L_IK_Foot_offset" 
+		"rotateY" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset" 
+		"translate" " -type \"double3\" -0.15470754093700756 0 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset" 
+		"translateX" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN|PALBot:PALbot_root|PALBot:PALbot_R_IK_Foot_offset" 
+		"translateZ" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01" 
+		"translate" " -type \"double3\" -7.3805814793104219e-09 0 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01" 
+		"rotate" " -type \"double3\" 0.083182453852528884 -3.7819379025602718e-05 0.052099695830142227"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01" 
+		"scaleX" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01" 
+		"scaleY" " 1.0000077486038208"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01" 
+		"scaleZ" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02" 
+		"rotate" " -type \"double3\" 0.13182454946336528 -3.2108619170121429e-05 0.027911151966886129"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03" 
+		"rotate" " -type \"double3\" 0.061672235285268169 -4.021062317082412e-06 0.0074714294460540842"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03" 
+		"scaleX" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03" 
+		"scaleY" " 1.0000077486038208"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03" 
+		"scaleZ" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03" 
+		"inverseScaleX" " 0.99999612569808971"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03" 
+		"inverseScaleY" " 1.0000077486038208"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03" 
+		"inverseScaleZ" " 0.99999612569808971"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04" 
+		"rotate" " -type \"double3\" -0.046655162781531402 -9.3511236601676998e-06 -0.022967656769831653"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04" 
+		"scaleX" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04" 
+		"scaleY" " 1.0000077486038208"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04" 
+		"scaleZ" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05" 
+		"rotate" " -type \"double3\" -0.16150116213401622 -7.5969375524435919e-05 -0.053903282543467115"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05" 
+		"scaleX" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05" 
+		"scaleY" " 1.0000077486038208"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05" 
+		"scaleZ" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06" 
+		"rotate" " -type \"double3\" -0.83106494521306462 0.00021527555391899183 -0.081292859999970074"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06" 
+		"scaleX" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06" 
+		"scaleY" " 1.0000077486038208"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06" 
+		"scaleZ" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06|PALBot:PALbot_neck_07" 
+		"rotate" " -type \"double3\" 0.67108815470038286 -0.00034558065689820256 -0.11858487670113646"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06|PALBot:PALbot_neck_07" 
+		"scaleX" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06|PALBot:PALbot_neck_07" 
+		"scaleY" " 1.0000077486038208"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_collarbone|PALBot:PALbot_neck_down|PALBot:PALbot_neck_01|PALBot:PALbot_neck_02|PALBot:PALbot_neck_03|PALBot:PALbot_neck_04|PALBot:PALbot_neck_05|PALBot:PALbot_neck_06|PALBot:PALbot_neck_07" 
+		"scaleZ" " 0.9999961256980896"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_L_clav|PALBot:PALbot_L_shoulder01|PALBot:PALbot_L_shoulder02|PALBot:PALbot_L_IK_shoulder" 
+		"rotate" " -type \"double3\" 0.33553629027687043 -0.11747404722849739 -0.30495336353876973"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_L_clav|PALBot:PALbot_L_shoulder01|PALBot:PALbot_L_shoulder02|PALBot:PALbot_L_IK_shoulder|PALBot:PALbot_L_IK_elbow" 
+		"rotate" " -type \"double3\" -0.61710891814798341 -0.38086450063481669 0.56804640873398771"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_R_clav|PALBot:PALbot_R_shoulder01|PALBot:PALbot_R_shoulder02|PALBot:PALbot_R_IK_shoulder" 
+		"rotate" " -type \"double3\" 74.54049467831819697 90.2718190857797822 74.80335541896597817"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_spine_up|PALBot:PALbot_CHESTROOT|PALBot:PALbot_R_clav|PALBot:PALbot_R_shoulder01|PALBot:PALbot_R_shoulder02|PALBot:PALbot_R_IK_shoulder|PALBot:PALbot_R_IK_elbow" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"translate" " -type \"double3\" 0.84329299324278917 0 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"translateX" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"translateY" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"translateZ" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"rotate" " -type \"double3\" -15.62333698466259335 0.54636815861462706 0.34409718784902599"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"rotateX" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"rotateY" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg" 
+		"rotateZ" " -av"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg|PALBot:PALbot_L_IK_kneeUP" 
+		"rotate" " -type \"double3\" 14.14994352688819212 0.00022225992956020066 -0.010142466508668093"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg|PALBot:PALbot_L_IK_kneeUP|PALBot:PALbot_L_IK_kneeDW" 
+		"rotate" " -type \"double3\" 15.41246635341798665 -0.0011558330589403595 0.0099574739607473286"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg|PALBot:PALbot_L_IK_kneeUP|PALBot:PALbot_L_IK_kneeDW|PALBot:PALbot_L_IK_ankle" 
+		"rotate" " -type \"double3\" -13.93829331184238285 -0.67841240711599204 -0.1848929916113333"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_L_IK_hip|PALBot:PALbot_L_IK_leg|PALBot:PALbot_L_IK_kneeUP|PALBot:PALbot_L_IK_kneeDW|PALBot:PALbot_L_IK_ankle|PALBot:PALbot_L_IK_ball" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_R_IK_hip|PALBot:PALbot_R_IK_leg" 
+		"rotate" " -type \"double3\" -8.93338096610184529 0.10268718390678805 -0.35769958935978968"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_R_IK_hip|PALBot:PALbot_R_IK_leg|PALBot:PALbot_R_IK_kneeUP" 
+		"rotate" " -type \"double3\" 8.66694887277209247 -0.14929541651317071 -0.014590161806585518"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_R_IK_hip|PALBot:PALbot_R_IK_leg|PALBot:PALbot_R_IK_kneeUP|PALBot:PALbot_R_IK_kneeDW" 
+		"rotate" " -type \"double3\" 8.64803809454704719 -0.025219555121630516 0.014745710387135701"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_R_IK_hip|PALBot:PALbot_R_IK_leg|PALBot:PALbot_R_IK_kneeUP|PALBot:PALbot_R_IK_kneeDW|PALBot:PALbot_R_IK_ankle" 
+		"rotate" " -type \"double3\" -8.38316356069903357 -0.077411629172825444 0.67813052593841217"
+		
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_R_IK_hip|PALBot:PALbot_R_IK_leg|PALBot:PALbot_R_IK_kneeUP|PALBot:PALbot_R_IK_kneeDW|PALBot:PALbot_R_IK_ankle|PALBot:PALbot_R_IK_ball" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_SKELETON|PALBot:PALbot_root|PALBot:PALbot_spine_down|PALBot:PALbot_spine_01" 
+		"translate" " -type \"double3\" 0 0 0"
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN.global_scale" 
 		"PALBotRN.placeHolderList[1]" ""
 		5 4 "PALBotRN" "|PALBot:PALBOT_GRP|PALBot:PALbot_LOC|PALBot:PALbot_CTRLs|PALBot:PALbot_MAIN.Mesh_lock" 
@@ -3267,7 +3430,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
-	setAttr -s 2 ".sol";
+	setAttr -s 4 ".sol";
 connectAttr "PALbot_MAIN_global_scale.o" "PALBotRN.phl[1]";
 connectAttr "PALbot_MAIN_Mesh_lock.o" "PALBotRN.phl[2]";
 connectAttr "PALbot_MAIN_translateX.o" "PALBotRN.phl[3]";
