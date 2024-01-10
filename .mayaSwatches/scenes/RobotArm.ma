@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RobotArm.ma
-//Last modified: Wed, Jan 10, 2024 04:00:48 PM
+//Last modified: Wed, Jan 10, 2024 04:26:33 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.3.2";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "D941579E-4B1E-B83E-B199-95B3FAC6D0F2";
+fileInfo "UUID" "5339F56C-42E7-2628-FA7C-3FBE841B1AFB";
 createNode transform -s -n "persp";
 	rename -uid "AD854AB9-41E3-9223-D0E0-FABE9FB06292";
 	setAttr ".v" no;
@@ -4159,7 +4159,7 @@ createNode transform -n "pCylinder8";
 	rename -uid "D7D9993B-4EB6-AFB0-9004-78BEB5CBC164";
 	setAttr ".t" -type "double3" 2.8959045708646971 14.519175017282778 4.2177123914765104 ;
 	setAttr ".r" -type "double3" 0 0 90 ;
-	setAttr ".s" -type "double3" 0.88870862895107416 2.6249954672762676 0.88870862895107416 ;
+	setAttr ".s" -type "double3" 0.88870862895107416 1.9479133611901209 0.88870862895107416 ;
 	setAttr ".rp" -type "double3" 0 1.1890402011640746 0 ;
 	setAttr ".rpt" -type "double3" -2.1890402188534428 -2.1890402188534428 0 ;
 	setAttr ".sp" -type "double3" 0 1.1890402011640746 0 ;
@@ -4362,7 +4362,7 @@ createNode mesh -n "pCylinderShape8" -p "pCylinder8";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCone1";
 	rename -uid "40F50A88-4619-5CDE-4E92-3EB902FD0E1C";
-	setAttr ".t" -type "double3" 8.6279917533592361 13.540801663325738 4.2178621854230745 ;
+	setAttr ".t" -type "double3" 6.8549539026144011 13.540801663325738 4.2178621854230745 ;
 	setAttr ".r" -type "double3" 0 0 -90 ;
 	setAttr ".s" -type "double3" 0.8957772614170878 0.8957772614170878 0.8957772614170878 ;
 createNode mesh -n "pConeShape1" -p "pCone1";
