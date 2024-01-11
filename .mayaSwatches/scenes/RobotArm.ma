@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RobotArm.ma
-//Last modified: Wed, Jan 10, 2024 04:26:33 PM
+//Last modified: Wed, Jan 10, 2024 04:37:21 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.3.2";
@@ -10,23 +10,23 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "5339F56C-42E7-2628-FA7C-3FBE841B1AFB";
+fileInfo "UUID" "9CE5D027-434A-AE24-8202-1BA912FCA7B1";
 createNode transform -s -n "persp";
 	rename -uid "AD854AB9-41E3-9223-D0E0-FABE9FB06292";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.101405988677332 21.0695788641405 -34.97882592446777 ;
-	setAttr ".r" -type "double3" 159.07021167061933 -0.24244018311510465 179.99999999999997 ;
-	setAttr ".rp" -type "double3" 0 -3.5527136788005009e-15 7.1054273576010019e-15 ;
-	setAttr ".rpt" -type "double3" -1.0808877200772614e-14 6.359097145021521e-15 -1.4122790926625977e-14 ;
+	setAttr ".t" -type "double3" 30.49665557468192 15.969390350636589 -29.628181945797667 ;
+	setAttr ".r" -type "double3" 166.45791963075888 24.846864518770811 180 ;
+	setAttr ".rp" -type "double3" 5.3290705182007514e-15 0 0 ;
+	setAttr ".rpt" -type "double3" -2.2829019526884401e-14 4.1120723602796395e-15 -2.908788409784753e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "615AD60B-479A-66F7-A8BE-5EADE5AA3D54";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 36.96835526715585;
+	setAttr ".coi" 36.968355267155857;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 14.24751145286208 7.8636081303956491 -0.44999331559638733 ;
+	setAttr ".tp" -type "double3" 15.394628095659753 7.3129006448665539 2.9855152251059565 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "5BA31143-4287-D93B-8FC8-40B87F7DB8A9";
