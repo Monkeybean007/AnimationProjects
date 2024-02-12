@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RobotArm.ma
-//Last modified: Sun, Feb 11, 2024 09:55:06 PM
+//Last modified: Sun, Feb 11, 2024 10:06:36 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "HIKSolverNode" -nodeType "HIKCharacterNode" -nodeType "HIKControlSetNode"
@@ -13,11 +13,11 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "F98B451C-4F8B-D132-0462-1D89D8E674A5";
+fileInfo "UUID" "A4FC9587-4DA8-20DB-3915-37A81FB11044";
 createNode transform -s -n "persp";
 	rename -uid "AD854AB9-41E3-9223-D0E0-FABE9FB06292";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.6724926508795246 23.739638514855617 -17.59082380121621 ;
+	setAttr ".t" -type "double3" -17.048199264440463 40.737784804655782 -47.065518202490289 ;
 	setAttr ".r" -type "double3" 154.53648384171939 -20.695619135687142 180 ;
 	setAttr ".rp" -type "double3" -1.7763568394002505e-15 -8.8817841970012523e-16 3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" -1.881384061711696e-14 3.1194009451906507e-15 1.9626924106089683e-14 ;
@@ -25,7 +25,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "615AD60B-479A-66F7-A8BE-5EADE5AA3D54";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 32.756174542423018;
+	setAttr ".coi" 68.588268230030195;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
