@@ -1,0 +1,220 @@
+#usda 1.0
+(
+    "Exported from Adobe Substance 3D Painter 9.1.2"
+    defaultPrim = "RootNode"
+)
+
+def "RootNode"
+{
+    def Scope "material"
+    {
+        def Material "GenericHuman_APose__1__BodyMaterial" (
+            customData = {
+                dictionary adobe = {
+                    dictionary painter = {
+                        asset painterProject_spp = @C:/Users/monke/OneDrive/Desktop/Homework/Substance Dont Upload to Git/Cartoon human Knight.spp@
+                    }
+                }
+            }
+        )
+        {
+            asset inputs:basecolor_tex = @Cartoon human Knight_textures/CartoonKnightBlender_GenericHuman_APose__1__BodyMaterial_BaseColor.png@
+            asset inputs:compositedNormalDX_tex = @Cartoon human Knight_textures/CartoonKnightBlender_GenericHuman_APose__1__BodyMaterial_Normal.png@
+            asset inputs:height_tex = @Cartoon human Knight_textures/CartoonKnightBlender_GenericHuman_APose__1__BodyMaterial_Height.png@
+            asset inputs:metallic_tex = @Cartoon human Knight_textures/CartoonKnightBlender_GenericHuman_APose__1__BodyMaterial_Metallic.png@
+            asset inputs:opacity_tex = @Cartoon human Knight_textures/CartoonKnightBlender_GenericHuman_APose__1__BodyMaterial_BaseColor.png@
+            asset inputs:roughness_tex = @Cartoon human Knight_textures/CartoonKnightBlender_GenericHuman_APose__1__BodyMaterial_Roughness.png@
+            token outputs:displacement.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/ShaderUsdPreviewSurface.outputs:displacement>
+            token outputs:surface.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/ShaderUsdPreviewSurface.outputs:surface>
+
+            def NodeGraph "UsdPreviewSurface"
+            {
+                def Shader "ShaderUsdPreviewSurface"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    float3 inputs:diffuseColor.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/diffuseColorTextureShader.outputs:rgb>
+                    float inputs:metallic.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/metallicTextureShader.outputs:r>
+                    normal3f inputs:normal.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/normalTextureShader.outputs:rgb>
+                    float inputs:opacity.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/opacityTextureShader.outputs:a>
+                    float inputs:roughness.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/roughnessTextureShader.outputs:r>
+                    token outputs:displacement
+                    token outputs:surface
+                }
+
+                def Shader "TexCoordReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "diffuseColorTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial.inputs:basecolor_tex>
+                    float2 inputs:st.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "roughnessTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial.inputs:roughness_tex>
+                    float2 inputs:st.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:r
+                }
+
+                def Shader "metallicTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial.inputs:metallic_tex>
+                    float2 inputs:st.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:r
+                }
+
+                def Shader "opacityTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial.inputs:opacity_tex>
+                    float2 inputs:st.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                }
+
+                def Shader "normalTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (-1, 1, -1, 0)
+                    asset inputs:file.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial.inputs:compositedNormalDX_tex>
+                    float4 inputs:scale = (2, -2, 2, 1)
+                    float2 inputs:st.connect = </RootNode/material/GenericHuman_APose__1__BodyMaterial/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    normal3f outputs:rgb
+                }
+            }
+        }
+
+        def Material "standardSurface1" (
+            customData = {
+                dictionary adobe = {
+                    dictionary painter = {
+                        asset painterProject_spp = @C:/Users/monke/OneDrive/Desktop/Homework/Substance Dont Upload to Git/Cartoon human Knight.spp@
+                    }
+                }
+            }
+        )
+        {
+            asset inputs:basecolor_tex = @Cartoon human Knight_textures/CartoonKnightBlender_standardSurface1_BaseColor.png@
+            asset inputs:compositedNormalDX_tex = @Cartoon human Knight_textures/CartoonKnightBlender_standardSurface1_Normal.png@
+            asset inputs:height_tex = @Cartoon human Knight_textures/CartoonKnightBlender_standardSurface1_Height.png@
+            asset inputs:metallic_tex = @Cartoon human Knight_textures/CartoonKnightBlender_standardSurface1_Metallic.png@
+            asset inputs:opacity_tex = @Cartoon human Knight_textures/CartoonKnightBlender_standardSurface1_BaseColor.png@
+            asset inputs:roughness_tex = @Cartoon human Knight_textures/CartoonKnightBlender_standardSurface1_Roughness.png@
+            token outputs:displacement.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/ShaderUsdPreviewSurface.outputs:displacement>
+            token outputs:surface.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/ShaderUsdPreviewSurface.outputs:surface>
+
+            def NodeGraph "UsdPreviewSurface"
+            {
+                def Shader "ShaderUsdPreviewSurface"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    float3 inputs:diffuseColor.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/diffuseColorTextureShader.outputs:rgb>
+                    float inputs:metallic.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/metallicTextureShader.outputs:r>
+                    normal3f inputs:normal.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/normalTextureShader.outputs:rgb>
+                    float inputs:opacity.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/opacityTextureShader.outputs:a>
+                    float inputs:roughness.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/roughnessTextureShader.outputs:r>
+                    token outputs:displacement
+                    token outputs:surface
+                }
+
+                def Shader "TexCoordReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "diffuseColorTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/standardSurface1.inputs:basecolor_tex>
+                    float2 inputs:st.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "roughnessTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/standardSurface1.inputs:roughness_tex>
+                    float2 inputs:st.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:r
+                }
+
+                def Shader "metallicTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/standardSurface1.inputs:metallic_tex>
+                    float2 inputs:st.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:r
+                }
+
+                def Shader "opacityTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </RootNode/material/standardSurface1.inputs:opacity_tex>
+                    float2 inputs:st.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                }
+
+                def Shader "normalTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (-1, 1, -1, 0)
+                    asset inputs:file.connect = </RootNode/material/standardSurface1.inputs:compositedNormalDX_tex>
+                    float4 inputs:scale = (2, -2, 2, 1)
+                    float2 inputs:st.connect = </RootNode/material/standardSurface1/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    normal3f outputs:rgb
+                }
+            }
+        }
+    }
+
+    over "GenericHuman_APose__1__Body"
+    {
+        over "GenericHuman_APose__1__Body" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </RootNode/material/GenericHuman_APose__1__BodyMaterial>
+        }
+    }
+
+    over "pCylinder1"
+    {
+        over "pCylinder1" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </RootNode/material/standardSurface1>
+        }
+    }
+}
+
