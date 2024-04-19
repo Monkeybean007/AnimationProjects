@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RobotModel.ma
-//Last modified: Thu, Apr 18, 2024 06:18:41 PM
+//Last modified: Fri, Apr 19, 2024 01:13:12 PM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
@@ -11,23 +11,23 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "BAD1C243-46CA-6726-CD76-93B6DE18C0B2";
+fileInfo "UUID" "A34F2B29-4F89-1372-F61E-04BD1FE37D64";
 createNode transform -s -n "persp";
 	rename -uid "795A630A-45ED-0A97-9C54-15B6A2746320";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -39.130358085996832 294.07136961269913 609.55360788220059 ;
-	setAttr ".r" -type "double3" -16.190142181987518 -12.082409307211897 -2.0328799539045101e-16 ;
-	setAttr ".rp" -type "double3" 0 -3.5527136788005009e-15 0 ;
-	setAttr ".rpt" -type "double3" -5.3371247895078237e-14 1.8584916516974273e-14 3.9846154417995823e-14 ;
+	setAttr ".t" -type "double3" -41.070454171189226 171.9012538282818 463.9755749816353 ;
+	setAttr ".r" -type "double3" -2.0593388469590321 -8.0700575381345843 7.5289833769825644e-17 ;
+	setAttr ".rp" -type "double3" 1.7763568394002505e-15 1.4210854715202004e-14 1.1368683772161603e-13 ;
+	setAttr ".rpt" -type "double3" -2.2972861604065263e-14 6.0092404511873132e-14 1.7752428652946995e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8AD2DED8-4D8C-FC85-11F0-FB91F0C1B36F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 728.00852819348961;
+	setAttr ".coi" 522.47526975108678;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 106.94521858271902 26.887535206497247 -8.0054116990430941 ;
+	setAttr ".tp" -type "double3" 12.237213448431788 109.70975061010324 -9.9624349113090034 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "8293750D-4634-55E9-9B3F-8C8032937FFF";
@@ -85,6 +85,10 @@ createNode transform -n "Skeleton" -p "Robot";
 	rename -uid "1512B0FD-4C89-79CD-71FC-CB85B5C84C34";
 createNode joint -n "Cog_Joint" -p "Skeleton";
 	rename -uid "5CB73370-45ED-13DA-3C74-3593B8A1F804";
+	setAttr ".t" -type "double3" 12.405516411728122 135.78078318059636 -12.524378360649344 ;
+	setAttr -av ".tx";
+	setAttr -av ".ty";
+	setAttr -av ".tz";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "xzy";
@@ -103,6 +107,7 @@ createNode joint -n "Spine_02_FK_Joint" -p "Spine_01_FK_Joint";
 	setAttr ".radi" 2;
 createNode joint -n "L_Arm_01_FK_Joint" -p "Spine_02_FK_Joint";
 	rename -uid "9989FEE0-4A82-23D6-8AA8-36818058A9A9";
+	setAttr ".v" no;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "xzy";
@@ -317,6 +322,7 @@ createNode parentConstraint -n "L_Arm_01_FK_Joint_parentConstraint1" -p "L_Arm_0
 	setAttr -k on ".w0";
 createNode joint -n "R_Arm_01_FK_Joint" -p "Spine_02_FK_Joint";
 	rename -uid "5EB33CB0-4312-50E7-3643-0EA4718AC80D";
+	setAttr ".v" no;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "xzy";
@@ -677,6 +683,201 @@ createNode parentConstraint -n "Spine_02_FK_Joint_parentConstraint1" -p "Spine_0
 	setAttr ".tg[0].tot" -type "double3" 0 6.9388939039072284e-18 0 ;
 	setAttr ".rst" -type "double3" 54.550994873046875 0.9150090217589768 -1.7024514418069706e-14 ;
 	setAttr -k on ".w0";
+createNode joint -n "L_Arm_01_IK_Joint" -p "Spine_02_FK_Joint";
+	rename -uid "149DC682-494A-B95B-280E-8183A2DEC2D5";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".r" -type "double3" -1.2768323759254734 1.3543046945207984 -2.2929571756396885 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 0 179.99992464442894 2.1193704768688306e-05 ;
+	setAttr ".radi" 5;
+createNode joint -n "L_Arm_02_IK_Joint" -p "L_Arm_01_IK_Joint";
+	rename -uid "00CA3AF2-428A-9965-6721-94BC37F5D2D1";
+	setAttr ".t" -type "double3" 69.611114502018069 -1.7763568394002505e-15 -4.2632564145606011e-14 ;
+	setAttr ".r" -type "double3" 1.3803209476803701e-31 6.4900305416164945e-15 4.06758747093604 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 5;
+createNode joint -n "L_Arm_03_IK_Joint" -p "L_Arm_02_IK_Joint";
+	rename -uid "F4EB573D-4C6D-E55C-C819-348DB5CE4314";
+	setAttr ".t" -type "double3" 72.04743957525838 0 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 5;
+createNode orientConstraint -n "L_Arm_03_IK_Joint_orientConstraint1" -p "L_Arm_03_IK_Joint";
+	rename -uid "A4DA13E2-4C15-9D6C-768D-20A6BA98E3ED";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Arm_IK_CntrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".lr" -type "double3" 12.984501647754458 88.746308643743987 101.21277669409429 ;
+	setAttr ".o" -type "double3" 89.999996278459079 0 -91.686030524475314 ;
+	setAttr ".rsrr" -type "double3" 1.2722217891741295e-14 -9.2236085877492039e-14 1.0362786129004458e-06 ;
+	setAttr -k on ".w0";
+createNode ikEffector -n "effector1" -p "L_Arm_02_IK_Joint";
+	rename -uid "0550590D-46A3-83D9-2DFA-0A916A260D15";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode pointConstraint -n "L_Arm_01_IK_Joint_pointConstraint1" -p "L_Arm_01_IK_Joint";
+	rename -uid "410013D7-4D0E-02B8-6213-55A77B3A800B";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Arm_IK_Base_CntrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" 1.2635661050808267e-06 -1.8144157820643159e-07 -3.5922475802863119e-06 ;
+	setAttr ".rst" -type "double3" 11.20095825195304 -2.1063966751098562 99.590499877929688 ;
+	setAttr -k on ".w0";
+createNode joint -n "R_Arm_01_IK_Joint" -p "Spine_02_FK_Joint";
+	rename -uid "9C9B150C-4AEA-1E97-34DF-04B1087F8D41";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".r" -type "double3" -76.826777400806719 -0.80959363895354464 -1.3088067874607245e-05 ;
+	setAttr ".s" -type "double3" 0.99999999999999967 0.99999999999999989 1 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 179.99997879275833 0.00015071114989425756 4.2387381645551024e-05 ;
+	setAttr ".radi" 5;
+createNode joint -n "R_Arm_02_IK_Joint" -p "R_Arm_01_IK_Joint";
+	rename -uid "F3ACA506-4384-D5FB-826A-EC8CBB6F682A";
+	setAttr ".t" -type "double3" -69.611000000025342 3.5527136788005009e-15 8.3105169210284657e-05 ;
+	setAttr ".r" -type "double3" 0.40053041559035529 4.5826443810338739 3.9967415368653922 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 0.99999999999999989 1 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 2.9955168826913387e-05 0 0 ;
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 5;
+createNode joint -n "R_Arm_03_IK_Joint" -p "R_Arm_02_IK_Joint";
+	rename -uid "EDC471FC-4286-B69D-1740-16A635E764F8";
+	setAttr ".t" -type "double3" -70.995310779312518 4.9508803967272517 -5.7287889900837312 ;
+	setAttr ".s" -type "double3" 1.0000000000000007 0.99999999999999978 0.99999999999999989 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 2.2893236264545264e-05 0 0 ;
+	setAttr ".radi" 5;
+createNode orientConstraint -n "R_Arm_03_IK_Joint_orientConstraint1" -p "R_Arm_03_IK_Joint";
+	rename -uid "E4C56CC9-4C1F-2275-962D-708BCB397823";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Arm_IK_CntrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".lr" -type "double3" -4.929095194704864 166.86318055410072 -95.956227973586977 ;
+	setAttr ".o" -type "double3" -89.999946591283745 -3.5266073613157939e-05 88.314197339191992 ;
+	setAttr ".rsrr" -type "double3" -2.8624992133171654e-14 -3.1805546814635148e-15 
+		9.5416640443905535e-15 ;
+	setAttr -k on ".w0";
+createNode ikEffector -n "effector2" -p "R_Arm_02_IK_Joint";
+	rename -uid "8F895D9F-439B-455C-3A53-30A8A3809500";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode pointConstraint -n "R_Arm_01_IK_Joint_pointConstraint1" -p "R_Arm_01_IK_Joint";
+	rename -uid "5D8B56F4-4A74-38BC-3621-B3A0A71BF019";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Arm_IK_Base_CntrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" -5.109391281621356e-06 2.6777717110348931e-07 3.1684244561347441e-07 ;
+	setAttr ".rst" -type "double3" 11.200910644531319 -2.1063952722167905 -99.590499999999977 ;
+	setAttr -k on ".w0";
+createNode joint -n "L_Arm_01_RK_Joint" -p "Spine_02_FK_Joint";
+	rename -uid "63BB13B1-4F99-A84B-AE15-308BBE43AEA6";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 11.20095825195304 -2.1063966751098562 99.590499877929688 ;
+	setAttr ".r" -type "double3" 2.8926976314901512e-27 -2.5444437451708999e-14 -6.4230790275182626e-43 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 0 179.99992464442894 2.1193704768688306e-05 ;
+	setAttr ".radi" 3;
+createNode joint -n "L_Arm_02_RK_Joint" -p "L_Arm_01_RK_Joint";
+	rename -uid "DDB8122D-408F-3413-D0E9-65B3FC93634F";
+	setAttr ".t" -type "double3" 69.611114502018069 -1.7763568394002505e-15 -4.2632564145606011e-14 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 3;
+createNode joint -n "L_Arm_03_RK_Joint" -p "L_Arm_02_RK_Joint";
+	rename -uid "D8B1CD8A-4742-8CC4-2E0B-F28E877747C3";
+	setAttr ".t" -type "double3" 72.04743957525838 0 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 3;
+createNode joint -n "R_Arm_01_RK_Joint" -p "Spine_02_FK_Joint";
+	rename -uid "54CF0B62-4893-8617-FA1D-1AB4333E44B7";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 11.200910644531319 -2.1063952722167905 -99.590499999999977 ;
+	setAttr ".r" -type "double3" -4.2110968298061416e-16 -3.2511193559454496e-16 7.1472575890372203e-15 ;
+	setAttr ".s" -type "double3" 0.99999999999999967 0.99999999999999989 1 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 179.99997879275833 0.00015071114989425745 4.2387381645551024e-05 ;
+	setAttr ".radi" 3;
+createNode joint -n "R_Arm_02_RK_Joint" -p "R_Arm_01_RK_Joint";
+	rename -uid "B4C48777-46BA-0E73-41DA-4791AC93E038";
+	setAttr ".t" -type "double3" -69.611000000025342 3.5527136788005009e-15 8.3105169210284657e-05 ;
+	setAttr ".r" -type "double3" 3.8434452514420035e-16 2.3854143057756864e-15 -6.5235990340226115e-15 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 0.99999999999999989 1 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 2.9955168826913401e-05 0 0 ;
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 3;
+createNode joint -n "R_Arm_03_RK_Joint" -p "R_Arm_02_RK_Joint";
+	rename -uid "01E86049-436E-B9CD-3DEA-3AA7D2627B96";
+	setAttr ".t" -type "double3" -72.047500000008881 -3.3300681520742614e-05 8.9514165964033054e-05 ;
+	setAttr ".r" -type "double3" -6.3833974143409458e-16 -7.9513650582326104e-16 1.0834567562115904e-14 ;
+	setAttr ".s" -type "double3" 1.0000000000000007 0.99999999999999978 0.99999999999999989 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" 2.2893236264545277e-05 0 0 ;
+	setAttr ".radi" 3;
 createNode parentConstraint -n "Spine_01_FK_Joint_parentConstraint1" -p "Spine_01_FK_Joint";
 	rename -uid "8657AFAC-448D-905B-18FA-E09C218332FC";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Spine_01_FK_CntrlW0" -dv 1 -min 0 
@@ -712,6 +913,7 @@ createNode joint -n "L_Leg_Clav_FK_Joint" -p "Hip_FK_Joint";
 	setAttr ".radi" 3;
 createNode joint -n "L_Leg_01_FK_Joint" -p "L_Leg_Clav_FK_Joint";
 	rename -uid "BCCBC57C-4B0F-3D8F-3615-029FD3B7FF69";
+	setAttr ".v" no;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -90.000000000002004 -88.170474794815718 90.000000000002004 ;
@@ -948,6 +1150,67 @@ createNode parentConstraint -n "L_Leg_Clav_FK_Joint_parentConstraint1" -p "L_Leg
 	setAttr ".lr" -type "double3" 0 -2.5444437451708134e-14 0 ;
 	setAttr ".rst" -type "double3" 23.963243541768165 -0.3989958763122341 -9.9657487869262908 ;
 	setAttr -k on ".w0";
+createNode joint -n "L_Leg_01_IK_Joint" -p "L_Leg_Clav_FK_Joint";
+	rename -uid "BD53F007-4820-470D-269C-E3BFF4308C83";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" 20.918925780719533 12.455332815093412 1.5523102178265589 ;
+	setAttr ".r" -type "double3" 0.087035762840676156 1.1024296182895068 1.7613389606383194 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" -90.000000000002004 -88.170474794815718 90.000000000002004 ;
+	setAttr ".radi" 6;
+createNode joint -n "L_Leg_02_IK_Joint" -p "L_Leg_01_IK_Joint";
+	rename -uid "ED6F03A0-4AC9-55F6-82E4-E9B01D51E6EF";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" 32.942268681740444 2.6645352591003757e-15 1.4210854715202004e-14 ;
+	setAttr ".r" -type "double3" 9.5249780212094365e-16 1.9814367977435273e-14 3.1958595802579652 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 180 0 0 ;
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 6;
+createNode joint -n "L_Leg_03_IK_Joint" -p "L_Leg_02_IK_Joint";
+	rename -uid "72DE9D80-48E3-4F94-C8B2-4EB98D19B7A3";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" 40.375490630978341 3.0522251392994804e-11 2.1316282072803006e-14 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 6;
+createNode ikEffector -n "effector4" -p "L_Leg_02_IK_Joint";
+	rename -uid "2DC5A30E-420D-F9C1-E246-94BC49DE3F89";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode joint -n "L_Leg_01_Rk_Joint" -p "L_Leg_Clav_FK_Joint";
+	rename -uid "00BEC193-4C5F-5295-4605-099FA76D1296";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 18.987685203552211 0.1444153785705371 2.720726013183608 ;
+	setAttr ".r" -type "double3" -3.0155634073625962e-13 -1.4272117930981315e-14 -4.7708320221952373e-15 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" -90.000000000002004 -88.170474794815718 90.000000000002004 ;
+	setAttr ".radi" 3;
+createNode joint -n "L_Leg_02_Rk_Joint" -p "L_Leg_01_Rk_Joint";
+	rename -uid "9511BA36-44C0-7699-5A4F-B8898A6C6DD3";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 32.942268681740444 2.6645352591003757e-15 1.4210854715202004e-14 ;
+	setAttr ".r" -type "double3" -4.0711099922733015e-13 0 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 180 0 0 ;
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 3;
+createNode joint -n "L_Leg_03_Rk_Joint" -p "L_Leg_02_Rk_Joint";
+	rename -uid "2268DDE5-4173-D1A7-1155-E293F0B3C3A5";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 40.375490630978341 3.0522251392994804e-11 2.1316282072803006e-14 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 3;
 createNode joint -n "R_Leg_Clav_FK_Joint" -p "Hip_FK_Joint";
 	rename -uid "EDFE15AA-42F8-939A-A47E-F88B3D0D4891";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -956,12 +1219,14 @@ createNode joint -n "R_Leg_Clav_FK_Joint" -p "Hip_FK_Joint";
 	setAttr ".radi" 3;
 createNode joint -n "R_Leg_01_FK_Joint" -p "R_Leg_Clav_FK_Joint";
 	rename -uid "76667DDE-49CC-5E11-2A75-7DBD3ECEE3BB";
+	setAttr ".v" no;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -90.000000000002004 -88.170474794815718 90.000000000001606 ;
 	setAttr ".radi" 3;
 createNode joint -n "R_Leg_02_FK_Joint" -p "R_Leg_01_FK_Joint";
 	rename -uid "0E26DC55-4833-F863-F648-01ACFA8ACB5C";
+	setAttr ".v" no;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "xzy";
@@ -970,6 +1235,7 @@ createNode joint -n "R_Leg_02_FK_Joint" -p "R_Leg_01_FK_Joint";
 	setAttr ".radi" 3;
 createNode joint -n "R_Leg_03_FK_Joint" -p "R_Leg_02_FK_Joint";
 	rename -uid "3D5DFD03-4A74-55DD-F1D9-A9BDFB538610";
+	setAttr ".v" no;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 3;
@@ -1338,6 +1604,71 @@ createNode scaleConstraint -n "R_Leg_Clav_FK_Joint_scaleConstraint1" -p "R_Leg_C
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
+createNode joint -n "R_Leg_01_IK_Joint" -p "R_Leg_Clav_FK_Joint";
+	rename -uid "5028F225-4CEA-CC28-AF8E-63836CEC67E5";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" -17.847468225731784 -9.7956135027828513 -1.7252748586760418 ;
+	setAttr ".r" -type "double3" 8.5377365991497731e-07 -2.5200741613818029e-11 0.0016872444497561267 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" -90.000000000002004 -88.170474794815732 90.000000000001606 ;
+	setAttr ".radi" 6;
+createNode joint -n "R_Leg_02_IK_Joint" -p "R_Leg_01_IK_Joint";
+	rename -uid "42C939E1-4060-2786-F031-E488AB64A81B";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" -35.44825489777228 0.00014346285219560785 -2.0173163271289258 ;
+	setAttr ".r" -type "double3" 5.2762746557846657e-15 -1.3871138373105059e-14 0.0030638647023203324 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1.0000000000000002 1 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" -180 0 0 ;
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 6;
+createNode joint -n "R_Leg_03_IK_Joint" -p "R_Leg_02_IK_Joint";
+	rename -uid "6BE137CC-4EA3-E779-73F3-D8A7818B5E85";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" -42.163534996380655 4.9313132195469032e-06 0.46008964356002791 ;
+	setAttr ".r" -type "double3" -6.8332229484567732e-16 -3.975693351829396e-16 -1.0808916300286168e-14 ;
+	setAttr ".s" -type "double3" 0.99999999999999944 0.99999999999999978 0.99999999999999989 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 6;
+createNode ikEffector -n "effector3" -p "R_Leg_02_IK_Joint";
+	rename -uid "C7907E62-47C4-28CE-D0FD-758EC7A5FCB3";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode joint -n "R_Leg_01_Rk_Joint" -p "R_Leg_Clav_FK_Joint";
+	rename -uid "439A17AD-4577-FA99-459A-1E9ABDC4CB0A";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" -18.98765 -0.14441999999999666 -2.7206999999999368 ;
+	setAttr ".r" -type "double3" -7.951386703658788e-16 6.3766394150826169e-15 8.5477407064332019e-15 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jo" -type "double3" -90.000000000002004 -88.170474794815732 90.000000000001606 ;
+	setAttr ".radi" 3;
+createNode joint -n "R_Leg_02_Rk_Joint" -p "R_Leg_01_Rk_Joint";
+	rename -uid "ABAE8124-46CC-ED0B-2ACF-AABCF7929844";
+	setAttr ".t" -type "double3" -32.942292317625828 9.4576886882080657e-06 4.2632564145606011e-14 ;
+	setAttr ".r" -type "double3" -2.9743011768061534e-16 -2.8868650939816266e-31 -4.5228885176041528e-15 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1.0000000000000002 1 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" -180 0 0 ;
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 3;
+createNode joint -n "R_Leg_03_Rk_Joint" -p "R_Leg_02_Rk_Joint";
+	rename -uid "DA82B70E-4E77-D026-7999-059638429DCB";
+	setAttr ".t" -type "double3" -40.375481909948768 4.9313132182149388e-06 -4.2632564145606011e-14 ;
+	setAttr ".r" -type "double3" -6.8332229484567732e-16 -3.975693351829396e-16 -1.0808916300286168e-14 ;
+	setAttr ".s" -type "double3" 0.99999999999999944 0.99999999999999978 0.99999999999999989 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 3;
 createNode parentConstraint -n "Hip_FK_Joint_parentConstraint1" -p "Hip_FK_Joint";
 	rename -uid "EE604262-41EB-FE5E-21F0-FA9605A70615";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Hip_FK_CntrlW0" -dv 1 -min 0 -at "double";
@@ -1505,6 +1836,7 @@ createNode nurbsCurve -n "L_Leg_Clav_FK_CntrlShape" -p "|Robot|Controls|Transfor
 		;
 createNode transform -n "L_Leg_01_FK_Group" -p "|Robot|Controls|Transform_Cntrl_Group|Transform_Cntrl|Cog_Cntrl_Group|Hip_FK_Cntrl_Group|Hip_FK_Cntrl|L_Leg_Clav_FK_Cntrl|L_Leg_Clav_FK_Cntrl";
 	rename -uid "00DAEE7D-498B-6B86-BFC0-03B492C0156C";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" 1.1506743529504024 0.0087517288448437092 0.16487895239540329 ;
 	setAttr ".r" -type "double3" -90.000000000001606 -88.170474794815718 90.000000000001194 ;
 	setAttr ".s" -type "double3" 0.060601086473412495 0.060601086473412495 0.060601086473412488 ;
@@ -1759,6 +2091,7 @@ createNode nurbsCurve -n "R_Leg_Clav_FK_CntrlShape" -p "R_Leg_Clav_FK_Cntrl";
 		;
 createNode transform -n "R_Leg_01_FK_Group" -p "R_Leg_Clav_FK_Cntrl1";
 	rename -uid "CA2284D9-4EBC-8BC7-C742-0EA13F2342BC";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" 18.987685203552214 0.14441537857053532 -2.720726013183608 ;
 	setAttr ".r" -type "double3" 90.000000000003197 88.170474794815703 90.0000000000028 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999978 0.99999999999999978 ;
@@ -2031,6 +2364,7 @@ createNode nurbsCurve -n "Spine_02_FK_CntrlShape" -p "Spine_02_FK_Cntrl";
 		;
 createNode transform -n "L_Arm_01_FK__Cntrl_Group" -p "Spine_02_FK_Cntrl";
 	rename -uid "5549443C-47F1-BE8D-C885-2188D79CB275";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" 0.1484948465015119 -0.027925204603560839 1.3203045364269022 ;
 	setAttr ".r" -type "double3" 0 179.99992464442894 2.1193704768688306e-05 ;
 	setAttr ".s" -type "double3" 0.013257334163853269 0.013257334163853269 0.013257334163853269 ;
@@ -2250,6 +2584,7 @@ createNode nurbsCurve -n "L_Finger_01_FK_CntrlShape" -p "|Robot|Controls|Transfo
 		;
 createNode transform -n "R_Arm_01_FK__Cntrl_Group" -p "Spine_02_FK_Cntrl";
 	rename -uid "5F6056B3-4C71-CABC-80CD-69A007D1F97A";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" 0.11895825888404277 -0.027925204603560863 -1.415937351125149 ;
 	setAttr ".r" -type "double3" 179.99999875128859 -3.3719856933846502 -179.99997876953907 ;
 	setAttr ".s" -type "double3" 0.013257334163853269 0.01325733416385327 0.01325733416385327 ;
@@ -2463,6 +2798,7 @@ createNode transform -n "Geometry" -p "Robot";
 createNode transform -n "Robot_Geo" -p "Geometry";
 	rename -uid "CEB2A0DA-4707-B56C-2DF3-BE9E51E645CA";
 	addAttr -is true -ci true -k true -sn "currentUVSet" -ln "currentUVSet" -dt "string";
+	setAttr ".t" -type "double3" 11.613722309311925 16.957524156985773 -2.1857226713405336 ;
 	setAttr -k on ".currentUVSet" -type "string" "map1";
 createNode mesh -n "Robot_GeoShape" -p "Robot_Geo";
 	rename -uid "FB85F8F4-47F2-A952-52D9-57820F65E54F";
@@ -44900,6 +45236,378 @@ createNode mesh -n "Robot_GeoShapeOrig" -p "Robot_Geo";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode ikHandle -n "R_leg_IK_Handle";
+	rename -uid "1234F174-4470-7D78-6B9A-A4BC3272200A";
+	setAttr ".t" -type "double3" -15.685943037893813 34.332995781155319 1.9754341050806909 ;
+	setAttr ".pv" -type "double3" 0.0020829424017706623 -0.018636390046417668 1.9999120846465506 ;
+	setAttr ".roc" yes;
+createNode ikHandle -n "L_Leg_IK_Handle";
+	rename -uid "BB3B13FA-4F86-0FEB-1197-C58A8BE5C22A";
+	setAttr ".t" -type "double3" 42.055018489379052 37.142067721495899 4.498162724998771 ;
+	setAttr ".pv" -type "double3" -0.00094837326456329268 -0.032221803966268246 1.999740197110462 ;
+	setAttr ".roc" yes;
+createNode transform -n "L_Leg_IK_Base_Cntrl_Group";
+	rename -uid "3BBFD2B6-465F-B16C-64B1-6CA803DC1877";
+	setAttr ".t" -type "double3" 40.832782745361328 109.27936553955078 -10.153475761413574 ;
+createNode transform -n "L_Leg_IK_Base_Cntrl" -p "L_Leg_IK_Base_Cntrl_Group";
+	rename -uid "3E09749E-4A62-95B1-A64C-7586962065A5";
+	setAttr ".t" -type "double3" -11.652305603027344 -18.495895385742188 8.0108466148376465 ;
+	setAttr ".s" -type "double3" 14.647717419394017 14.647717419394017 14.647717419394017 ;
+createNode nurbsCurve -n "L_Leg_IK_Base_CntrlShape" -p "L_Leg_IK_Base_Cntrl";
+	rename -uid "E9074B93-402F-75E6-6A53-20AFF2953441";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "L_Leg_IK_Cntrl_Group";
+	rename -uid "4D59BBB8-4F82-C1D7-4C24-26BDC4D34319";
+	setAttr ".t" -type "double3" 38.676784515380859 36.030704498291016 -7.812746524810791 ;
+createNode transform -n "L_Leg_IK_Cntrl" -p "L_Leg_IK_Cntrl_Group";
+	rename -uid "4101FB60-4DA2-A496-9D80-38977B46648E";
+	setAttr ".t" -type "double3" -10.238853454589844 -18.495622634887695 8.0108382105827332 ;
+	setAttr ".s" -type "double3" 15.370050466383878 15.370050466383878 15.370050466383878 ;
+createNode nurbsCurve -n "L_Leg_IK_CntrlShape" -p "L_Leg_IK_Cntrl";
+	rename -uid "617DABB9-4A32-C08E-DEE6-FCA968778BF8";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "L_Leg_PV_Cntrl_Group";
+	rename -uid "40569451-4721-11A9-180D-34B3D5C48A09";
+	setAttr ".t" -type "double3" 39.86407612064297 76.368143246284916 -9.1017655659574057 ;
+	setAttr ".r" -type "double3" -90 -1.8295235358095177 -91.685955168906986 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 1 ;
+createNode transform -n "L_Leg_PV_Offset_Group" -p "L_Leg_PV_Cntrl_Group";
+	rename -uid "DCDE3AB0-45BC-0017-6DED-2F9F8DBD3EE7";
+createNode transform -n "L_Leg_PV_Cntrl" -p "L_Leg_PV_Offset_Group";
+	rename -uid "D59591CF-4DDD-AF92-B89C-4E842775DE15";
+	setAttr ".t" -type "double3" -1.4210854715202004e-14 2.6645352591003757e-15 0 ;
+	setAttr ".s" -type "double3" 11.198680018977905 11.198680018977905 11.198680018977905 ;
+createNode nurbsCurve -n "L_Leg_PV_CntrlShape" -p "L_Leg_PV_Cntrl";
+	rename -uid "11E32943-4839-F682-5314-789F256AAD44";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "group10";
+	rename -uid "7134A610-40E0-489C-C545-38A99299375C";
+createNode transform -n "nurbsCircle1" -p "group10";
+	rename -uid "4D6B7438-418C-E903-2CD4-B086CA473884";
+createNode nurbsCurve -n "nurbsCircleShape1" -p "|group10|nurbsCircle1";
+	rename -uid "166DC1D3-4A20-B065-A01C-6DB1BD9AC7B6";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "group11";
+	rename -uid "86FF741C-424A-921F-D024-5283DB57E9CC";
+createNode transform -n "nurbsCircle1" -p "group11";
+	rename -uid "70DCB4AD-42AC-EDC6-4CB6-B9A758219932";
+createNode nurbsCurve -n "nurbsCircleShape1" -p "|group11|nurbsCircle1";
+	rename -uid "4A653024-4C21-3E96-4571-A18CAE1164A6";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "group12";
+	rename -uid "FF832CBD-4FE9-7090-4A6F-14A6C019CAA7";
+createNode transform -n "nurbsCircle1" -p "group12";
+	rename -uid "A705F52A-4732-3A7F-F82B-149AC7A13028";
+createNode nurbsCurve -n "nurbsCircleShape1" -p "|group12|nurbsCircle1";
+	rename -uid "CDBE507F-45F5-D3A0-BD05-5F84F682B104";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "R_Arm_IK_Cntrl_Main_Group";
+	rename -uid "ECF6D16E-438A-0C7D-4442-5BA448ADC6BC";
+createNode transform -n "R_Arm_IK_Base_Cntrl_Group" -p "R_Arm_IK_Cntrl_Main_Group";
+	rename -uid "A9BD8F81-4300-2491-58C3-41BA6A816BBE";
+	setAttr ".t" -type "double3" -84.929512023925781 205.67510986328125 -11.09028148651123 ;
+createNode transform -n "R_Arm_IK_Base_Cntrl" -p "R_Arm_IK_Base_Cntrl_Group";
+	rename -uid "119E7CA4-4900-5EC7-B8C5-3C8BC28CCA8C";
+	setAttr ".s" -type "double3" 39.893956265897032 39.893956265897032 39.893956265897032 ;
+createNode nurbsCurve -n "R_Arm_IK_Base_CntrlShape" -p "R_Arm_IK_Base_Cntrl";
+	rename -uid "398B8CFB-4997-D193-999B-58968D1A9FE5";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "R_Arm_IK_Cntrl_Group" -p "R_Arm_IK_Cntrl_Main_Group";
+	rename -uid "DCD859FA-40FC-68B6-708A-3AAF5D7A3895";
+	setAttr ".t" -type "double3" -89.097076416015625 64.077919006347656 -11.090353012084961 ;
+createNode transform -n "R_Arm_IK_Cntrl" -p "R_Arm_IK_Cntrl_Group";
+	rename -uid "2EE5DD7D-433F-AEBE-4B78-D5AE6B235B05";
+	setAttr ".t" -type "double3" 2.0168801164332146 0 0 ;
+	setAttr ".s" -type "double3" 34.010651528996334 34.010651528996334 34.010651528996334 ;
+createNode nurbsCurve -n "R_Arm_IK_CntrlShape" -p "R_Arm_IK_Cntrl";
+	rename -uid "A759CA60-4D6A-94C5-BF2B-8DA278705BA3";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode ikHandle -n "R_Arrm_IK_Handle" -p "R_Arm_IK_Cntrl";
+	rename -uid "546DE869-474F-621B-D87C-C786B4ACD9DA";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" -5.308865969055887e-08 1.0348464196674456e-07 5.8731005059264874e-09 ;
+	setAttr ".s" -type "double3" 0.029402553466152621 0.029402553466152621 0.029402553466152621 ;
+	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "R_Arrm_IK_Handle_poleVectorConstraint1" -p "R_Arrm_IK_Handle";
+	rename -uid "EC83BAF8-4D6B-6BB9-B3F8-15AB71C50E9E";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Arm_PV_CntrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" -0.060214765871132503 -2.0458539379238299 -2.0581805245939164 ;
+	setAttr -k on ".w0";
+createNode transform -n "R_Arm_PV_Cntrl_Group" -p "R_Arm_IK_Cntrl_Main_Group";
+	rename -uid "8E468CB7-454D-ED67-05BF-F8B23FFEDB2B";
+	setAttr ".t" -type "double3" -86.977454920312709 136.09423632579495 -11.090341824477873 ;
+	setAttr ".r" -type "double3" -89.999998671756245 -3.5220466749025082e-05 88.31419735069413 ;
+	setAttr ".s" -type "double3" 1 0.99999999999999967 0.99999999999999989 ;
+createNode transform -n "R_Arm_PV_Offset_Group" -p "R_Arm_PV_Cntrl_Group";
+	rename -uid "54E5E6E9-422C-9DF7-C06F-ADAD49286583";
+	setAttr ".t" -type "double3" -8.9496389456332996e-14 -80 -2.7349855092465339e-14 ;
+createNode transform -n "R_Arm_PV_Cntrl" -p "R_Arm_PV_Offset_Group";
+	rename -uid "2D9ABDC8-47FE-819B-F52C-1A8D34E6DBAC";
+	setAttr ".t" -type "double3" 2.1030331409358106e-13 150 2.7822486353811639e-13 ;
+	setAttr ".s" -type "double3" 12.254323235377514 12.254323235377514 12.254323235377514 ;
+createNode nurbsCurve -n "R_Arm_PV_CntrlShape" -p "R_Arm_PV_Cntrl";
+	rename -uid "F8A36726-4B0B-1A40-8F20-CCA03EA65375";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122682 4.7982373409884762e-17 -0.78361162489122538
+		-1.4358554028299457e-15 6.7857323231109048e-17 -1.108194187554387
+		-0.78361162489122205 4.7982373409884725e-17 -0.78361162489122427
+		-1.1081941875543897 -3.8518598887744717e-33 -5.5511151231257827e-17
+		-0.78361162489122371 -4.7982373409884651e-17 0.78361162489122438
+		-5.9030161711096491e-16 -6.7857323231109208e-17 1.1081941875543884
+		0.78361162489122527 -4.7982373409884682e-17 0.7836116248912236
+		1.1081941875543864 -1.0554096095242052e-31 1.5820678100908481e-15
+		0.78361162489122682 4.7982373409884762e-17 -0.78361162489122538
+		-1.4358554028299457e-15 6.7857323231109048e-17 -1.108194187554387
+		-0.78361162489122205 4.7982373409884725e-17 -0.78361162489122427
+		;
+createNode transform -n "L_Arm_IK_Cntrl_Main_Group";
+	rename -uid "938FDDF9-4E52-8B0B-24A6-7DBB4F0AA29C";
+createNode transform -n "L_Arm_IK_Base_Cntrl_Group" -p "L_Arm_IK_Cntrl_Main_Group";
+	rename -uid "364E682C-47B6-ACFF-1BE5-5D9D2DEA0419";
+	setAttr ".t" -type "double3" 114.16526794433594 199.81500244140625 -11.090282440185547 ;
+createNode transform -n "L_Arm_IK_Base_Cntrl" -p "L_Arm_IK_Base_Cntrl_Group";
+	rename -uid "C5E703E7-4B84-E49B-7F05-F6BF0D77D7B2";
+	setAttr ".s" -type "double3" 39.893956265897032 39.893956265897032 39.893956265897032 ;
+createNode nurbsCurve -n "L_Arm_IK_Base_CntrlShape" -p "L_Arm_IK_Base_Cntrl";
+	rename -uid "42B00E42-4AEB-1870-52F5-87ADD2FAFE87";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".tw" yes;
+createNode transform -n "L_Arm_IK_Cntrl_Group" -p "L_Arm_IK_Cntrl_Main_Group";
+	rename -uid "F46C51F6-4340-7EFD-BD9D-98B79846FACC";
+	setAttr ".t" -type "double3" 109.99730682373047 58.217777252197266 -11.090334892272949 ;
+createNode transform -n "L_Arm_IK_Cntrl" -p "L_Arm_IK_Cntrl_Group";
+	rename -uid "62172F34-4B99-E4A9-6EF5-4887B9B514A1";
+	setAttr ".t" -type "double3" -5.7829776643574178 0 6.0415053455991224e-14 ;
+	setAttr ".s" -type "double3" 34.010651528996334 34.010651528996334 34.010651528996334 ;
+createNode nurbsCurve -n "L_Arm_IK_CntrlShape" -p "L_Arm_IK_Cntrl";
+	rename -uid "D4DB7517-4E72-48CD-5355-4EA113AC36F6";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode ikHandle -n "L_Arm_IK_Handle" -p "L_Arm_IK_Cntrl";
+	rename -uid "26118545-488F-7B25-351A-56A8EFA4E13E";
+	setAttr ".t" -type "double3" 0.27176848181692614 0.00090246890473411057 -0.016273418803335993 ;
+	setAttr ".r" -type "double3" -2.3051455048943885 0 0 ;
+	setAttr ".s" -type "double3" 0.029402553466152621 0.029402553466152621 0.029402553466152621 ;
+	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "L_Arm_IK_Handle_poleVectorConstraint1" -p "L_Arm_IK_Handle";
+	rename -uid "A1E5A4CD-4CE7-956E-16AE-BBA0A7D00FC1";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Arm_PV_CntrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" -0.060220565253235492 -2.04585840107011 -2.3522057833148851 ;
+	setAttr -k on ".w0";
+createNode transform -n "L_Arm_PV_Cntrl_Group" -p "L_Arm_IK_Cntrl_Main_Group";
+	rename -uid "4B37506D-49ED-1A24-8749-6D8DB0CAF865";
+	setAttr ".t" -type "double3" 112.11712878658319 130.23402650483928 -11.090333842439696 ;
+	setAttr ".r" -type "double3" 89.999996377717309 1.018901782801012e-06 -91.686030524475356 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1 1.0000000000000002 ;
+createNode transform -n "L_Arm_PV_Offset_Group" -p "L_Arm_PV_Cntrl_Group";
+	rename -uid "5F1928C8-4263-24B9-E50B-01BF4B7DA8DA";
+	setAttr ".t" -type "double3" -8.9496389456332996e-14 -80 -2.7349855092465339e-14 ;
+createNode transform -n "L_Arm_PV_Cntrl" -p "L_Arm_PV_Offset_Group";
+	rename -uid "0528C764-43FA-B74B-2AAE-2391403ED6F6";
+	setAttr ".t" -type "double3" 2.8421709430404007e-14 -1.7763568394002505e-15 0 ;
+	setAttr ".s" -type "double3" 12.254323235377514 12.254323235377514 12.254323235377514 ;
+createNode nurbsCurve -n "L_Arm_PV_CntrlShape" -p "L_Arm_PV_Cntrl";
+	rename -uid "C2A433F4-423A-E9B7-F055-9E9D2ED6473D";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122682 4.7982373409884762e-17 -0.78361162489122538
+		-1.4358554028299457e-15 6.7857323231109048e-17 -1.108194187554387
+		-0.78361162489122205 4.7982373409884725e-17 -0.78361162489122427
+		-1.1081941875543897 -3.8518598887744717e-33 -5.5511151231257827e-17
+		-0.78361162489122371 -4.7982373409884651e-17 0.78361162489122438
+		-5.9030161711096491e-16 -6.7857323231109208e-17 1.1081941875543884
+		0.78361162489122527 -4.7982373409884682e-17 0.7836116248912236
+		1.1081941875543864 -1.0554096095242052e-31 1.5820678100908481e-15
+		0.78361162489122682 4.7982373409884762e-17 -0.78361162489122538
+		-1.4358554028299457e-15 6.7857323231109048e-17 -1.108194187554387
+		-0.78361162489122205 4.7982373409884725e-17 -0.78361162489122427
+		;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "A24C056A-4D09-4631-83BF-7097C301C850";
 	setAttr -s 3 ".lnk";
@@ -44945,17 +45653,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 601\n            -height 337\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
 		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
 		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n"
-		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
+		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 600\n            -height 336\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
 		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
 		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
-		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
-		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
-		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 0\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1208\n            -height 635\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 601\n            -height 336\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
+		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1208\n            -height 702\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 1\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
@@ -44982,16 +45690,22 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
 		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
 		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 0\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1208\\n    -height 635\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 0\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1208\\n    -height 635\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1208\\n    -height 702\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1208\\n    -height 702\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "0EC8C981-4E3B-3A96-FB6B-12BD99B7559C";
 	setAttr ".b" -type "string" "playbackOptions -min -3 -max 42 -ast -3 -aet 42 ";
 	setAttr ".st" 6;
+createNode ikRPsolver -n "ikRPsolver";
+	rename -uid "75FC6DE0-4E70-43CF-46EB-7D87C5BFE125";
+createNode makeNurbCircle -n "makeNurbCircle1";
+	rename -uid "B762C142-47ED-3D7D-48FA-279C1A718E8E";
+	setAttr ".nr" -type "double3" 0 1 0 ;
 select -ne :time1;
-	setAttr ".o" 0;
+	setAttr ".o" -2;
+	setAttr ".unw" -2;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -45613,6 +46327,82 @@ connectAttr "Spine_02_FK_Cntrl.pm" "Spine_02_FK_Joint_parentConstraint1.tg[0].tp
 		;
 connectAttr "Spine_02_FK_Joint_parentConstraint1.w0" "Spine_02_FK_Joint_parentConstraint1.tg[0].tw"
 		;
+connectAttr "Spine_02_FK_Joint.s" "L_Arm_01_IK_Joint.is";
+connectAttr "L_Arm_01_IK_Joint_pointConstraint1.ctx" "L_Arm_01_IK_Joint.tx";
+connectAttr "L_Arm_01_IK_Joint_pointConstraint1.cty" "L_Arm_01_IK_Joint.ty";
+connectAttr "L_Arm_01_IK_Joint_pointConstraint1.ctz" "L_Arm_01_IK_Joint.tz";
+connectAttr "L_Arm_01_IK_Joint.s" "L_Arm_02_IK_Joint.is";
+connectAttr "L_Arm_02_IK_Joint.s" "L_Arm_03_IK_Joint.is";
+connectAttr "L_Arm_03_IK_Joint_orientConstraint1.crx" "L_Arm_03_IK_Joint.rx";
+connectAttr "L_Arm_03_IK_Joint_orientConstraint1.cry" "L_Arm_03_IK_Joint.ry";
+connectAttr "L_Arm_03_IK_Joint_orientConstraint1.crz" "L_Arm_03_IK_Joint.rz";
+connectAttr "L_Arm_03_IK_Joint.ro" "L_Arm_03_IK_Joint_orientConstraint1.cro";
+connectAttr "L_Arm_03_IK_Joint.pim" "L_Arm_03_IK_Joint_orientConstraint1.cpim";
+connectAttr "L_Arm_03_IK_Joint.jo" "L_Arm_03_IK_Joint_orientConstraint1.cjo";
+connectAttr "L_Arm_03_IK_Joint.is" "L_Arm_03_IK_Joint_orientConstraint1.is";
+connectAttr "L_Arm_IK_Cntrl.r" "L_Arm_03_IK_Joint_orientConstraint1.tg[0].tr";
+connectAttr "L_Arm_IK_Cntrl.ro" "L_Arm_03_IK_Joint_orientConstraint1.tg[0].tro";
+connectAttr "L_Arm_IK_Cntrl.pm" "L_Arm_03_IK_Joint_orientConstraint1.tg[0].tpm";
+connectAttr "L_Arm_03_IK_Joint_orientConstraint1.w0" "L_Arm_03_IK_Joint_orientConstraint1.tg[0].tw"
+		;
+connectAttr "L_Arm_03_IK_Joint.tx" "effector1.tx";
+connectAttr "L_Arm_03_IK_Joint.ty" "effector1.ty";
+connectAttr "L_Arm_03_IK_Joint.tz" "effector1.tz";
+connectAttr "L_Arm_03_IK_Joint.opm" "effector1.opm";
+connectAttr "L_Arm_01_IK_Joint.pim" "L_Arm_01_IK_Joint_pointConstraint1.cpim";
+connectAttr "L_Arm_01_IK_Joint.rp" "L_Arm_01_IK_Joint_pointConstraint1.crp";
+connectAttr "L_Arm_01_IK_Joint.rpt" "L_Arm_01_IK_Joint_pointConstraint1.crt";
+connectAttr "L_Arm_IK_Base_Cntrl.t" "L_Arm_01_IK_Joint_pointConstraint1.tg[0].tt"
+		;
+connectAttr "L_Arm_IK_Base_Cntrl.rp" "L_Arm_01_IK_Joint_pointConstraint1.tg[0].trp"
+		;
+connectAttr "L_Arm_IK_Base_Cntrl.rpt" "L_Arm_01_IK_Joint_pointConstraint1.tg[0].trt"
+		;
+connectAttr "L_Arm_IK_Base_Cntrl.pm" "L_Arm_01_IK_Joint_pointConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Arm_01_IK_Joint_pointConstraint1.w0" "L_Arm_01_IK_Joint_pointConstraint1.tg[0].tw"
+		;
+connectAttr "Spine_02_FK_Joint.s" "R_Arm_01_IK_Joint.is";
+connectAttr "R_Arm_01_IK_Joint_pointConstraint1.ctx" "R_Arm_01_IK_Joint.tx";
+connectAttr "R_Arm_01_IK_Joint_pointConstraint1.cty" "R_Arm_01_IK_Joint.ty";
+connectAttr "R_Arm_01_IK_Joint_pointConstraint1.ctz" "R_Arm_01_IK_Joint.tz";
+connectAttr "R_Arm_01_IK_Joint.s" "R_Arm_02_IK_Joint.is";
+connectAttr "R_Arm_02_IK_Joint.s" "R_Arm_03_IK_Joint.is";
+connectAttr "R_Arm_03_IK_Joint_orientConstraint1.crx" "R_Arm_03_IK_Joint.rx";
+connectAttr "R_Arm_03_IK_Joint_orientConstraint1.cry" "R_Arm_03_IK_Joint.ry";
+connectAttr "R_Arm_03_IK_Joint_orientConstraint1.crz" "R_Arm_03_IK_Joint.rz";
+connectAttr "R_Arm_03_IK_Joint.ro" "R_Arm_03_IK_Joint_orientConstraint1.cro";
+connectAttr "R_Arm_03_IK_Joint.pim" "R_Arm_03_IK_Joint_orientConstraint1.cpim";
+connectAttr "R_Arm_03_IK_Joint.jo" "R_Arm_03_IK_Joint_orientConstraint1.cjo";
+connectAttr "R_Arm_03_IK_Joint.is" "R_Arm_03_IK_Joint_orientConstraint1.is";
+connectAttr "R_Arm_IK_Cntrl.r" "R_Arm_03_IK_Joint_orientConstraint1.tg[0].tr";
+connectAttr "R_Arm_IK_Cntrl.ro" "R_Arm_03_IK_Joint_orientConstraint1.tg[0].tro";
+connectAttr "R_Arm_IK_Cntrl.pm" "R_Arm_03_IK_Joint_orientConstraint1.tg[0].tpm";
+connectAttr "R_Arm_03_IK_Joint_orientConstraint1.w0" "R_Arm_03_IK_Joint_orientConstraint1.tg[0].tw"
+		;
+connectAttr "R_Arm_03_IK_Joint.tx" "effector2.tx";
+connectAttr "R_Arm_03_IK_Joint.ty" "effector2.ty";
+connectAttr "R_Arm_03_IK_Joint.tz" "effector2.tz";
+connectAttr "R_Arm_03_IK_Joint.opm" "effector2.opm";
+connectAttr "R_Arm_01_IK_Joint.pim" "R_Arm_01_IK_Joint_pointConstraint1.cpim";
+connectAttr "R_Arm_01_IK_Joint.rp" "R_Arm_01_IK_Joint_pointConstraint1.crp";
+connectAttr "R_Arm_01_IK_Joint.rpt" "R_Arm_01_IK_Joint_pointConstraint1.crt";
+connectAttr "R_Arm_IK_Base_Cntrl.t" "R_Arm_01_IK_Joint_pointConstraint1.tg[0].tt"
+		;
+connectAttr "R_Arm_IK_Base_Cntrl.rp" "R_Arm_01_IK_Joint_pointConstraint1.tg[0].trp"
+		;
+connectAttr "R_Arm_IK_Base_Cntrl.rpt" "R_Arm_01_IK_Joint_pointConstraint1.tg[0].trt"
+		;
+connectAttr "R_Arm_IK_Base_Cntrl.pm" "R_Arm_01_IK_Joint_pointConstraint1.tg[0].tpm"
+		;
+connectAttr "R_Arm_01_IK_Joint_pointConstraint1.w0" "R_Arm_01_IK_Joint_pointConstraint1.tg[0].tw"
+		;
+connectAttr "Spine_02_FK_Joint.s" "L_Arm_01_RK_Joint.is";
+connectAttr "L_Arm_01_RK_Joint.s" "L_Arm_02_RK_Joint.is";
+connectAttr "L_Arm_02_RK_Joint.s" "L_Arm_03_RK_Joint.is";
+connectAttr "Spine_02_FK_Joint.s" "R_Arm_01_RK_Joint.is";
+connectAttr "R_Arm_01_RK_Joint.s" "R_Arm_02_RK_Joint.is";
+connectAttr "R_Arm_02_RK_Joint.s" "R_Arm_03_RK_Joint.is";
 connectAttr "Spine_01_FK_Joint.ro" "Spine_01_FK_Joint_parentConstraint1.cro";
 connectAttr "Spine_01_FK_Joint.pim" "Spine_01_FK_Joint_parentConstraint1.cpim";
 connectAttr "Spine_01_FK_Joint.rp" "Spine_01_FK_Joint_parentConstraint1.crp";
@@ -45872,6 +46662,16 @@ connectAttr "|Robot|Controls|Transform_Cntrl_Group|Transform_Cntrl|Cog_Cntrl_Gro
 		;
 connectAttr "L_Leg_Clav_FK_Joint_parentConstraint1.w0" "L_Leg_Clav_FK_Joint_parentConstraint1.tg[0].tw"
 		;
+connectAttr "L_Leg_Clav_FK_Joint.s" "L_Leg_01_IK_Joint.is";
+connectAttr "L_Leg_01_IK_Joint.s" "L_Leg_02_IK_Joint.is";
+connectAttr "L_Leg_02_IK_Joint.s" "L_Leg_03_IK_Joint.is";
+connectAttr "L_Leg_03_IK_Joint.tx" "effector4.tx";
+connectAttr "L_Leg_03_IK_Joint.ty" "effector4.ty";
+connectAttr "L_Leg_03_IK_Joint.tz" "effector4.tz";
+connectAttr "L_Leg_03_IK_Joint.opm" "effector4.opm";
+connectAttr "L_Leg_Clav_FK_Joint.s" "L_Leg_01_Rk_Joint.is";
+connectAttr "L_Leg_01_Rk_Joint.s" "L_Leg_02_Rk_Joint.is";
+connectAttr "L_Leg_02_Rk_Joint.s" "L_Leg_03_Rk_Joint.is";
 connectAttr "Hip_FK_Joint.s" "R_Leg_Clav_FK_Joint.is";
 connectAttr "R_Leg_Clav_FK_Joint_scaleConstraint1.csx" "R_Leg_Clav_FK_Joint.sx";
 connectAttr "R_Leg_Clav_FK_Joint_scaleConstraint1.csy" "R_Leg_Clav_FK_Joint.sy";
@@ -46185,6 +46985,16 @@ connectAttr "R_Leg_Clav_FK_Cntrl.pm" "R_Leg_Clav_FK_Joint_scaleConstraint1.tg[0]
 		;
 connectAttr "R_Leg_Clav_FK_Joint_scaleConstraint1.w0" "R_Leg_Clav_FK_Joint_scaleConstraint1.tg[0].tw"
 		;
+connectAttr "R_Leg_Clav_FK_Joint.s" "R_Leg_01_IK_Joint.is";
+connectAttr "R_Leg_01_IK_Joint.s" "R_Leg_02_IK_Joint.is";
+connectAttr "R_Leg_02_IK_Joint.s" "R_Leg_03_IK_Joint.is";
+connectAttr "R_Leg_03_IK_Joint.tx" "effector3.tx";
+connectAttr "R_Leg_03_IK_Joint.ty" "effector3.ty";
+connectAttr "R_Leg_03_IK_Joint.tz" "effector3.tz";
+connectAttr "R_Leg_03_IK_Joint.opm" "effector3.opm";
+connectAttr "R_Leg_Clav_FK_Joint.s" "R_Leg_01_Rk_Joint.is";
+connectAttr "R_Leg_01_Rk_Joint.s" "R_Leg_02_Rk_Joint.is";
+connectAttr "R_Leg_02_Rk_Joint.s" "R_Leg_03_Rk_Joint.is";
 connectAttr "Hip_FK_Joint.ro" "Hip_FK_Joint_parentConstraint1.cro";
 connectAttr "Hip_FK_Joint.pim" "Hip_FK_Joint_parentConstraint1.cpim";
 connectAttr "Hip_FK_Joint.rp" "Hip_FK_Joint_parentConstraint1.crp";
@@ -46214,6 +47024,51 @@ connectAttr "Cog_Cntrl.pm" "Cog_Joint_parentConstraint1.tg[0].tpm";
 connectAttr "Cog_Joint_parentConstraint1.w0" "Cog_Joint_parentConstraint1.tg[0].tw"
 		;
 connectAttr "Robot_GeoShapeOrig.w" "Robot_GeoShape.i";
+connectAttr "R_Leg_01_IK_Joint.msg" "R_leg_IK_Handle.hsj";
+connectAttr "effector3.hp" "R_leg_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "R_leg_IK_Handle.hsv";
+connectAttr "L_Leg_01_IK_Joint.msg" "L_Leg_IK_Handle.hsj";
+connectAttr "effector4.hp" "L_Leg_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "L_Leg_IK_Handle.hsv";
+connectAttr "R_Arm_01_IK_Joint.msg" "R_Arrm_IK_Handle.hsj";
+connectAttr "effector2.hp" "R_Arrm_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "R_Arrm_IK_Handle.hsv";
+connectAttr "R_Arrm_IK_Handle_poleVectorConstraint1.ctx" "R_Arrm_IK_Handle.pvx";
+connectAttr "R_Arrm_IK_Handle_poleVectorConstraint1.cty" "R_Arrm_IK_Handle.pvy";
+connectAttr "R_Arrm_IK_Handle_poleVectorConstraint1.ctz" "R_Arrm_IK_Handle.pvz";
+connectAttr "R_Arrm_IK_Handle.pim" "R_Arrm_IK_Handle_poleVectorConstraint1.cpim"
+		;
+connectAttr "R_Arm_01_IK_Joint.pm" "R_Arrm_IK_Handle_poleVectorConstraint1.ps";
+connectAttr "R_Arm_01_IK_Joint.t" "R_Arrm_IK_Handle_poleVectorConstraint1.crp";
+connectAttr "R_Arm_PV_Cntrl.t" "R_Arrm_IK_Handle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "R_Arm_PV_Cntrl.rp" "R_Arrm_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "R_Arm_PV_Cntrl.rpt" "R_Arrm_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "R_Arm_PV_Cntrl.pm" "R_Arrm_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "R_Arrm_IK_Handle_poleVectorConstraint1.w0" "R_Arrm_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
+connectAttr "makeNurbCircle1.oc" "L_Arm_IK_Base_CntrlShape.cr";
+connectAttr "L_Arm_01_IK_Joint.msg" "L_Arm_IK_Handle.hsj";
+connectAttr "effector1.hp" "L_Arm_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "L_Arm_IK_Handle.hsv";
+connectAttr "L_Arm_IK_Handle_poleVectorConstraint1.ctx" "L_Arm_IK_Handle.pvx";
+connectAttr "L_Arm_IK_Handle_poleVectorConstraint1.cty" "L_Arm_IK_Handle.pvy";
+connectAttr "L_Arm_IK_Handle_poleVectorConstraint1.ctz" "L_Arm_IK_Handle.pvz";
+connectAttr "L_Arm_IK_Handle.pim" "L_Arm_IK_Handle_poleVectorConstraint1.cpim";
+connectAttr "L_Arm_01_IK_Joint.pm" "L_Arm_IK_Handle_poleVectorConstraint1.ps";
+connectAttr "L_Arm_01_IK_Joint.t" "L_Arm_IK_Handle_poleVectorConstraint1.crp";
+connectAttr "L_Arm_PV_Cntrl.t" "L_Arm_IK_Handle_poleVectorConstraint1.tg[0].tt";
+connectAttr "L_Arm_PV_Cntrl.rp" "L_Arm_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "L_Arm_PV_Cntrl.rpt" "L_Arm_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "L_Arm_PV_Cntrl.pm" "L_Arm_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Arm_IK_Handle_poleVectorConstraint1.w0" "L_Arm_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Robot_GeoSG.message" ":defaultLightSet.message";
@@ -46233,4 +47088,5 @@ connectAttr "lambert2.msg" "materialInfo1.m";
 connectAttr "Robot_GeoSG.pa" ":renderPartition.st" -na;
 connectAttr "lambert2.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
 // End of RobotModel.ma
